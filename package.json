@@ -25,15 +25,12 @@
     "commitlint": "commitlint --from=HEAD~1 --to=HEAD",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm run commitlint"
-    }
+    "qwik": "qwik",
+    "postinstall": "husky",
+    "prepare": "husky"
   },
   "lint-staged": {
-    "src/**/*.ts*": [
+    "src/**/*.{ts,tsx,js,jsx}": [
       "eslint",
       "prettier --write"
     ],
