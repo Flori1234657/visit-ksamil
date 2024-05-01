@@ -22,23 +22,47 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
+    "commitlint": "commitlint --from=HEAD~1 --to=HEAD",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
     "qwik": "qwik"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run commitlint"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts*": [
+      "eslint",
+      "prettier --write"
+    ],
+    "src/**/*.{scss,css}": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@builder.io/qwik": "^1.5.2",
     "@builder.io/qwik-city": "^1.5.2",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/eslint": "^8.56.6",
+    "@types/leaflet": "^1.9.6",
     "@types/node": "^20.11.30",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
     "eslint": "^8.57.0",
     "eslint-plugin-qwik": "^1.5.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
+    "sass": "^1.76.0",
     "typescript": "5.3.3",
     "undici": "*",
     "vite": "^5.1.6",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "leaflet": "1.9.4"
   }
 }
