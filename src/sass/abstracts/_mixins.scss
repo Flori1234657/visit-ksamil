@@ -1,0 +1,51 @@
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex($dr: row, $js: space-between, $al: center) {
+  display: flex;
+  flex-direction: $dr;
+  justify-content: $js;
+  align-items: $al;
+}
+
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin font($f, $s: 1rem, $w, $c, $lh: 160%) {
+  font-family: $f;
+  font-size: $s;
+  font-weight: $w;
+  color: $c;
+  line-height: $lh;
+}

@@ -1,0 +1,29 @@
+@use "../utilities/get-color";
+@use "../abstracts/mixins";
+
+.--icon-button {
+  background-color: get-color.color("jellow", 500);
+  @include mixins.box(2rem);
+  border-radius: 0.5rem;
+  border: none;
+  svg {
+    @include mixins.box(0.875rem);
+    color: get-color.color("accent", 900);
+  }
+
+  outline-offset: 1px;
+
+  transition:
+    outline-color 0.2s ease-in-out,
+    outline-offset 0.2s ease-in-out;
+
+  &:focus {
+    outline: 2px solid get-color.color("jellow", 300);
+  }
+
+  &:active {
+    background-color: get-color.color("jellow", 600);
+    transition: 0.2s;
+    transform: scale(0.95);
+  }
+}

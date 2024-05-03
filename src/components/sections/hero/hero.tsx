@@ -1,12 +1,19 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import { ImagesWrapper } from "./components/imagesWrapper";
+
+import styles from "./hero.scss?inline";
 
 //import Image from '[IMAGE_PATH]?jsx';
 
 export const Hero = component$(() => {
+  useStyles$(styles);
+
   return (
-    <section>
-      <div aria-label="Main section text and button container">
+    <section class="hero-section">
+      <div
+        class="hero-section__text-button-wrapper"
+        aria-label="Main section text and button container"
+      >
         <h1>
           Uncover the Beauty of <span>Ksamil</span>: Your Essential Guide Starts
           Here

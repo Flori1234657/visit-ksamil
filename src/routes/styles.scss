@@ -1,0 +1,12 @@
+@use "../sass/abstracts/mixins" as mixin;
+
+header {
+  width: 100%;
+  @include mixin.flex-column;
+  position: fixed;
+  z-index: 10;
+}
+
+main {
+  width: 100%;
+}

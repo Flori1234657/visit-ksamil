@@ -1,3 +1,6 @@
+@use "abstracts";
+@use "components";
+
 *,
 ::after,
 ::before {
@@ -8,4 +11,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 16px;
 }

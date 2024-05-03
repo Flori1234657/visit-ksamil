@@ -1,0 +1,21 @@
+$md: 900;
+$lg: 1200;
+$xl: 1536;
+
+@mixin md {
+  @media only screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media only screen and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media only screen and (min-width: $xl) {
+    @content;
+  }
+}

@@ -1,0 +1,46 @@
+@use "../../sass/utilities/get-color";
+@use "../../sass/abstracts/mixins";
+@use "../../sass/components/icon-buttons";
+
+.support-us-container {
+  width: 100%;
+  background-color: get-color.color("jellow", 500);
+  @include mixins.flex-center;
+  h4 {
+    @include mixins.font(
+      "Poppins",
+      0.75rem,
+      600,
+      get-color.color("accent", 500)
+    );
+    padding: 0.41rem 0.25rem;
+    span {
+      font-size: 1rem;
+      vertical-align: middle;
+      margin: 0 0.25rem;
+      line-height: 0;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.nav-logo-lang-container {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(50px);
+  padding: 0.875rem 2rem;
+  @include mixins.flex;
+  .nav-logo-lang-container__logo {
+    @include mixins.flex;
+    gap: 0.5rem;
+    h4 {
+      @include mixins.font("IslandMoments", 1.269rem, 400, white, 115%);
+    }
+  }
+  nav,
+  select {
+    display: none;
+  }
+}
