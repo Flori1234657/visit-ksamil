@@ -1,0 +1,15 @@
+@use "../../../sass/abstracts/variables";
+@use "../../../sass/abstracts/mixins";
+@use "../../../sass/utilities/get-color";
+
+.what-to-do {
+  margin-top: 5rem;
+  @include mixins.flex-center-column;
+  gap: 4.5rem;
+  h1 {
+    @include mixins.font(Poppins, 1.6rem, 600, get-color.color("accent", 900));
+  }
+  .what-to-do__card-map {
+    padding: 0 2rem;
+  }
+}

@@ -1,0 +1,94 @@
+@use "../../../sass/abstracts/variables";
+@use "../../../sass/abstracts/mixins";
+@use "../../../sass/utilities/get-color";
+
+.about-us {
+  width: 100%;
+  @include mixins.flex-center-column;
+  gap: 4.5rem;
+  h1 {
+    @include mixins.font(Poppins, 1.6rem, 600, get-color.color("accent", 900));
+  }
+
+  .about-us__about-cards {
+    @include mixins.flex-center-column;
+    gap: 4rem;
+
+    article {
+      position: relative;
+
+      div {
+        padding: 0 2rem;
+        @include mixins.flex-center-column;
+        gap: 0.5rem;
+
+        h2 {
+          @include mixins.font(
+            Poppins,
+            1.269rem,
+            500,
+            get-color.color("accent", 900)
+          );
+
+          filter: drop-shadow(0 0 0.2rem white);
+        }
+
+        p {
+          @include mixins.font(Poppins, 0.888rem, 400, white);
+          text-align: center;
+
+          filter: drop-shadow(0 0 0.2rem black);
+        }
+      }
+
+      svg {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 13.438rem;
+        height: auto;
+      }
+    }
+
+    .about-us__about-cards__history {
+      svg {
+        right: -4rem;
+      }
+    }
+    .about-us__about-cards__beauty {
+      svg {
+        left: -4rem;
+      }
+    }
+    .about-us__about-cards__crystal--clear--waters {
+      svg {
+        right: -4rem;
+      }
+    }
+    .about-us__about-cards__to--be--discovered {
+      svg {
+        left: -4rem;
+      }
+    }
+  }
+
+  .about-us__last-message {
+    padding: 0 2rem;
+    @include mixins.flex-center-column;
+    gap: 0.5rem;
+
+    h2 {
+      @include mixins.font(
+        Poppins,
+        1.425rem,
+        700,
+        get-color.color("accent", 900)
+      );
+    }
+
+    p {
+      @include mixins.font(Poppins, 1rem, 500, get-color.color("accent", 500));
+      text-align: center;
+    }
+  }
+}

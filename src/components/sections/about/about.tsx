@@ -1,14 +1,21 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import { AboutCards } from "./components/aboutCards";
 
+import styles from "./about.scss?inline";
+
 export const About = component$(() => {
+  useStyles$(styles);
+
   return (
-    <section>
+    <section class="about-us">
       <h1>About Ksamil</h1>
-      <div aria-label="Cards about Ksamil">
+      <div aria-label="Cards about Ksamil" class="about-us__about-cards">
         <AboutCards />
       </div>
-      <div aria-label="About Ksamil last paragraph">
+      <div
+        aria-label="About Ksamil last paragraph"
+        class="about-us__last-message"
+      >
         <h2>You are welcomed!</h2>
         <p>
           Experience the beauty of Ksamil for yourself and unlock the secrets of

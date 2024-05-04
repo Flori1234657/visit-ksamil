@@ -2,6 +2,7 @@
 @use "../../../sass/utilities/get-color";
 
 .hero-section {
+  width: 100%;
   background-image: url("/images/pages/hero/background-banner-mb(1).jpg");
   @include mixins.cover-background;
   position: relative;
@@ -35,5 +36,40 @@
       @include mixins.font(Poppins, 1rem, 400, white);
       text-align: center;
     }
+  }
+  .hero-section__images-card {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 6.5rem;
+
+    box-shadow: 0 0 7.8px #ffff;
+    border-radius: 0.5rem;
+
+    @include mixins.flex-center;
+
+    img {
+      border-radius: 0.5rem;
+    }
+
+    img:nth-child(1),
+    img:nth-child(3) {
+      @include mixins.box(7.773rem, 12.39rem);
+    }
+    img:nth-child(2) {
+      @include mixins.box(8.228rem, 13.116rem);
+
+      box-shadow: 0 0 7.8px #ffff;
+
+      position: absolute;
+      z-index: 3;
+    }
+  }
+
+  > svg {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
   }
 }

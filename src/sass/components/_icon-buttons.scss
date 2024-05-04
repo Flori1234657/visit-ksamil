@@ -12,11 +12,10 @@
   }
 
   outline-offset: 1px;
-
   transition:
     outline-color 0.2s ease-in-out,
     outline-offset 0.2s ease-in-out;
-
+  cursor: pointer;
   &:focus {
     outline: 2px solid get-color.color("jellow", 300);
   }

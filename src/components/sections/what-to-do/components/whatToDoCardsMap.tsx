@@ -42,7 +42,7 @@ export const WhatToDoCardsMap = component$(() => {
   ];
 
   return (
-    <div aria-label="What to do cards map">
+    <div aria-label="What to do cards map" class="what-to-do__card-map">
       {placeholderData.map((card) => (
         <WhatToDoCard
           description={card.description}

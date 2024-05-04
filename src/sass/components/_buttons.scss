@@ -1,0 +1,41 @@
+@use "../utilities/get-color";
+@use "../abstracts/mixins";
+
+.--tex-icon-button {
+  background-color: get-color.color("jellow", 500);
+  border-radius: 0.5rem;
+  border: none;
+  width: 100%;
+
+  @include mixins.flex($js: center);
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+
+  @include mixins.font(
+    Inter,
+    0.875rem,
+    600,
+    get-color.color("accent", 500),
+    0.875rem
+  );
+  svg {
+    @include mixins.box(1.5rem);
+    color: get-color.color("accent", 500);
+  }
+
+  outline-offset: 1px;
+  transition:
+    outline-color 0.2s ease-in-out,
+    outline-offset 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:focus {
+    outline: 2px solid get-color.color("jellow", 300);
+  }
+
+  &:active {
+    background-color: get-color.color("jellow", 600);
+    transition: 0.2s;
+    transform: scale(0.95);
+  }
+}

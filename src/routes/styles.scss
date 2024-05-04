@@ -9,4 +9,7 @@ header {
 
 main {
   width: 100%;
+  overflow-x: hidden;
+  @include mixin.flex-center-column;
+  gap: 3.75rem;
 }

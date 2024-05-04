@@ -1,9 +1,10 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
 import { ImagesWrapper } from "./components/imagesWrapper";
+import { HiChatBubbleOvalLeftEllipsisOutline } from "@qwikest/icons/heroicons";
 
 import styles from "./hero.scss?inline";
 
-//import Image from '[IMAGE_PATH]?jsx';
+import Wave from "../../../../public/images/svg/home-wave.svg?jsx";
 
 export const Hero = component$(() => {
   useStyles$(styles);
@@ -23,13 +24,13 @@ export const Hero = component$(() => {
           hidden gem in Albania. Dive into our interactive map, and plan your
           perfect getaway
         </p>
-        <button>
-          Contact Us <span>// also icon here</span>
+        <button class="hero-section__text-button-wrapper__cta-button --tex-icon-button">
+          Contact Us <HiChatBubbleOvalLeftEllipsisOutline />
         </button>
       </div>
       <ImagesWrapper />
 
-      {/** also wavw here <Image style={{ width: '300px', height: '200px'}}/> */}
+      <Wave />
     </section>
   );
 });
