@@ -1,14 +1,17 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import { Buttons } from "./components/buttons";
 import { CardsMap } from "./components/cardsMap";
 
-//import Image from '[IMAGE_PATH]?jsx';
+import styles from "./popular-attractions.scss?inline";
+import Blob from "../../../../public/images/svg/popular-attractions-blob.svg?jsx";
 
 export const PopularAttractions = component$(() => {
+  useStyles$(styles);
+
   return (
-    <section>
+    <section class="popular-attractions">
       <h1>Popular attractions</h1>
-      {/** blob <Image style={{ width: '300px', height: '200px'}}/> */}
+      <Blob />
       <Buttons>
         <CardsMap />
       </Buttons>

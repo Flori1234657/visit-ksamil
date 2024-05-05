@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 
-//import Image from '[IMAGE_PATH]?jsx';
+import { HiArrowTopRightOnSquareOutline } from "@qwikest/icons/heroicons";
 
 export const CardsMap = component$(() => {
   {
@@ -11,39 +11,39 @@ export const CardsMap = component$(() => {
     {
       id: "91tya8y8Y&As687a",
       title: "Shkëmbi i keq",
-      image: <img src="path" alt="Card image" width={50} height={50} />,
+      image: "/images/pages/popular-attractions/buka-e-vivarit.jpg",
     },
     {
       id: "8j29js8*!982uj&As687a",
       title: "Shkëmbi i keq",
-      image: <img src="path" alt="Card image" width={50} height={50} />,
+      image: "/images/pages/popular-attractions/shkembi-i-keq.jpg",
     },
     {
       id: ")90ndnu&^!7hd67t2",
       title: "Shkëmbi i keq",
-      image: <img src="path" alt="Card image" width={50} height={50} />,
-    },
-    {
-      id: "!982ns9uxn09aj9s",
-      title: "Shkëmbi i keq",
-      image: <img src="path" alt="Card image" width={50} height={50} />,
-    },
-    {
-      id: "ansa!yu897wna9",
-      title: "Shkëmbi i keq",
-      image: <img src="path" alt="Card image" width={50} height={50} />,
+      image: "/images/pages/popular-attractions/pema-e-thate.jpg",
     },
   ];
 
   return (
-    <div aria-label="Cards map container">
+    <div
+      aria-label="Cards map container"
+      class="popular-attractions__buttons__cards-wrapper"
+    >
       {placeholderData.map((card) => (
-        <div aria-label="card" key={card.id}>
-          {card.image}
-          <div aria-label="contant wrapper">
+        <div
+          aria-label="card"
+          class="popular-attractions__buttons__cards-wrapper__card"
+          key={card.id}
+        >
+          <img src={card.image} alt="Attraction" width={168} height={244.7} />
+          <div
+            aria-label="contant wrapper"
+            class="popular-attractions__buttons__cards-wrapper__card__content"
+          >
             <h2>{card.title}</h2>
-            <button>
-              View on Map <span>icon</span>
+            <button class="--tex-icon-button --sm">
+              View on Map <HiArrowTopRightOnSquareOutline />
             </button>
           </div>
         </div>
