@@ -1,4 +1,6 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
+
+import { HiChevronDownOutline } from "@qwikest/icons/heroicons";
 
 interface Props {
   city: string;
@@ -9,11 +11,21 @@ interface Props {
 
 export const HourCard = component$(
   ({ city, hours, butrintHours, sarandaHours }: Props) => {
+    const showHours = useSignal(false);
+
     return (
-      <div aria-label="bus hours card">
+      <div
+        aria-label="bus hours card"
+        class={`transportation__hours-container__cards-wrapper__hour-card ${showHours.value ? "--show" : "--hide"} ${city === "Ksamil" && "--ksamil"}`}
+      >
         <h4>From {city}</h4>
 
-        <div aria-label="Hours list">
+        <div
+          aria-label="Hours list"
+          class={
+            "transportation__hours-container__cards-wrapper__hour-card__hours"
+          }
+        >
           {city === "Ksamil" ? (
             <>
               <ul>
@@ -30,7 +42,12 @@ export const HourCard = component$(
           )}
         </div>
 
-        <button>Icon here</button>
+        <button
+          class="--icon-button --rounded"
+          onClick$={() => (showHours.value = !showHours.value)}
+        >
+          <HiChevronDownOutline />
+        </button>
       </div>
     );
   },

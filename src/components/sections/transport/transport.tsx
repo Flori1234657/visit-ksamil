@@ -1,19 +1,25 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import { HoursCards } from "./components/hoursCards";
 
-//import Image from '[IMAGE_PATH]?jsx';
+import styles from "./transport.scss?inline";
+import ImageMb from "../../../../public/images/pages/transportation/image-mb.svg?jsx";
+// import ImagePc from "../../../../public/images/pages/transportation/image-pc.svg?jsx"
+import Blob from "../../../../public/images/svg/transportation-blob.svg?jsx";
 
 export const Transport = component$(() => {
-  return (
-    <section>
-      <h1>Transportation</h1>
-      {/** card images <Image style={{ width: '300px', height: '200px'}}/> */}
+  useStyles$(styles);
 
-      <div aria-label="Information text">
-        {/** card images <Image style={{ width: '300px', height: '200px'}}/> */}
+  return (
+    <section class="transportation">
+      <h1>Transportation</h1>
+
+      <ImageMb />
+
+      <div aria-label="Information text" class="transportation__info-txt">
+        <Blob />
         <p>
           To come in Ksamil from Saranda you can use the bus it costs
-          <span>150lek/person,</span> or you can get a taxi. Also you can use
+          <span> 150lek/person,</span>or you can get a taxi. Also you can use
           the same bus to go in Butrint and come from Butrint to Ksamil.
         </p>
       </div>

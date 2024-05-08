@@ -19,22 +19,30 @@ export const HoursCards = component$(() => {
   ];
 
   return (
-    <div>
+    <div
+      aria-label="hours cards container"
+      class="transportation__hours-container"
+    >
       <h3>Hours</h3>
 
-      <HourCard
-        city={placeholderData[0].city}
-        hours={placeholderData[0].hours}
-      />
-      <HourCard
-        city={placeholderData[1].city}
-        butrintHours={placeholderData[1].butrintiHours}
-        sarandaHours={placeholderData[1].sarandaHours}
-      />
-      <HourCard
-        city={placeholderData[2].city}
-        hours={placeholderData[2].hours}
-      />
+      <div
+        aria-label="hours cards wrapper"
+        class="transportation__hours-container__cards-wrapper"
+      >
+        <HourCard
+          city={placeholderData[0].city}
+          hours={placeholderData[0].hours}
+        />
+        <HourCard
+          city={placeholderData[1].city}
+          butrintHours={placeholderData[1].butrintiHours}
+          sarandaHours={placeholderData[1].sarandaHours}
+        />
+        <HourCard
+          city={placeholderData[2].city}
+          hours={placeholderData[2].hours}
+        />
+      </div>
     </div>
   );
 });
