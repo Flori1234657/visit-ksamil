@@ -32,7 +32,12 @@
   backdrop-filter: blur(50px);
   padding: 0.875rem 2rem;
   @include mixins.flex;
-  .nav-logo-lang-container__logo {
+
+  > svg {
+    display: none;
+  }
+
+  &__logo {
     @include mixins.flex;
     gap: 0.5rem;
     h4 {
@@ -42,5 +47,64 @@
   nav,
   select {
     display: none;
+  }
+}
+
+.nav-logo-lang-container.--show {
+  padding: 0 2rem;
+  background-color: get-color.color("jellow", 500);
+  height: 100vh;
+  @include mixins.flex-center-column;
+  gap: 1.5rem;
+  justify-content: flex-start;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100vw;
+    height: 3.8rem;
+    background-color: get-color.color("accent", 500);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+
+  > svg {
+    display: block;
+    width: 100vw;
+
+    position: absolute;
+    top: 3.75rem;
+    left: 0;
+    z-index: -1;
+  }
+
+  .nav-logo-lang-container__logo {
+    height: 3.75rem;
+    align-self: flex-start;
+  }
+
+  nav,
+  select {
+    display: block;
+  }
+
+  nav {
+    ul {
+      list-style-type: none;
+      @include mixins.flex-column;
+      gap: 1.5rem;
+      align-items: center;
+
+      li:nth-child(1) {
+        color: white;
+      }
+
+      li {
+        @include mixins.font(Inter, 1rem, 500, get-color.color("accent", 900));
+      }
+    }
   }
 }

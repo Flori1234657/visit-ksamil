@@ -29,4 +29,28 @@
   &.--rounded {
     border-radius: 50%;
   }
+
+  &.--color-secondary {
+    background-color: get-color.color("accent", 500);
+
+    svg {
+      color: white;
+    }
+
+    &:focus {
+      outline-color: get-color.color("accent", 400);
+    }
+
+    &:active {
+      background-color: get-color.color("accent", 700);
+    }
+  }
+
+  &.--md {
+    @include mixins.box(3rem);
+
+    svg {
+      @include mixins.box(1rem);
+    }
+  }
 }

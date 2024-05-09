@@ -1,0 +1,26 @@
+@use "../../sass/utilities/get-color";
+@use "../../sass/abstracts/mixins";
+
+select {
+  background-color: transparent;
+  border: 1px solid get-color.color("accent", 500);
+  border-radius: 0.5rem;
+
+  @include mixins.font(
+    Inter,
+    1rem,
+    600,
+    get-color.color("accent", 500),
+    0.875rem
+  );
+  padding: 0.5rem;
+
+  outline-offset: 1px;
+  transition:
+    outline-color 0.2s ease-in-out,
+    outline-offset 0.2s ease-in-out;
+  cursor: pointer;
+  &:focus {
+    outline: 2px solid get-color.color("accent", 400);
+  }
+}
