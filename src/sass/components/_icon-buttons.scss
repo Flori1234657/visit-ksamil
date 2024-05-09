@@ -1,11 +1,13 @@
 @use "../utilities/get-color";
 @use "../abstracts/mixins";
+@use "../abstracts/variables";
 
 .--icon-button {
   background-color: get-color.color("jellow", 500);
   @include mixins.box(2rem);
   border-radius: 0.5rem;
   border: none;
+  box-shadow: variables.$button-box-shadow;
   svg {
     @include mixins.box(0.875rem);
     color: get-color.color("accent", 900);

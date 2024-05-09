@@ -1,9 +1,11 @@
 @use "../utilities/get-color";
 @use "../abstracts/mixins";
+@use "../abstracts/variables";
 
 .--tex-icon-button {
   background-color: get-color.color("jellow", 500);
   border-radius: 0.5rem;
+  box-shadow: variables.$button-box-shadow;
   border: none;
   width: 100%;
 

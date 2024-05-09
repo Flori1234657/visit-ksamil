@@ -15,8 +15,10 @@ button {
 
 html {
   scroll-behavior: smooth;
-}
 
-body {
-  font-size: 16px;
+  font-size: clamp(
+    1rem,
+    0.0836rem + 4.5821vi,
+    1.8019rem
+  ); // 16 - 28.83 max(600px vw)
 }

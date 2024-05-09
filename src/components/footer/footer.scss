@@ -7,12 +7,19 @@ footer {
   width: 100%;
   @include mixins.flex-column();
 
-  svg {
+  position: relative;
+
+  > svg {
     width: 100%;
     height: auto;
+
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .footer-sections {
+    margin-top: 1rem;
     background-color: get-color.color("accent", 500);
     @include mixins.flex-column();
     gap: 2.5rem;

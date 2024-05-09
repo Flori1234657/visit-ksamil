@@ -12,8 +12,10 @@
     @include mixins.font(Poppins, 1.6rem, 600, get-color.color("accent", 900));
   }
 
-  > img {
+  > svg {
     width: 100%;
+    height: auto;
+    padding: 0 2rem;
   }
 
   &__info-txt {

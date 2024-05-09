@@ -42,8 +42,10 @@
     gap: 0.5rem;
     h4 {
       @include mixins.font("IslandMoments", 1.269rem, 400, white, 115%);
+      filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
     }
   }
+
   nav,
   select {
     display: none;
@@ -74,6 +76,7 @@
   > svg {
     display: block;
     width: 100vw;
+    height: auto;
 
     position: absolute;
     top: 3.75rem;

@@ -23,4 +23,8 @@ select {
   &:focus {
     outline: 2px solid get-color.color("accent", 400);
   }
+
+  option {
+    font-size: 0.75rem;
+  }
 }
