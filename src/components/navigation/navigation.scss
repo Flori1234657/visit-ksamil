@@ -1,6 +1,7 @@
 @use "../../sass/utilities/get-color";
 @use "../../sass/abstracts/mixins";
 @use "../../sass/components/icon-buttons";
+@use "../../sass/abstracts/media-query";
 
 .support-us-container {
   width: 100%;
@@ -30,7 +31,7 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(50px);
-  padding: 0.875rem 2rem;
+  @include mixins.main-padding(0.875rem);
   @include mixins.flex;
 
   > svg {
@@ -53,7 +54,7 @@
 }
 
 .nav-logo-lang-container.--show {
-  padding: 0 2rem;
+  @include mixins.main-padding(0);
   background-color: get-color.color("jellow", 500);
   height: 100vh;
   @include mixins.flex-center-column;
@@ -95,6 +96,10 @@
   }
 
   nav {
+    @include media-query.sm {
+      margin-top: clamp(8px, -120.4281px + 21.4047vi, 72px);
+    }
+
     ul {
       list-style-type: none;
       @include mixins.flex-column;

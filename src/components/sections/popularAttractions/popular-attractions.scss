@@ -22,7 +22,7 @@
       position: relative;
 
       width: 100%;
-      padding: 0 2rem;
+      @include mixins.main-padding(0);
 
       &__card {
         border-radius: 0.5rem;

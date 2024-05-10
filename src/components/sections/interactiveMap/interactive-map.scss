@@ -10,7 +10,7 @@
 
   &__content {
     width: 100%;
-    padding: 0 2rem;
+    @include mixins.main-padding(0);
 
     @include mixins.flex-center-column;
     gap: 2rem;

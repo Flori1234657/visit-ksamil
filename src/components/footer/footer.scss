@@ -1,6 +1,7 @@
 @use "../../sass/utilities/get-color";
 @use "../../sass/abstracts/mixins";
 @use "../../sass/components/icon-buttons";
+@use "../../sass/abstracts/media-query";
 
 footer {
   margin-top: 6.5rem;
@@ -23,7 +24,7 @@ footer {
     background-color: get-color.color("accent", 500);
     @include mixins.flex-column();
     gap: 2.5rem;
-    padding: 1.5rem 2rem;
+    @include mixins.main-padding(1.5rem);
 
     &__website-info {
       @include mixins.flex-column();
@@ -107,12 +108,19 @@ footer {
         }
       }
     }
+
+    &__newsletter,
+    &__travel-stories {
+      @include media-query.sm-2 {
+        width: 75%;
+      }
+    }
   }
 
   .footer-copyright {
     width: 100%;
     background-color: get-color.color("accent", 900);
-    padding: 0.5rem 2rem;
+    @include mixins.main-padding(0.5rem);
     @include mixins.flex-center-column();
     gap: 0.25rem;
 

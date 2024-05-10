@@ -6,7 +6,7 @@
   margin-top: 11.5rem;
   @include mixins.flex-center-column;
   gap: 4.5rem;
-  padding: 0 2rem;
+  @include mixins.main-padding(0);
 
   h1 {
     @include mixins.font(Poppins, 1.6rem, 600, get-color.color("accent", 900));
