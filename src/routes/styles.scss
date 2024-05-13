@@ -1,4 +1,5 @@
 @use "../sass/abstracts/mixins" as mixin;
+@use "../sass/abstracts/media-query";
 
 header {
   width: 100%;
@@ -12,4 +13,8 @@ main {
   overflow-x: hidden;
   @include mixin.flex-center-column;
   gap: 3.75rem;
+
+  @include media-query.md {
+    gap: 10.125rem;
+  }
 }

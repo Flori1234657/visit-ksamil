@@ -66,4 +66,8 @@
   @include media-query.sm-3 {
     padding: $y 4rem;
   }
+
+  @include media-query.md {
+    padding: $y 4.688rem;
+  }
 }

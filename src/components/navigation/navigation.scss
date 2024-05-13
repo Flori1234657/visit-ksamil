@@ -14,7 +14,7 @@
       600,
       get-color.color("accent", 500)
     );
-    padding: 0.41rem 0.25rem;
+    padding: 0.547em 0.333em;
     span {
       font-size: 1rem;
       vertical-align: middle;
@@ -112,6 +112,65 @@
 
       li {
         @include mixins.font(Inter, 1rem, 500, get-color.color("accent", 900));
+      }
+    }
+  }
+}
+
+@include media-query.md {
+  .support-us-container {
+    h4 {
+      font-size: 0.554rem;
+
+      span {
+        font-size: 0.703rem;
+        margin: 0 0.125rem;
+      }
+    }
+  }
+
+  .nav-logo-lang-container {
+    @include mixins.main-padding(0.469rem);
+
+    &__logo {
+      h4 {
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      display: none;
+    }
+
+    @include mixins.flex;
+    gap: unset;
+
+    nav,
+    select {
+      display: block;
+    }
+
+    nav {
+      ul {
+        @include mixins.flex;
+        gap: 1.172rem;
+        list-style-type: none;
+
+        li {
+          @include mixins.font(Inter, 0.625rem, 500, white);
+          filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
+        }
+      }
+    }
+
+    select {
+      color: white;
+      border-color: white;
+      font-size: 0.625rem;
+      filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
+
+      &:focus {
+        outline-color: white;
       }
     }
   }

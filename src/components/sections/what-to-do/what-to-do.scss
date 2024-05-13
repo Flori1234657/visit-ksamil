@@ -1,5 +1,6 @@
 @use "../../../sass/abstracts/variables";
 @use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
 @use "../../../sass/utilities/get-color";
 
 .what-to-do {
@@ -97,5 +98,76 @@
   & > button {
     width: auto;
     margin-top: 3rem;
+  }
+}
+
+@include media-query.md {
+  .what-to-do {
+    margin-top: 0;
+
+    h1 {
+      font-size: 1.266rem;
+      margin-bottom: 6.25rem;
+    }
+
+    &__cards-map {
+      max-width: unset;
+      width: 14rem;
+
+      &__card {
+        gap: 0.375rem;
+
+        &.--visible {
+          width: 9.45rem;
+          margin-right: unset;
+
+          img {
+            height: 4.75rem;
+          }
+        }
+
+        &__text-button {
+          gap: 0.469rem;
+          padding: 0.469rem 0.469rem 1.469rem 0.469rem;
+
+          &__text-container {
+            gap: 0.469rem;
+
+            h2 {
+              font-size: 0.79rem;
+            }
+
+            p {
+              font-size: 0.624rem;
+            }
+          }
+        }
+
+        &.--hidden {
+          width: 8rem;
+          height: 12rem;
+
+          h2 {
+            @include mixins.font(
+              Poppins,
+              3.625rem,
+              600,
+              get-color.color("jellow", 100)
+            );
+          }
+        }
+      }
+
+      & > svg {
+        width: 20rem;
+        height: unset;
+
+        top: -3.5rem;
+      }
+    }
+
+    & > button {
+      margin-top: 2rem;
+    }
   }
 }

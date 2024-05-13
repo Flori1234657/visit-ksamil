@@ -1,5 +1,6 @@
 @use "../../../sass/abstracts/variables";
 @use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
 @use "../../../sass/utilities/get-color";
 
 .about-us {
@@ -89,6 +90,70 @@
     p {
       @include mixins.font(Poppins, 1rem, 500, get-color.color("accent", 500));
       text-align: center;
+    }
+  }
+}
+
+@include media-query.md {
+  .about-us {
+    gap: 4.688rem;
+
+    h1 {
+      font-size: 1.266rem;
+    }
+
+    .about-us__about-cards {
+      gap: 3.048rem;
+
+      article {
+        position: unset;
+        @include mixins.main-padding(0);
+
+        @include mixins.flex;
+        gap: 0.469rem;
+
+        div {
+          gap: 0.469rem;
+          padding: 0;
+
+          h2 {
+            font-size: 1rem;
+            filter: unset;
+          }
+
+          p {
+            font-size: 0.79rem;
+            color: get-color.color("accent", 500);
+            filter: unset;
+            max-width: 27.5rem;
+          }
+        }
+
+        svg {
+          position: unset;
+
+          width: 10rem;
+        }
+      }
+
+      .--left {
+        div {
+          order: 2;
+        }
+      }
+    }
+
+    .about-us__last-message {
+      gap: 0.469rem;
+
+      h2 {
+        font-size: 1.125rem;
+      }
+
+      p {
+        font-size: 0.889rem;
+        max-width: 25rem;
+      }
     }
   }
 }

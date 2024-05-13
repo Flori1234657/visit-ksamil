@@ -1,5 +1,6 @@
 @use "../../../sass/abstracts/mixins";
 @use "../../../sass/utilities/get-color";
+@use "../../../sass/abstracts/media-query";
 
 .hero-section {
   width: 100%;
@@ -19,7 +20,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 0;
   }
-  .hero-section__text-button-wrapper {
+  &__text-button-wrapper {
     position: relative;
     z-index: 1;
     padding: 8.518rem 0 0 0;
@@ -71,5 +72,44 @@
     position: absolute;
     bottom: -2px;
     z-index: 1;
+  }
+}
+
+@include media-query.md {
+  .hero-section {
+    padding-top: 9.668rem;
+    padding-bottom: 9.668rem;
+    @include mixins.flex;
+    gap: unset;
+
+    &__text-button-wrapper {
+      padding: 0;
+      max-width: 19rem;
+      align-items: flex-start;
+      gap: unset;
+
+      h1 {
+        font-size: 1.424rem;
+        text-align: unset;
+      }
+
+      p {
+        font-size: 0.79rem;
+        text-align: unset;
+      }
+
+      button {
+        margin-top: 0.469rem;
+      }
+    }
+
+    .hero-section__images-card {
+      margin-bottom: 0;
+    }
+
+    > svg {
+      left: 0;
+      bottom: -3.125rem;
+    }
   }
 }

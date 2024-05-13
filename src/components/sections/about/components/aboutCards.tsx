@@ -19,7 +19,7 @@ export const AboutCards = component$(() => {
       description:
         "Renowned for its breathtaking scenery. At the heart of its allure lie the enchanting Ksamil Islands, reminiscent of the Caribbean.Unlike its Mediterranean counterparts, Ksamil exudes a serene charm, offering crystal-clear turquoise waters and secluded shores that beckon exploration.",
       image: <BeautySvg />,
-      class: "beauty",
+      class: "beauty --left",
     },
     {
       title: "Crystal clear waters",
@@ -33,7 +33,7 @@ export const AboutCards = component$(() => {
       description:
         "But Ksamil is more than just a picturesque beach destination; it's a hidden gem waiting to be discovered. As Albania emerges as a burgeoning tourist hotspot in Europe, Ksamil stands out as a must-visit highlight along the Albanian Riviera.",
       image: <DiscoverSvg />,
-      class: "to--be--discovered",
+      class: "to--be--discovered --left",
     },
   ];
 

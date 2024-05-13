@@ -1,6 +1,7 @@
 @use "../utilities/get-color";
 @use "../abstracts/mixins";
 @use "../abstracts/variables";
+@use "../abstracts/media-query";
 
 .--tex-icon-button {
   background-color: get-color.color("jellow", 500);
@@ -64,6 +65,17 @@
 
     &:active {
       background-color: get-color.color("accent", 700);
+    }
+  }
+}
+
+@include media-query.md {
+  .--tex-icon-button {
+    width: auto;
+    font-size: 0.694rem;
+
+    svg {
+      @include mixins.box(1rem);
     }
   }
 }
