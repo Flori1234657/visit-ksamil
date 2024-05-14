@@ -1,5 +1,6 @@
 @use "../../../sass/abstracts/variables";
 @use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
 @use "../../../sass/utilities/get-color";
 
 .popular-attractions {
@@ -97,5 +98,59 @@
     z-index: -2;
 
     @include mixins.box(22.688rem, 24.375rem);
+  }
+}
+
+@include media-query.md {
+  .popular-attractions {
+    margin-top: 1.875rem;
+
+    h1 {
+      font-size: 1.266rem;
+    }
+
+    &__buttons {
+      @include mixins.flex;
+      gap: 2.813rem;
+
+      > button {
+        display: unset;
+      }
+
+      &__cards-wrapper {
+        width: auto;
+        padding: 0 3.5rem;
+
+        &__card:nth-child(2) {
+          width: 9rem;
+          height: unset;
+          aspect-ratio: 0.63;
+
+          .popular-attractions__buttons__cards-wrapper__card__content {
+            width: 9rem;
+            height: unset;
+            aspect-ratio: 0.63;
+
+            h2 {
+              font-size: 0.889rem;
+            }
+          }
+        }
+
+        &__card:first-child,
+        &__card:last-child {
+          width: 8rem;
+          height: unset;
+          aspect-ratio: 0.63;
+        }
+      }
+    }
+
+    > svg {
+      @include mixins.box(18.75rem, 20.063rem);
+
+      left: unset;
+      bottom: -3.5rem;
+    }
   }
 }
