@@ -1,5 +1,6 @@
 @use "../../../sass/abstracts/variables";
 @use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
 @use "../../../sass/utilities/get-color";
 
 .transportation {
@@ -181,6 +182,71 @@
             ul {
               padding-top: 10rem;
               text-wrap: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-query.md {
+  .transportation {
+    margin-top: 1.875rem;
+    padding-bottom: 5rem;
+
+    h1 {
+      font-size: 1.266rem;
+    }
+
+    > svg {
+      width: 35rem;
+      padding: 0;
+    }
+
+    &__info-txt {
+      max-width: 14rem;
+      padding: 1rem 0;
+      margin: 1.5rem 0;
+
+      p {
+        font-size: 0.889rem;
+      }
+
+      svg {
+        @include mixins.box(12rem, 12rem);
+      }
+    }
+
+    &__hours-container {
+      width: 100%;
+      gap: 0.5rem;
+      padding: 0;
+
+      h3 {
+        font-size: 0.889rem;
+      }
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      &__cards-wrapper {
+        max-width: unset;
+        overflow-x: unset;
+        padding: 0;
+        gap: 0;
+
+        &__hour-card {
+          h4 {
+            font-size: 0.79rem;
+          }
+          &__hours {
+            ul {
+              li {
+                font-size: 0.79rem;
+              }
             }
           }
         }

@@ -2,8 +2,8 @@ import { component$, useStyles$ } from "@builder.io/qwik";
 import { HoursCards } from "./components/hoursCards";
 
 import styles from "./transport.scss?inline";
-import ImageMb from "../../../../public/images/pages/transportation/image-mb.svg?jsx";
-// import ImagePc from "../../../../public/images/pages/transportation/image-pc.svg?jsx"
+// import ImageMb from "../../../../public/images/pages/transportation/image-mb.svg?jsx";
+import ImagePc from "../../../../public/images/pages/transportation/image-pc.svg?jsx";
 import Blob from "../../../../public/images/svg/transportation-blob.svg?jsx";
 
 export const Transport = component$(() => {
@@ -13,7 +13,7 @@ export const Transport = component$(() => {
     <section class="transportation">
       <h1>Transportation</h1>
 
-      <ImageMb />
+      <ImagePc />
 
       <div aria-label="Information text" class="transportation__info-txt">
         <Blob />
