@@ -140,3 +140,72 @@ footer {
     }
   }
 }
+
+@include media-query.md {
+  footer {
+    > svg {
+      top: -1rem;
+    }
+
+    .footer-sections {
+      @include mixins.flex($al: flex-start);
+      gap: 0;
+      padding-bottom: 5rem;
+
+      &__website-info {
+        max-width: 15rem;
+        img {
+          @include mixins.box(4);
+        }
+
+        h1 {
+          font-size: 1.125rem;
+        }
+
+        p {
+          font-size: 0.79rem;
+        }
+      }
+
+      &__newsletter,
+      &__travel-stories,
+      &__contact {
+        margin-top: 6.25rem;
+
+        h1 {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.625rem;
+        }
+      }
+
+      &__contact ul {
+        li {
+          font-size: 0.625rem;
+
+          margin-bottom: 0.25rem;
+
+          svg {
+            @include mixins.box(1rem);
+          }
+        }
+      }
+
+      &__newsletter,
+      &__travel-stories {
+        max-width: 9rem;
+      }
+    }
+
+    .footer-copyright {
+      @include mixins.flex();
+
+      h2,
+      a {
+        font-size: 0.625rem;
+      }
+    }
+  }
+}
