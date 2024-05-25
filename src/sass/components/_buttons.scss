@@ -79,3 +79,9 @@
     }
   }
 }
+
+@include media-query.lg {
+  .--tex-icon-button {
+    font-size: 0.625rem;
+  }
+}

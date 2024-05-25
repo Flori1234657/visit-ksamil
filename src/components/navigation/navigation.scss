@@ -125,6 +125,8 @@
       span {
         font-size: 0.703rem;
         margin: 0 0.125rem;
+
+        cursor: pointer;
       }
     }
   }
@@ -133,6 +135,8 @@
     @include mixins.main-padding(0.469rem);
 
     &__logo {
+      cursor: pointer;
+
       h4 {
         font-size: 1rem;
       }
@@ -157,6 +161,7 @@
         list-style-type: none;
 
         li {
+          cursor: pointer;
           @include mixins.font(Inter, 0.625rem, 500, white);
           filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
         }
@@ -172,6 +177,43 @@
       &:focus {
         outline-color: white;
       }
+    }
+  }
+}
+
+@include media-query.lg {
+  .support-us-container {
+    h4 {
+      font-size: 0.625rem;
+      line-height: 0;
+
+      span {
+        font-size: 0.938rem;
+      }
+    }
+  }
+
+  .nav-logo-lang-container {
+    @include mixins.main-padding(0.565rem);
+
+    &__logo {
+      h4 {
+        font-size: 1.266rem;
+      }
+    }
+
+    nav {
+      ul {
+        gap: 1.563rem;
+
+        li {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    select {
+      font-size: 0.625rem;
     }
   }
 }

@@ -26,6 +26,10 @@ html {
   ); // 16 - 28.83 max(600px vw)
 
   @include media-query.md {
+    font-size: clamp(1rem, 0.2031rem + 1.4167vi, 1.2656rem); // 16 - 20.25 px
+  }
+
+  @include media-query.lg {
     font-size: 16px;
   }
 }

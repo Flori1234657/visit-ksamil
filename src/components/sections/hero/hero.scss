@@ -113,3 +113,36 @@
     }
   }
 }
+
+@include media-query.lg {
+  .hero-section {
+    padding-top: 11.078rem;
+    padding-bottom: 12.188rem;
+
+    &__text-button-wrapper {
+      max-width: 21.25rem;
+
+      h1 {
+        font-size: 1.802rem;
+      }
+
+      p {
+        font-size: 0.889rem;
+      }
+
+      button {
+        margin-top: 0.625rem;
+      }
+    }
+
+    .hero-section__images-card {
+      img:nth-child(1),
+      img:nth-child(3) {
+        @include mixins.box(10rem, 15.941rem);
+      }
+      img:nth-child(2) {
+        @include mixins.box(10.586rem, 16.875rem);
+      }
+    }
+  }
+}
