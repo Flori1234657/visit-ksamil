@@ -171,3 +171,73 @@
     }
   }
 }
+
+@include media-query.lg {
+  .what-to-do {
+    h1 {
+      font-size: 1.602rem;
+      margin-bottom: 3.906rem;
+    }
+
+    &__cards-map {
+      width: 37.383rem;
+
+      &__card {
+        gap: 0.5rem;
+
+        &.--visible {
+          width: 9.609rem;
+
+          img {
+            height: 5.313rem;
+          }
+        }
+
+        &__text-button {
+          gap: 0.625rem;
+          padding: 0.625rem 0.625rem 1.25rem 0.625rem;
+
+          &__text-container {
+            gap: 0;
+
+            h2 {
+              font-size: 0.79rem;
+              line-height: 160%;
+            }
+
+            p {
+              font-size: 0.625rem;
+            }
+          }
+
+          .--tex-icon-button.--sm {
+            svg {
+              width: 0.938rem;
+              height: 0.938rem;
+            }
+          }
+        }
+
+        &.--hidden {
+          width: 8.281rem;
+          height: 11.58rem;
+
+          h2 {
+            font-size: 3.906rem;
+          }
+        }
+      }
+
+      & > svg {
+        width: 17.109rem;
+        left: -5rem;
+
+        top: -2.063rem;
+      }
+    }
+
+    & > button {
+      margin-top: 1.563rem;
+    }
+  }
+}

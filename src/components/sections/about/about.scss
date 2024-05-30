@@ -157,3 +157,51 @@
     }
   }
 }
+
+@include media-query.lg {
+  .about-us {
+    gap: 6.25rem;
+
+    h1 {
+      font-size: 1.602rem;
+    }
+
+    .about-us__about-cards {
+      gap: 4.063rem;
+
+      article {
+        gap: 0.625rem;
+
+        div {
+          gap: 0.625rem;
+
+          h2 {
+            font-size: 1.125rem;
+          }
+
+          p {
+            font-size: 0.79rem;
+            max-width: 28.243rem;
+          }
+        }
+
+        svg {
+          width: 10.781rem;
+        }
+      }
+    }
+
+    .about-us__last-message {
+      gap: 0.625rem;
+
+      h2 {
+        font-size: 1.266rem;
+      }
+
+      p {
+        font-size: 0.889rem;
+        max-width: 25.508rem;
+      }
+    }
+  }
+}
