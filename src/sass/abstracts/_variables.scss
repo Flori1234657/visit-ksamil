@@ -1,0 +1,142 @@
+$palette: (
+  jellow: (
+    100: #fff6cc,
+    200: #ffed99,
+    300: #ffe366,
+    400: #ffda33,
+    500: #ffd100,
+    600: #cca700,
+    700: #997d00,
+    800: #665400,
+    900: #332a00,
+  ),
+  accent: (
+    100: #d2d2d2,
+    200: #a6a6a6,
+    300: #797979,
+    400: #4d4d4d,
+    500: #202020,
+    600: #1a1a1a,
+    700: #131313,
+    800: #0d0d0d,
+    900: #060606,
+  ),
+  success: (
+    100: #ccffd1,
+    200: #99ffa3,
+    300: #66ff76,
+    400: #33ff48,
+    500: #00ff1a,
+    600: #00cc15,
+    700: #009910,
+    800: #00660a,
+    900: #003305,
+  ),
+  danger: (
+    100: #ffcccc,
+    200: #ff9999,
+    300: #ff6666,
+    400: #ff3333,
+    500: #ff0000,
+    600: #cc0000,
+    700: #990000,
+    800: #660000,
+    900: #330000,
+  ),
+  warning: (
+    100: #ffe4cc,
+    200: #ffca99,
+    300: #ffaf66,
+    400: #ff9533,
+    500: #ff7a00,
+    600: #cc6200,
+    700: #994900,
+    800: #663100,
+    900: #331800,
+  ),
+  info: (
+    100: #ccdaff,
+    200: #99b5ff,
+    300: #6691ff,
+    400: #336cff,
+    500: #0047ff,
+    600: #0039cc,
+    700: #002b99,
+    800: #001c66,
+    900: #000e33,
+  ),
+);
+
+@font-face {
+  font-family: "IslandMoments";
+  src: url("/fonts/island-moments_5.0.20/webfonts/island-moments-latin-400-normal.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sniglet";
+  src: url("/fonts/sniglet_5.0.13/webfonts/sniglet-latin-400-normal.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter_5.0.18/webfonts/inter-latin-400-normal.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter_5.0.18/webfonts/inter-latin-500-normal.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter_5.0.18/webfonts/inter-latin-600-normal.woff")
+    format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins_5.0.14/webfonts/poppins-latin-400-normal.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins_5.0.14/webfonts/poppins-latin-500-normal.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins_5.0.14/webfonts/poppins-latin-600-normal.woff")
+    format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins_5.0.14/webfonts/poppins-latin-700-normal.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+$button-box-shadow: 0 0 9px rgba(0, 0, 0, 0.25);

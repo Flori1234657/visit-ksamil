@@ -1,0 +1,219 @@
+@use "../../sass/utilities/get-color";
+@use "../../sass/abstracts/mixins";
+@use "../../sass/components/icon-buttons";
+@use "../../sass/abstracts/media-query";
+
+.support-us-container {
+  width: 100%;
+  background-color: get-color.color("jellow", 500);
+  @include mixins.flex-center;
+  h4 {
+    @include mixins.font(
+      "Poppins",
+      0.75rem,
+      600,
+      get-color.color("accent", 500)
+    );
+    padding: 0.547em 0.333em;
+    span {
+      font-size: 1rem;
+      vertical-align: middle;
+      margin: 0 0.25rem;
+      line-height: 0;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.nav-logo-lang-container {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(50px);
+  @include mixins.main-padding(0.875rem);
+  @include mixins.flex;
+
+  > svg {
+    display: none;
+  }
+
+  &__logo {
+    @include mixins.flex;
+    gap: 0.5rem;
+    h4 {
+      @include mixins.font("IslandMoments", 1.269rem, 400, white, 115%);
+      filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
+    }
+  }
+
+  nav,
+  select {
+    display: none;
+  }
+}
+
+.nav-logo-lang-container.--show {
+  @include mixins.main-padding(0);
+  background-color: get-color.color("jellow", 500);
+  height: 100vh;
+  @include mixins.flex-center-column;
+  gap: 1.5rem;
+  justify-content: flex-start;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100vw;
+    height: 3.8rem;
+    background-color: get-color.color("accent", 500);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+
+  > svg {
+    display: block;
+    width: 100vw;
+    height: auto;
+
+    position: absolute;
+    top: 3.75rem;
+    left: 0;
+    z-index: -1;
+  }
+
+  .nav-logo-lang-container__logo {
+    height: 3.75rem;
+    align-self: flex-start;
+  }
+
+  nav,
+  select {
+    display: block;
+  }
+
+  nav {
+    @include media-query.sm {
+      margin-top: clamp(8px, -120.4281px + 21.4047vi, 72px);
+    }
+
+    ul {
+      list-style-type: none;
+      @include mixins.flex-column;
+      gap: 1.5rem;
+      align-items: center;
+
+      li:nth-child(1) {
+        color: white;
+      }
+
+      li {
+        @include mixins.font(Inter, 1rem, 500, get-color.color("accent", 900));
+      }
+    }
+  }
+}
+
+@include media-query.md {
+  .support-us-container {
+    h4 {
+      font-size: 0.554rem;
+
+      span {
+        font-size: 0.703rem;
+        margin: 0 0.125rem;
+
+        cursor: pointer;
+      }
+    }
+  }
+
+  .nav-logo-lang-container {
+    @include mixins.main-padding(0.469rem);
+
+    &__logo {
+      cursor: pointer;
+
+      h4 {
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      display: none;
+    }
+
+    @include mixins.flex;
+    gap: unset;
+
+    nav,
+    select {
+      display: block;
+    }
+
+    nav {
+      ul {
+        @include mixins.flex;
+        gap: 1.172rem;
+        list-style-type: none;
+
+        li {
+          cursor: pointer;
+          @include mixins.font(Inter, 0.625rem, 500, white);
+          filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
+        }
+      }
+    }
+
+    select {
+      color: white;
+      border-color: white;
+      font-size: 0.625rem;
+      filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
+
+      &:focus {
+        outline-color: white;
+      }
+    }
+  }
+}
+
+@include media-query.lg {
+  .support-us-container {
+    h4 {
+      font-size: 0.625rem;
+      line-height: 0;
+
+      span {
+        font-size: 0.938rem;
+      }
+    }
+  }
+
+  .nav-logo-lang-container {
+    @include mixins.main-padding(0.565rem);
+
+    &__logo {
+      h4 {
+        font-size: 1.266rem;
+      }
+    }
+
+    nav {
+      ul {
+        gap: 1.563rem;
+
+        li {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    select {
+      font-size: 0.625rem;
+    }
+  }
+}

@@ -1,0 +1,207 @@
+@use "../../../sass/abstracts/variables";
+@use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
+@use "../../../sass/utilities/get-color";
+
+.about-us {
+  width: 100%;
+  @include mixins.flex-center-column;
+  gap: 4.5rem;
+  h1 {
+    @include mixins.font(Poppins, 1.6rem, 600, get-color.color("accent", 900));
+  }
+
+  .about-us__about-cards {
+    @include mixins.flex-center-column;
+    gap: 4rem;
+
+    article {
+      position: relative;
+
+      div {
+        @include mixins.main-padding(0);
+        @include mixins.flex-center-column;
+        gap: 0.5rem;
+
+        h2 {
+          @include mixins.font(
+            Poppins,
+            1.269rem,
+            500,
+            get-color.color("accent", 900)
+          );
+
+          filter: drop-shadow(0 0 0.2rem white);
+        }
+
+        p {
+          @include mixins.font(Poppins, 0.888rem, 400, white);
+          text-align: center;
+
+          filter: drop-shadow(0 0 0.2rem black);
+        }
+      }
+
+      svg {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 13.438rem;
+        height: auto;
+      }
+    }
+
+    .about-us__about-cards__history {
+      svg {
+        right: -4rem;
+      }
+    }
+    .about-us__about-cards__beauty {
+      svg {
+        left: -4rem;
+      }
+    }
+    .about-us__about-cards__crystal--clear--waters {
+      svg {
+        right: -4rem;
+      }
+    }
+    .about-us__about-cards__to--be--discovered {
+      svg {
+        left: -4rem;
+      }
+    }
+  }
+
+  .about-us__last-message {
+    @include mixins.main-padding(0);
+    @include mixins.flex-center-column;
+    gap: 0.5rem;
+
+    h2 {
+      @include mixins.font(
+        Poppins,
+        1.425rem,
+        700,
+        get-color.color("accent", 900)
+      );
+    }
+
+    p {
+      @include mixins.font(Poppins, 1rem, 500, get-color.color("accent", 500));
+      text-align: center;
+    }
+  }
+}
+
+@include media-query.md {
+  .about-us {
+    gap: 4.688rem;
+
+    h1 {
+      font-size: 1.266rem;
+    }
+
+    .about-us__about-cards {
+      gap: 3.048rem;
+
+      article {
+        position: unset;
+        @include mixins.main-padding(0);
+
+        @include mixins.flex;
+        gap: 0.469rem;
+
+        div {
+          gap: 0.469rem;
+          padding: 0;
+
+          h2 {
+            font-size: 1rem;
+            filter: unset;
+          }
+
+          p {
+            font-size: 0.79rem;
+            color: get-color.color("accent", 500);
+            filter: unset;
+            max-width: 27.5rem;
+          }
+        }
+
+        svg {
+          position: unset;
+
+          width: 10rem;
+        }
+      }
+
+      .--left {
+        div {
+          order: 2;
+        }
+      }
+    }
+
+    .about-us__last-message {
+      gap: 0.469rem;
+
+      h2 {
+        font-size: 1.125rem;
+      }
+
+      p {
+        font-size: 0.889rem;
+        max-width: 25rem;
+      }
+    }
+  }
+}
+
+@include media-query.lg {
+  .about-us {
+    gap: 6.25rem;
+
+    h1 {
+      font-size: 1.602rem;
+    }
+
+    .about-us__about-cards {
+      gap: 4.063rem;
+
+      article {
+        gap: 0.625rem;
+
+        div {
+          gap: 0.625rem;
+
+          h2 {
+            font-size: 1.125rem;
+          }
+
+          p {
+            font-size: 0.79rem;
+            max-width: 28.243rem;
+          }
+        }
+
+        svg {
+          width: 10.781rem;
+        }
+      }
+    }
+
+    .about-us__last-message {
+      gap: 0.625rem;
+
+      h2 {
+        font-size: 1.266rem;
+      }
+
+      p {
+        font-size: 0.889rem;
+        max-width: 25.508rem;
+      }
+    }
+  }
+}

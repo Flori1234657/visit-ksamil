@@ -1,0 +1,58 @@
+@use "../utilities/get-color";
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.--icon-button {
+  background-color: get-color.color("jellow", 500);
+  @include mixins.box(2rem);
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: variables.$button-box-shadow;
+  svg {
+    @include mixins.box(0.875rem);
+    color: get-color.color("accent", 900);
+  }
+
+  outline-offset: 1px;
+  transition:
+    outline-color 0.2s ease-in-out,
+    outline-offset 0.2s ease-in-out;
+  cursor: pointer;
+  &:focus {
+    outline: 2px solid get-color.color("jellow", 300);
+  }
+
+  &:active {
+    background-color: get-color.color("jellow", 600);
+    transition: 0.2s;
+    transform: scale(0.95);
+  }
+
+  &.--rounded {
+    border-radius: 50%;
+  }
+
+  &.--color-secondary {
+    background-color: get-color.color("accent", 500);
+
+    svg {
+      color: white;
+    }
+
+    &:focus {
+      outline-color: get-color.color("accent", 400);
+    }
+
+    &:active {
+      background-color: get-color.color("accent", 700);
+    }
+  }
+
+  &.--md {
+    @include mixins.box(3rem);
+
+    svg {
+      @include mixins.box(1rem);
+    }
+  }
+}

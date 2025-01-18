@@ -1,0 +1,19 @@
+@use "../abstracts/variables";
+
+@function color($color, $tone) {
+  $palette: variables.$palette;
+
+  @if map-has-key($palette, $color) {
+    $colorMap: map-get($palette, $color);
+
+    @if map-has-key($colorMap, $tone) {
+      @return map-get($colorMap, $tone);
+    } @else {
+      @warn "Unknown tone `#{$tone}` in color `#{$color}`";
+      @return null;
+    }
+  } @else {
+    @warn "Unknown color `#{$color}` in palette";
+    @return null;
+  }
+}

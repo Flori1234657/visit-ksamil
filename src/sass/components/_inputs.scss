@@ -1,0 +1,65 @@
+@use "../utilities/get-color";
+@use "../abstracts/mixins";
+@use "../abstracts/media-query";
+
+.--input-icon {
+  position: relative;
+
+  input {
+    background-color: get-color.color("jellow", 100);
+    border-radius: 0.5rem;
+    width: 100%;
+    border: none;
+
+    @include mixins.flex($js: center);
+    gap: 0.5rem;
+    padding: 0.72rem 0 0.72rem 2.5rem;
+
+    @include mixins.font(
+      Inter,
+      0.875rem,
+      600,
+      get-color.color("jellow", 900),
+      0.875rem
+    );
+
+    outline-offset: 1px;
+    transition:
+      outline-color 0.2s ease-in-out,
+      outline-offset 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid get-color.color("jellow", 500);
+    }
+
+    &:active {
+      background-color: get-color.color("jellow", 200);
+      transition: 0.2s;
+      transform: scale(0.95);
+    }
+  }
+
+  svg {
+    @include mixins.box(1.5rem);
+    color: get-color.color("accent", 300);
+
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@include media-query.md {
+  .--input-icon {
+    input {
+      font-size: 0.694rem;
+      gap: 0.25rem;
+      padding: 0.563rem 0 0.563rem 2rem;
+    }
+
+    svg {
+      @include mixins.box(1rem);
+    }
+  }
+}

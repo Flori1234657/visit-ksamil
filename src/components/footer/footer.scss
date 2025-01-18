@@ -1,0 +1,211 @@
+@use "../../sass/utilities/get-color";
+@use "../../sass/abstracts/mixins";
+@use "../../sass/components/icon-buttons";
+@use "../../sass/abstracts/media-query";
+
+footer {
+  margin-top: 6.5rem;
+  width: 100%;
+  @include mixins.flex-column();
+
+  position: relative;
+
+  > svg {
+    width: 100%;
+    height: auto;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .footer-sections {
+    margin-top: 1rem;
+    background-color: get-color.color("accent", 500);
+    @include mixins.flex-column();
+    gap: 2.5rem;
+    @include mixins.main-padding(1.5rem);
+
+    &__website-info {
+      @include mixins.flex-column();
+
+      img {
+        width: 6.25rem;
+        height: 6.25rem;
+      }
+
+      h1 {
+        @include mixins.font(
+          Sniglet,
+          1.425rem,
+          400,
+          get-color.color("jellow", 500)
+        );
+      }
+
+      p {
+        @include mixins.font(
+          Poppins,
+          0.875rem,
+          400,
+          get-color.color("jellow", 100),
+          132%
+        );
+      }
+    }
+
+    &__newsletter,
+    &__travel-stories,
+    &__contact {
+      @include mixins.flex-column();
+      gap: 0.5rem;
+
+      h1 {
+        @include mixins.font(
+          Poppins,
+          1.269rem,
+          500,
+          get-color.color("jellow", 500)
+        );
+      }
+
+      p {
+        @include mixins.font(
+          Poppins,
+          0.875rem,
+          400,
+          get-color.color("jellow", 100),
+          132%
+        );
+      }
+    }
+
+    &__newsletter__actions {
+      @include mixins.flex-column();
+      gap: 0.5rem;
+    }
+
+    &__contact ul {
+      list-style-type: none;
+      li {
+        @include mixins.flex-center;
+        justify-content: flex-start;
+        gap: 0.25rem;
+
+        @include mixins.font(
+          Poppins,
+          0.875rem,
+          400,
+          get-color.color("jellow", 100),
+          132%
+        );
+
+        margin-bottom: 0.5rem;
+
+        svg {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+      }
+    }
+
+    &__newsletter,
+    &__travel-stories {
+      @include media-query.sm-2 {
+        width: 75%;
+      }
+    }
+  }
+
+  .footer-copyright {
+    width: 100%;
+    background-color: get-color.color("accent", 900);
+    @include mixins.main-padding(0.5rem);
+    @include mixins.flex-center-column();
+    gap: 0.25rem;
+
+    h2,
+    a {
+      @include mixins.font(
+        Inter,
+        0.788rem,
+        400,
+        get-color.color("jellow", 100),
+        132%
+      );
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+@include media-query.md {
+  footer {
+    > svg {
+      top: -1rem;
+    }
+
+    .footer-sections {
+      @include mixins.flex($al: flex-start);
+      gap: 0;
+      padding-bottom: 5rem;
+
+      &__website-info {
+        max-width: 15rem;
+        img {
+          @include mixins.box(4);
+        }
+
+        h1 {
+          font-size: 1.125rem;
+        }
+
+        p {
+          font-size: 0.79rem;
+        }
+      }
+
+      &__newsletter,
+      &__travel-stories,
+      &__contact {
+        margin-top: 6.25rem;
+
+        h1 {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.625rem;
+        }
+      }
+
+      &__contact ul {
+        li {
+          font-size: 0.625rem;
+
+          margin-bottom: 0.25rem;
+
+          svg {
+            @include mixins.box(1rem);
+          }
+        }
+      }
+
+      &__newsletter,
+      &__travel-stories {
+        max-width: 9rem;
+      }
+    }
+
+    .footer-copyright {
+      @include mixins.flex();
+
+      h2,
+      a {
+        font-size: 0.625rem;
+      }
+    }
+  }
+}

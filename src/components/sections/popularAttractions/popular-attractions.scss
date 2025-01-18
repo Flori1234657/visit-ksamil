@@ -1,0 +1,156 @@
+@use "../../../sass/abstracts/variables";
+@use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
+@use "../../../sass/utilities/get-color";
+
+.popular-attractions {
+  margin-top: 5rem;
+  @include mixins.flex-center-column;
+
+  position: relative;
+  h1 {
+    @include mixins.font(Poppins, 1.6rem, 600, get-color.color("accent", 900));
+    margin-bottom: 4.5rem;
+  }
+
+  &__buttons {
+    > button {
+      display: none;
+    }
+
+    &__cards-wrapper {
+      @include mixins.flex-center;
+      position: relative;
+
+      width: 100%;
+      @include mixins.main-padding(0);
+
+      &__card {
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25);
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+
+          position: relative;
+        }
+      }
+
+      &__card:nth-child(2) {
+        width: 11.5rem;
+        height: 16.75rem;
+
+        .popular-attractions__buttons__cards-wrapper__card__content {
+          position: absolute;
+          bottom: 0;
+
+          @include mixins.flex-column;
+          justify-content: flex-end;
+          gap: 0.75rem;
+          padding: 0.75rem;
+
+          width: 11.5rem;
+          height: 16.75rem;
+          border-radius: 0.5rem;
+
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 1) 100%
+          );
+
+          h2 {
+            @include mixins.font(Poppins, 1.125rem, 600, white, 0.875rem);
+          }
+        }
+      }
+
+      &__card:first-child,
+      &__card:last-child {
+        width: 10.5rem;
+        height: 15.294rem;
+
+        position: absolute;
+        top: auto;
+        z-index: -1;
+
+        .popular-attractions__buttons__cards-wrapper__card__content {
+          display: none;
+        }
+      }
+
+      &__card:first-child {
+        left: 0;
+      }
+
+      &__card:last-child {
+        right: 0;
+      }
+    }
+  }
+
+  > svg {
+    position: absolute;
+    bottom: -5.25rem;
+    left: -4rem;
+    z-index: -2;
+
+    @include mixins.box(22.688rem, 24.375rem);
+  }
+}
+
+@include media-query.md {
+  .popular-attractions {
+    margin-top: 1.875rem;
+
+    h1 {
+      font-size: 1.266rem;
+    }
+
+    &__buttons {
+      @include mixins.flex;
+      gap: 2.813rem;
+
+      > button {
+        display: unset;
+      }
+
+      &__cards-wrapper {
+        width: auto;
+        padding: 0 3.5rem;
+
+        &__card:nth-child(2) {
+          width: 9rem;
+          height: unset;
+          aspect-ratio: 0.63;
+
+          .popular-attractions__buttons__cards-wrapper__card__content {
+            width: 9rem;
+            height: unset;
+            aspect-ratio: 0.63;
+
+            h2 {
+              font-size: 0.889rem;
+            }
+          }
+        }
+
+        &__card:first-child,
+        &__card:last-child {
+          width: 8rem;
+          height: unset;
+          aspect-ratio: 0.63;
+        }
+      }
+    }
+
+    > svg {
+      @include mixins.box(18.75rem, 20.063rem);
+
+      left: unset;
+      bottom: -3.5rem;
+    }
+  }
+}

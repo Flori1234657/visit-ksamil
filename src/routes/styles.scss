@@ -1,0 +1,20 @@
+@use "../sass/abstracts/mixins" as mixin;
+@use "../sass/abstracts/media-query";
+
+header {
+  width: 100%;
+  @include mixin.flex-column;
+  position: fixed;
+  z-index: 100;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+  @include mixin.flex-center-column;
+  gap: 3.75rem;
+
+  @include media-query.md {
+    gap: 10.125rem;
+  }
+}
