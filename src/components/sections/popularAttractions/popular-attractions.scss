@@ -103,7 +103,7 @@
 
 @include media-query.md {
   .popular-attractions {
-    margin-top: 1.875rem;
+    margin-top: 0;
 
     h1 {
       font-size: 1.266rem;
@@ -151,6 +151,54 @@
 
       left: unset;
       bottom: -3.5rem;
+    }
+  }
+}
+
+@include media-query.lg {
+  .popular-attractions {
+    gap: 2.5rem;
+    h1 {
+      font-size: 1.602rem;
+    }
+
+    &__buttons {
+      @include mixins.flex;
+      gap: 3.68rem;
+
+      &__cards-wrapper {
+        padding: 0 4.531rem;
+
+        &__card:nth-child(2) {
+          width: 9.681rem;
+
+          .popular-attractions__buttons__cards-wrapper__card__content {
+            width: 9.681rem;
+
+            h2 {
+              font-size: 0.891rem;
+            }
+          }
+        }
+
+        &__card:first-child,
+        &__card:last-child {
+          width: 9.063rem;
+        }
+      }
+    }
+
+    > svg {
+      @include mixins.box(21.016rem, 22.539rem);
+    }
+
+    .--tex-icon-button.--sm {
+      padding: 0.375rem 0.625rem;
+
+      svg {
+        width: 0.938rem;
+        height: 0.938rem;
+      }
     }
   }
 }

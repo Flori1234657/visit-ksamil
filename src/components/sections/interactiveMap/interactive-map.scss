@@ -98,3 +98,35 @@
     }
   }
 }
+
+@include media-query.lg {
+  .interactive-map {
+    &__content {
+      max-width: 14.063rem;
+
+      gap: 3rem;
+
+      h1 {
+        font-size: 1.602rem;
+      }
+
+      &__text-button {
+        p {
+          font-size: 0.891rem;
+        }
+      }
+    }
+
+    > svg {
+      width: 10.994rem;
+    }
+
+    > svg:first-child {
+      left: -15rem;
+    }
+
+    > svg:last-child {
+      right: -15rem;
+    }
+  }
+}
