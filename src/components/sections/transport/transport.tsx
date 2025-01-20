@@ -18,9 +18,9 @@ export const Transport = component$(() => {
       <div aria-label="Information text" class="transportation__info-txt">
         <Blob />
         <p>
-          To come in Ksamil from Saranda you can use the bus it costs
-          <span> 150lek/person,</span>or you can get a taxi. Also you can use
-          the same bus to go in Butrint and come from Butrint to Ksamil.
+          To come in Ksamil from Saranda you can use the bus it costs &nbsp;
+          <span> 150lek/person,</span>&nbsp; or you can get a taxi. Also you can
+          use the same bus to go in Butrint and come from Butrint to Ksamil.
         </p>
       </div>
 

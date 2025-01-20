@@ -254,3 +254,61 @@
     }
   }
 }
+
+@include media-query.lg {
+  .transportation {
+    gap: 3.5rem;
+
+    h1 {
+      font-size: 1.602rem;
+    }
+
+    > svg {
+      width: 35.853rem;
+    }
+
+    &__info-txt {
+      max-width: 15.75rem;
+      padding: 2.344rem 0;
+      margin: 0;
+
+      p {
+        font-size: 0.891rem;
+
+        span {
+          padding: 0.1rem;
+          border-radius: 0.313rem;
+          white-space: nowrap;
+        }
+      }
+
+      svg {
+        @include mixins.box(12.696rem, 12.696rem);
+      }
+    }
+
+    &__hours-container {
+      width: 100%;
+      gap: 0.625rem;
+
+      h3 {
+        font-size: 0.891rem;
+      }
+
+      &__cards-wrapper {
+        &__hour-card {
+          h4 {
+            font-size: 0.793rem;
+          }
+          &__hours {
+            ul {
+              li {
+                font-size: 0.79rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
