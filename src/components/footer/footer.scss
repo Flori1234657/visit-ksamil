@@ -209,3 +209,77 @@ footer {
     }
   }
 }
+
+@include media-query.lg {
+  footer {
+    margin-top: 7.625rem;
+
+    .footer-sections {
+      padding-bottom: 3.125rem;
+
+      &__website-info {
+        max-width: 14.922rem;
+        img {
+          @include mixins.box(5.25rem);
+        }
+
+        h1 {
+          font-size: 1.266rem;
+        }
+
+        p {
+          font-size: 0.793rem;
+        }
+      }
+
+      &__newsletter,
+      &__travel-stories,
+      &__contact {
+        margin-top: 5.297rem;
+        gap: 0;
+
+        h1 {
+          font-size: 1.125rem;
+        }
+
+        p {
+          font-size: 0.703rem;
+        }
+      }
+
+      &__contact ul {
+        li {
+          font-size: 0.703rem;
+
+          margin-bottom: 0.313rem;
+          gap: 0.156rem;
+          svg {
+            @include mixins.box(0.938rem);
+          }
+        }
+      }
+
+      &__newsletter,
+      &__travel-stories {
+        max-width: 9.571rem;
+
+        p {
+          margin-bottom: 0.625rem;
+        }
+      }
+
+      &__newletter__actions {
+        gap: 0.313rem;
+      }
+    }
+
+    .footer-copyright {
+      padding: 0.625rem 4.688rem;
+
+      h2,
+      a {
+        font-size: 0.703rem;
+      }
+    }
+  }
+}
