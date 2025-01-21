@@ -30,6 +30,6 @@ html {
   }
 
   @include media-query.lg {
-    font-size: 16px;
+    font-size: clamp(1rem, -0.0031rem + 1.3375vw, 1.6019rem); // 16 - 25.63 px
   }
 }
