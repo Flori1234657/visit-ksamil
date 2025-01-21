@@ -4,22 +4,13 @@
 
 .hero-section {
   width: 100%;
-  background-image: url("/images/pages/hero/background-banner-mb(1).jpg");
-  @include mixins.cover-background;
   position: relative;
+  background-image: url("/images/pages/hero/background-banner-mb-2.webp");
+  @include mixins.cover-background;
   @include mixins.main-padding(0);
-  gap: 5rem;
   @include mixins.flex-center-column;
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 0;
-  }
+  gap: 5rem;
+
   &__text-button-wrapper {
     position: relative;
     z-index: 1;
@@ -77,6 +68,7 @@
 
 @include media-query.md {
   .hero-section {
+    background-image: url("/images/pages/hero/background-banner-pc-2.webp");
     padding-top: 9.668rem;
     padding-bottom: 9.668rem;
     @include mixins.flex;
