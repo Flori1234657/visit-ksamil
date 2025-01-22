@@ -1,19 +1,31 @@
-import { component$, useStyles$ } from "@builder.io/qwik";
+import {
+  component$,
+  useSignal,
+  useStyles$,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import { HoursCards } from "./components/hoursCards";
 
 import styles from "./transport.scss?inline";
-// import ImageMb from "../../../../public/images/pages/transportation/image-mb.svg?jsx";
+import ImageMb from "../../../../public/images/pages/transportation/image-mb.svg?jsx";
 import ImagePc from "../../../../public/images/pages/transportation/image-pc.svg?jsx";
 import Blob from "../../../../public/images/svg/transportation-blob.svg?jsx";
 
 export const Transport = component$(() => {
   useStyles$(styles);
 
+  const isMobile = useSignal(false);
+
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(() => {
+    isMobile.value = window.innerWidth <= 768;
+  });
+
   return (
     <section class="transportation" id="transport">
       <h1>Transportation</h1>
 
-      <ImagePc />
+      {isMobile.value ? <ImageMb /> : <ImagePc />}
 
       <div aria-label="Information text" class="transportation__info-txt">
         <Blob />
