@@ -51,10 +51,7 @@ export const Navigation = component$(() => {
           </ul>
         </nav>
         <select name="Language">
-          <option value="al">Al</option>
           <option value="en">En</option>
-          <option value="it">It</option>
-          <option value="tr">Tr</option>
         </select>
         <MobileNavigationButton showNavigation={showNavigation} />
       </div>

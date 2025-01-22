@@ -10,7 +10,7 @@ export const Hero = component$(() => {
   useStyles$(styles);
 
   return (
-    <section class="hero-section">
+    <section class="hero-section" id="hero">
       <div
         class="hero-section__text-button-wrapper"
         aria-label="Main section text and button container"

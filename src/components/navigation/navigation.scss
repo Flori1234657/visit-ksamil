@@ -43,7 +43,10 @@
     gap: 0.5rem;
     h4 {
       @include mixins.font("IslandMoments", 1.269rem, 400, white, 115%);
-      filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
+      &:hover {
+        color: get-color.color("jellow", 500);
+        transition: 0.25s;
+      }
     }
   }
 
@@ -117,6 +120,10 @@
   }
 }
 
+.nav-logo-lang-container.--scrolled {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 @include media-query.md {
   .support-us-container {
     h4 {
@@ -125,7 +132,10 @@
       span {
         font-size: 0.703rem;
         margin: 0 0.125rem;
+      }
 
+      a,
+      span {
         cursor: pointer;
       }
     }
@@ -163,7 +173,11 @@
         li {
           cursor: pointer;
           @include mixins.font(Inter, 0.625rem, 500, white);
-          filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
+
+          &:hover {
+            color: get-color.color("jellow", 500);
+            transition: 0.25s;
+          }
         }
       }
     }
@@ -172,10 +186,16 @@
       color: white;
       border-color: white;
       font-size: 0.625rem;
-      filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
+
+      transition: 0.25s;
 
       &:focus {
-        outline-color: white;
+        outline-color: get-color.color("jellow", 500);
+      }
+
+      &:hover {
+        color: get-color.color("jellow", 500);
+        border-color: get-color.color("jellow", 500);
       }
     }
   }
