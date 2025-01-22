@@ -8,7 +8,7 @@ export const WhatToDo = component$(() => {
   useStyles$(styles);
 
   return (
-    <section class="what-to-do">
+    <section class="what-to-do" id="what-to-do">
       <h1>What to do?</h1>
 
       <WhatToDoCardsMap />

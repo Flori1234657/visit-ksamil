@@ -9,7 +9,7 @@ export const PopularAttractions = component$(() => {
   useStyles$(styles);
 
   return (
-    <section class="popular-attractions">
+    <section class="popular-attractions" id="popular-attractions">
       <h1>Popular attractions</h1>
       <Blob />
       <Buttons>

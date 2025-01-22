@@ -7,7 +7,7 @@ export const About = component$(() => {
   useStyles$(styles);
 
   return (
-    <section class="about-us">
+    <section class="about-us" id="about">
       <h1>About Ksamil</h1>
       <div aria-label="Cards about Ksamil" class="about-us__about-cards">
         <AboutCards />

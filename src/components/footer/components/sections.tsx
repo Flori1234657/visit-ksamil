@@ -56,7 +56,7 @@ export const Sections = component$(() => {
             <HiMapPinOutline /> Ksamil
           </li>
           <li>
-            <HiEnvelopeOutline /> floriandollani15@gmailcom
+            <HiEnvelopeOutline /> floriandollani15@gmail.com
           </li>
         </ul>
       </div>

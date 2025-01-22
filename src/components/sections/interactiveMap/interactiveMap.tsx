@@ -10,7 +10,7 @@ export const InteractiveMap = component$(() => {
   useStyles$(styles);
 
   return (
-    <section class="interactive-map">
+    <section class="interactive-map" id="interactive-map">
       <ImageIllustration />
 
       <div aria-label="content" class="interactive-map__content">

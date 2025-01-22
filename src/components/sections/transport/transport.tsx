@@ -10,7 +10,7 @@ export const Transport = component$(() => {
   useStyles$(styles);
 
   return (
-    <section class="transportation">
+    <section class="transportation" id="transport">
       <h1>Transportation</h1>
 
       <ImagePc />

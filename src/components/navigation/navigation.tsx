@@ -1,4 +1,4 @@
-import { component$, useSignal, useStyles$ } from "@builder.io/qwik";
+import { $, component$, useSignal, useStyles$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { MobileNavigationButton } from "./components/mobileNavigationButton";
 
@@ -12,6 +12,10 @@ export const Navigation = component$(() => {
   useStyles$(styles);
 
   const showNavigation = useSignal(false);
+
+  const handleCloseNavigationMobile = $(() => {
+    if (showNavigation.value) showNavigation.value = false;
+  });
 
   return (
     <>
@@ -31,22 +35,40 @@ export const Navigation = component$(() => {
         <nav>
           <ul>
             <li>
-              <Link>Home</Link>
+              <Link href="#hero" onClick$={handleCloseNavigationMobile}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link>About</Link>
+              <Link href="#about" onClick$={handleCloseNavigationMobile}>
+                About
+              </Link>
             </li>
             <li>
-              <Link>What to do</Link>
+              <Link href="#what-to-do" onClick$={handleCloseNavigationMobile}>
+                What to do
+              </Link>
             </li>
             <li>
-              <Link>Popular Attractions</Link>
+              <Link
+                href="#popular-attractions"
+                onClick$={handleCloseNavigationMobile}
+              >
+                Popular Attractions
+              </Link>
             </li>
             <li>
-              <Link>Interactive Map</Link>
+              <Link
+                href="#interactive-map"
+                onClick$={handleCloseNavigationMobile}
+              >
+                Interactive Map
+              </Link>
             </li>
             <li>
-              <Link>Transport</Link>
+              <Link href="#transport" onClick$={handleCloseNavigationMobile}>
+                Transport
+              </Link>
             </li>
           </ul>
         </nav>
