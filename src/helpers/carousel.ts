@@ -1,4 +1,8 @@
-export const reorderCards = <T>(clickedIndex: number, cardsArray: T[]): T[] => {
+export const reorderCards = <T>(
+  clickedIndex: number,
+  cardsArray: T[],
+  orderPosition?: boolean
+): T[] => {
   const newOrder = [...cardsArray];
   const clickedCard = newOrder.splice(clickedIndex, 1)[0]; // Remove the clicked card
 
@@ -6,8 +10,9 @@ export const reorderCards = <T>(clickedIndex: number, cardsArray: T[]): T[] => {
   const rotatedFirstCard = newOrder.shift()!;
   newOrder.push(rotatedFirstCard);
 
+  if (orderPosition) newOrder.splice(0, 0, clickedCard);
   // Insert the clicked card in the second position
-  newOrder.splice(1, 0, clickedCard);
+  else newOrder.splice(1, 0, clickedCard);
 
   return newOrder;
 };

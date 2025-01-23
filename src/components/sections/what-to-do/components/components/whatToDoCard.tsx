@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import type { QRL } from "@builder.io/qwik";
 
 import { HiArrowTopRightOnSquareOutline } from "@qwikest/icons/heroicons";
 
@@ -8,10 +9,12 @@ interface Props {
   title: string;
   description: string;
   show: boolean;
+  changeCard: QRL<(index: number) => void>;
+  index: number;
 }
 
 export const WhatToDoCard = component$(
-  ({ description, id, imagePath, title, show }: Props) => {
+  ({ description, id, imagePath, title, show, changeCard, index }: Props) => {
     return show ? (
       <div
         aria-label="What to to card"
@@ -39,9 +42,12 @@ export const WhatToDoCard = component$(
         </div>
       </div>
     ) : (
-      <div class="what-to-do__cards-map__card --hidden">
+      <div
+        class="what-to-do__cards-map__card --hidden"
+        onClick$={() => changeCard(index)}
+      >
         <h2>?</h2>
       </div>
     );
-  },
+  }
 );
