@@ -2,9 +2,17 @@ import { $, component$, useStore, useStyles$ } from "@builder.io/qwik";
 import { Buttons } from "./components/buttons";
 import { CardsMap } from "./components/cardsMap";
 
+import type { QRL } from "@builder.io/qwik";
+import type { Card } from "./types/card";
+
 import styles from "./popular-attractions.scss?inline";
 import Blob from "../../../../public/images/svg/popular-attractions-blob.svg?jsx";
-import { reorderCards } from "~/helpers/carousel";
+import { reorderCards as reorderCardsHelper } from "~/helpers/carousel";
+
+type PopularAttractionsStore = {
+  cards: Card[];
+  reorderCards: QRL<(this: PopularAttractionsStore) => void>;
+};
 
 export const PopularAttractions = component$(() => {
   useStyles$(styles);
@@ -29,18 +37,20 @@ export const PopularAttractions = component$(() => {
       },
       // Add more cards as needed
     ],
-  });
-
-  const handleReorder = $((index: number) => {
-    state.cards = reorderCards(index, state.cards);
+    reorderCards: $(function (this: PopularAttractionsStore, index: number) {
+      this.cards = reorderCardsHelper(index, this.cards);
+    }),
   });
 
   return (
     <section class="popular-attractions" id="popular-attractions">
       <h1>Popular attractions</h1>
       <Blob />
-      <Buttons cardChange={handleReorder}>
-        <CardsMap cardChange={handleReorder} cards={state.cards} />
+      <Buttons cardChange={$((index) => state.reorderCards(index))}>
+        <CardsMap
+          cardChange={$((index) => state.reorderCards(index))}
+          cards={state.cards}
+        />
       </Buttons>
     </section>
   );

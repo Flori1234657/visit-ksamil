@@ -5,7 +5,10 @@ import { HiArrowTopRightOnSquareOutline } from "@qwikest/icons/heroicons";
 import type { Card } from "../types/card";
 
 export const CardsMap = component$(
-  (state: { cardChange: QRL<(index: number) => void>; cards: Card[] }) => {
+  (state: {
+    cardChange: QRL<(index: number) => Promise<void>>;
+    cards: Card[];
+  }) => {
     return (
       <div
         aria-label="Cards map container"

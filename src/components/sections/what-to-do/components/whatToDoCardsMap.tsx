@@ -6,7 +6,10 @@ import type { Card } from "../types/cards";
 import Blob from "../../../../../public/images/svg/what-to-do-blob.svg?jsx";
 
 export const WhatToDoCardsMap = component$(
-  (state: { cards: Card[]; handleChange: QRL<(index: number) => void> }) => {
+  (state: {
+    cards: Card[];
+    handleChange: QRL<(index: number) => Promise<void>>;
+  }) => {
     return (
       <div aria-label="What to do cards map" class="what-to-do__cards-map">
         <Blob />

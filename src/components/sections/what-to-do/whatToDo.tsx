@@ -1,9 +1,17 @@
 import { $, component$, useStore, useStyles$ } from "@builder.io/qwik";
 import { WhatToDoCardsMap } from "./components/whatToDoCardsMap";
 
+import type { QRL } from "@builder.io/qwik";
+import type { Card } from "./types/cards";
+
 import { HiArrowLeftOutline } from "@qwikest/icons/heroicons";
 import styles from "./what-to-do.scss?inline";
-import { reorderCards } from "~/helpers/carousel";
+import { reorderCards as reorderCardsHelper } from "~/helpers/carousel";
+
+type WhatToDoStore = {
+  cards: Card[];
+  reorderCards: QRL<(this: WhatToDoStore) => void>;
+};
 
 export const WhatToDo = component$(() => {
   useStyles$(styles);
@@ -39,10 +47,9 @@ export const WhatToDo = component$(() => {
           "Lorem ipsum dolor sit amet consectetur dolor sitamet conseturasgeter d",
       },
     ],
-  });
-
-  const handleReorder = $((index: number) => {
-    placeholderData.cards = reorderCards(index, placeholderData.cards, true);
+    reorderCards: $(function (this: WhatToDoStore, index: number) {
+      this.cards = reorderCardsHelper(index, this.cards, true);
+    }),
   });
 
   return (
@@ -51,12 +58,12 @@ export const WhatToDo = component$(() => {
 
       <WhatToDoCardsMap
         cards={placeholderData.cards.slice(0, 3)}
-        handleChange={handleReorder}
+        handleChange={$((index) => placeholderData.reorderCards(index))}
       />
 
       <button
         class="--tex-icon-button --color-secondary"
-        onClick$={() => handleReorder(1)}
+        onClick$={() => placeholderData.reorderCards(1)}
       >
         <HiArrowLeftOutline /> Next Card
       </button>

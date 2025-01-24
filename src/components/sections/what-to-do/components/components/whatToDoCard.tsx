@@ -9,7 +9,7 @@ interface Props {
   title: string;
   description: string;
   show: boolean;
-  changeCard: QRL<(index: number) => void>;
+  changeCard: QRL<(index: number) => Promise<void>>;
   index: number;
 }
 

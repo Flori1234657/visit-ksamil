@@ -6,7 +6,7 @@ import {
 } from "@qwikest/icons/heroicons";
 
 export const Buttons = component$(
-  (state: { cardChange: QRL<(index: number) => void> }) => {
+  (state: { cardChange: QRL<(index: number) => Promise<void>> }) => {
     return (
       <div class="popular-attractions__buttons">
         <button
