@@ -52,8 +52,6 @@ export const WhatToDo = component$(
       const controller = new AbortController();
       cleanup(() => controller.abort());
 
-      console.log("Resource triggered");
-
       if (
         !fetchNextArticles.value ||
         fetchNextArticles.value === "dont-fetch-again"
@@ -82,10 +80,13 @@ export const WhatToDo = component$(
 
         <Resource
           value={newArticles}
-          onPending={() => <div>Loading...</div>} // change this with e better visual thing
+          onPending={() => (
+            <WhatToDoCardsMap
+              cards={articlesStore.data.articles.slice(0, 3)}
+              handleChange={handleChangeCard}
+            />
+          )}
           onResolved={(data) => {
-            console.log("Resolved data:", data);
-
             if (data) articlesStore.setData(data);
 
             if (

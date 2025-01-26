@@ -7,11 +7,12 @@ import { PopularAttractions } from "~/components/sections/popularAttractions/pop
 import { Transport } from "~/components/sections/transport/transport";
 import { WhatToDo } from "~/components/sections/what-to-do/whatToDo";
 
-import { useArticles } from "~/hooks/initialFetch";
-export { useArticles };
+import { useArticles, useAttractions } from "~/hooks/initialFetch";
+export { useArticles, useAttractions };
 
 export default component$(() => {
   const fetchedArticles = useArticles();
+  const fetchedArttractions = useAttractions();
 
   return (
     <>
@@ -22,7 +23,11 @@ export default component$(() => {
       ) : (
         ""
       )}
-      <PopularAttractions />
+      {fetchedArttractions.value ? (
+        <PopularAttractions firstAttractions={fetchedArttractions.value} />
+      ) : (
+        ""
+      )}
       <InteractiveMap />
       <Transport />
     </>

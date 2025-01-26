@@ -1,20 +1,22 @@
 import { component$ } from "@builder.io/qwik";
-import type { QRL } from "@builder.io/qwik";
 
+import type { QRL } from "@builder.io/qwik";
+import type { Attractions } from "~/types/api";
+
+import placeholderImage from "/images/pages/popular-attractions/shkembi-i-keq.jpg";
 import { HiArrowTopRightOnSquareOutline } from "@qwikest/icons/heroicons";
-import type { Card } from "../types/card";
 
 export const CardsMap = component$(
   (state: {
-    cardChange: QRL<(index: number) => Promise<void>>;
-    cards: Card[];
+    cardChange: QRL<(index: number) => void>;
+    cards: Attractions[];
   }) => {
     return (
       <div
         aria-label="Cards map container"
         class="popular-attractions__buttons__cards-wrapper"
       >
-        {state.cards.slice(0, 3).map((card, index) => (
+        {state.cards.map((card, index) => (
           <div
             aria-label="card"
             class="popular-attractions__buttons__cards-wrapper__card"
@@ -23,7 +25,12 @@ export const CardsMap = component$(
               if (index !== 1) state.cardChange(index);
             }}
           >
-            <img src={card.image} alt="Attraction" width={168} height={244.7} />
+            <img
+              src={placeholderImage}
+              alt="Attraction"
+              width={168}
+              height={244.7}
+            />
             <div
               aria-label="content wrapper"
               class="popular-attractions__buttons__cards-wrapper__card__content"
