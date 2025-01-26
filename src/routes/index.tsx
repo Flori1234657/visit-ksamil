@@ -7,12 +7,21 @@ import { PopularAttractions } from "~/components/sections/popularAttractions/pop
 import { Transport } from "~/components/sections/transport/transport";
 import { WhatToDo } from "~/components/sections/what-to-do/whatToDo";
 
+import { useArticles } from "~/hooks/initialFetch";
+export { useArticles };
+
 export default component$(() => {
+  const fetchedArticles = useArticles();
+
   return (
     <>
       <Hero />
       <About />
-      <WhatToDo />
+      {fetchedArticles.value ? (
+        <WhatToDo firstArticles={fetchedArticles.value} />
+      ) : (
+        ""
+      )}
       <PopularAttractions />
       <InteractiveMap />
       <Transport />

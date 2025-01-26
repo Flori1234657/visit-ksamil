@@ -1,6 +1,6 @@
-export type Card = {
-  id: string;
-  image: string;
-  title: string;
-  description: string;
+import type { Articles } from "~/types/api";
+
+export type ArticleStoreDataType = {
+  articles: Articles[];
+  lastDoc: string;
 };

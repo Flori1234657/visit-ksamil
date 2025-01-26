@@ -1,72 +1,118 @@
-import { $, component$, useStore, useStyles$ } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  Resource,
+  useResource$,
+  useSignal,
+  useStore,
+  useStyles$,
+} from "@builder.io/qwik";
 import { WhatToDoCardsMap } from "./components/whatToDoCardsMap";
 
-import type { QRL } from "@builder.io/qwik";
-import type { Card } from "./types/cards";
+import type { ArticleStoreDataType } from "./types/cards";
 
 import { HiArrowLeftOutline } from "@qwikest/icons/heroicons";
 import styles from "./what-to-do.scss?inline";
 import { reorderCards as reorderCardsHelper } from "~/helpers/carousel";
+import { fetchArticles } from "~/api/articles";
 
-type WhatToDoStore = {
-  cards: Card[];
-  reorderCards: QRL<(this: WhatToDoStore) => void>;
-};
+export const WhatToDo = component$(
+  ({ firstArticles }: { firstArticles: ArticleStoreDataType }) => {
+    useStyles$(styles);
 
-export const WhatToDo = component$(() => {
-  useStyles$(styles);
+    const fetchNextArticles = useSignal<
+      { index: number } | "dont-fetch-again" | null
+    >(null);
 
-  const placeholderData = useStore({
-    cards: [
-      {
-        id: "1Afc243!!2233",
-        image: "/images/pages/what-to-do/placeholder.jpg",
-        title: "Camping at night",
-        description:
-          "Lorem ipsum dolor sit amet consectetur dolor sitamet conseturasgeter d",
-      },
-      {
-        id: "1Afc2zxt!!2233",
-        image: "/images/pages/what-to-do/placeholder.jpg",
-        title: "Trip to the Island",
-        description:
-          "Lorem ipsum dolor sit amet consectetur dolor sitamet conseturasgeter d",
-      },
-      {
-        id: "1Afc243!!22sopa[3",
-        image: "/images/pages/what-to-do/placeholder.jpg",
-        title: "Jetsi water sport",
-        description:
-          "Lorem ipsum dolor sit amet consectetur dolor sitamet conseturasgeter d",
-      },
-      {
-        id: "1Afc243|[s]a2233",
-        image: "/images/pages/what-to-do/placeholder.jpg",
-        title: "Fishing by boat",
-        description:
-          "Lorem ipsum dolor sit amet consectetur dolor sitamet conseturasgeter d",
-      },
-    ],
-    reorderCards: $(function (this: WhatToDoStore, index: number) {
-      this.cards = reorderCardsHelper(index, this.cards, true);
-    }),
-  });
+    const articlesStore = useStore({
+      data: firstArticles,
+      setData: $(function (
+        this: { data: ArticleStoreDataType },
+        newFetchedData: ArticleStoreDataType
+      ) {
+        this.data = {
+          articles: [...this.data.articles, ...newFetchedData.articles],
+          lastDoc: newFetchedData.lastDoc,
+        };
+      }),
+      reorderCards: $(function (
+        this: { data: ArticleStoreDataType },
+        index: number
+      ) {
+        this.data.articles = reorderCardsHelper(
+          index,
+          this.data.articles,
+          true
+        );
+      }),
+    });
 
-  return (
-    <section class="what-to-do" id="what-to-do">
-      <h1>What to do?</h1>
+    const newArticles = useResource$(async ({ track, cleanup }) => {
+      track(() => fetchNextArticles.value);
+      const controller = new AbortController();
+      cleanup(() => controller.abort());
 
-      <WhatToDoCardsMap
-        cards={placeholderData.cards.slice(0, 3)}
-        handleChange={$((index) => placeholderData.reorderCards(index))}
-      />
+      console.log("Resource triggered");
 
-      <button
-        class="--tex-icon-button --color-secondary"
-        onClick$={() => placeholderData.reorderCards(1)}
-      >
-        <HiArrowLeftOutline /> Next Card
-      </button>
-    </section>
-  );
-});
+      if (
+        !fetchNextArticles.value ||
+        fetchNextArticles.value === "dont-fetch-again"
+      )
+        return null;
+
+      const response = await fetchArticles(
+        `&lastDocId=${articlesStore.data.lastDoc}`
+      );
+      if (!response || response.articles.length === 0) return null;
+
+      return response;
+    });
+
+    const handleChangeCard = $((index: number) => {
+      if (fetchNextArticles.value === "dont-fetch-again") {
+        articlesStore.reorderCards(index);
+        return;
+      }
+      fetchNextArticles.value = { index };
+    });
+
+    return (
+      <section class="what-to-do" id="what-to-do">
+        <h1>What to do?</h1>
+
+        <Resource
+          value={newArticles}
+          onPending={() => <div>Loading...</div>} // change this with e better visual thing
+          onResolved={(data) => {
+            console.log("Resolved data:", data);
+
+            if (data) articlesStore.setData(data);
+
+            if (
+              fetchNextArticles.value &&
+              fetchNextArticles.value !== "dont-fetch-again"
+            )
+              articlesStore.reorderCards(fetchNextArticles.value.index);
+
+            if (data && data.articles.length < 3)
+              fetchNextArticles.value = "dont-fetch-again";
+
+            return (
+              <WhatToDoCardsMap
+                cards={articlesStore.data.articles.slice(0, 3)}
+                handleChange={handleChangeCard}
+              />
+            );
+          }}
+        />
+
+        <button
+          class="--tex-icon-button --color-secondary"
+          onClick$={() => handleChangeCard(1)}
+        >
+          <HiArrowLeftOutline /> Next Card
+        </button>
+      </section>
+    );
+  }
+);

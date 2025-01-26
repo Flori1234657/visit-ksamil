@@ -61,6 +61,6 @@
   },
   "dependencies": {
     "@qwikest/icons": "^0.0.13",
-    "leaflet": "1.9.4"
+    "axios": "^1.7.9"
   }
 }
