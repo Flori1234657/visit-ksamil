@@ -1,17 +1,11 @@
 /* eslint-disable qwik/jsx-img */
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { imagesData as IMAGES } from "../data/images";
 
-import Image1 from "/images/pages/hero/image-card-1.jpg";
-import Image2 from "/images/pages/hero/image-card-2.jpg";
-import Image3 from "/images/pages/hero/image-card-3.jpg";
-import Image4 from "/images/pages/hero/image-card-4.jpg";
-import Image5 from "/images/pages/hero/image-card-5.jpg";
-import Image6 from "/images/pages/hero/image-card-6.jpg";
-
-const IMAGES = [Image1, Image2, Image3, Image4, Image5, Image6];
+import placeholder from "/images/pages/hero/image-card-1.jpg";
 
 export const ImagesWrapper = component$(() => {
-  const visibleImages = useSignal<string[]>(IMAGES.slice(0, 3)); // Start with the first three images
+  const visibleImages = useSignal<typeof IMAGES>(IMAGES.slice(0, 3)); // Start with the first three images
   const currentIndex = useSignal(0); // Track the current starting index for the visible images
 
   // Rotate images every 5 seconds
@@ -40,13 +34,13 @@ export const ImagesWrapper = component$(() => {
       aria-label="Main section images container"
       class="hero-section__images-card"
     >
-      {visibleImages.value.map((src, index) => (
+      {visibleImages.value.map((image, index) => (
         <img
           key={index}
           decoding="async"
           loading="lazy"
-          src={src}
-          alt={`Random image ${index + 1}`}
+          src={placeholder}
+          alt={image.alt}
         />
       ))}
     </div>
