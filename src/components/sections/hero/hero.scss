@@ -34,7 +34,6 @@
     z-index: 1;
     margin-bottom: 6.5rem;
 
-    box-shadow: 0 0 7.8px #ffff;
     border-radius: 0.5rem;
 
     @include mixins.flex-center;
@@ -54,6 +53,20 @@
 
       position: absolute;
       z-index: 3;
+    }
+
+    img:nth-child(3).animate {
+      animation: rollingPrevLeftCard 0.6s ease-in-out;
+    }
+    img:nth-child(2).animate {
+      animation: rollingPrevRightCard 0.6s ease-in-out;
+    }
+    img:nth-child(1).animate {
+      animation: rollingPrevMiddleCard 0.6s ease-in-out;
+    }
+
+    &.--box-shadow {
+      box-shadow: 0 0 7.8px #ffff;
     }
   }
 

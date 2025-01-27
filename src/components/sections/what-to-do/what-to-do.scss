@@ -2,6 +2,7 @@
 @use "../../../sass/abstracts/mixins";
 @use "../../../sass/abstracts/media-query";
 @use "../../../sass/utilities/get-color";
+@use "../../../sass/abstracts/animations";
 
 .what-to-do {
   margin-top: 5rem;
@@ -24,10 +25,15 @@
       gap: 1rem;
       overflow: hidden;
 
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease-in-out;
+
       &.--visible {
         width: 11rem;
         margin-right: 5rem;
         z-index: 1;
+
+        animation: flipIn 0.6s ease forwards;
 
         img {
           width: 100%;
@@ -72,6 +78,8 @@
         position: absolute;
         top: auto;
         right: 0;
+
+        animation: flipOut 0.6s ease forwards;
 
         h2 {
           @include mixins.font(
