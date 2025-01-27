@@ -7,6 +7,7 @@ import placeholder from "/images/pages/hero/image-card-placeholder.jpg";
 export const ImagesWrapper = component$(() => {
   const visibleImages = useSignal<typeof IMAGES>(IMAGES.slice(0, 3)); // Start with the first three images
   const currentIndex = useSignal(0); // Track the current starting index for the visible images
+  const animate = useSignal(false);
 
   // Rotate images every 5 seconds
   // eslint-disable-next-line qwik/no-use-visible-task
@@ -20,6 +21,11 @@ export const ImagesWrapper = component$(() => {
         IMAGES[(currentIndex.value + 1) % IMAGES.length],
         IMAGES[(currentIndex.value + 2) % IMAGES.length],
       ];
+
+      animate.value = true;
+      setTimeout(() => {
+        animate.value = false;
+      }, 600);
     };
 
     // Update images every 5 seconds
@@ -32,7 +38,7 @@ export const ImagesWrapper = component$(() => {
   return (
     <div
       aria-label="Main section images container"
-      class="hero-section__images-card"
+      class={`hero-section__images-card${!animate.value ? " --box-shadow" : ""}`}
     >
       {visibleImages.value.map((image, index) => (
         <img
@@ -41,6 +47,7 @@ export const ImagesWrapper = component$(() => {
           loading="lazy"
           src={placeholder}
           alt={image.alt}
+          class={animate.value ? "animate" : ""}
         />
       ))}
     </div>
