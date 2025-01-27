@@ -221,6 +221,7 @@ footer {
         max-width: 14.922rem;
         img {
           @include mixins.box(5.25rem);
+          z-index: 1;
         }
 
         h1 {

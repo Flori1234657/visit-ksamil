@@ -7,7 +7,7 @@ import {
   HiEnvelopeOutline,
 } from "@qwikest/icons/heroicons";
 
-import Logo from "../../../../public/logo-placeholder.png?jsx";
+import Logo from "../../../../public/logo.webp?jsx";
 
 export const Sections = component$(() => {
   return (

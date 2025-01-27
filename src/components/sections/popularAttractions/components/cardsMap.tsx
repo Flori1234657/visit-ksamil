@@ -3,7 +3,7 @@ import { component$ } from "@builder.io/qwik";
 import type { QRL } from "@builder.io/qwik";
 import type { Attractions } from "~/types/api";
 
-import placeholderImage from "/images/pages/popular-attractions/shkembi-i-keq.jpg";
+import placeholderImage from "/images/pages/popular-attractions/placeholder.jpg";
 import { HiArrowTopRightOnSquareOutline } from "@qwikest/icons/heroicons";
 
 export const CardsMap = component$(

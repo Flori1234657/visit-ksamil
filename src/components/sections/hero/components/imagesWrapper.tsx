@@ -2,7 +2,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { imagesData as IMAGES } from "../data/images";
 
-import placeholder from "/images/pages/hero/image-card-1.jpg";
+import placeholder from "/images/pages/hero/image-card-placeholder.jpg";
 
 export const ImagesWrapper = component$(() => {
   const visibleImages = useSignal<typeof IMAGES>(IMAGES.slice(0, 3)); // Start with the first three images

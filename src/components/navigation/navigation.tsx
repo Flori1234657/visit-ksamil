@@ -5,7 +5,7 @@ import { MobileNavigationButton } from "./components/mobileNavigationButton";
 import styles from "./navigation.scss?inline";
 import { SupportUs } from "./support-section/supportUs";
 
-import Image from "../../../public/logo-placeholder.png?jsx";
+import Image from "../../../public/logo.webp?jsx";
 import MobileWave from "../../../public/images/svg/dropdown-menu-wave.svg?jsx";
 
 export const Navigation = component$(() => {
