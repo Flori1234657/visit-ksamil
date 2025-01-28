@@ -13,12 +13,13 @@ import { addSubscription } from "~/api/subscription";
 export const Sections = component$(() => {
   const email = useSignal("");
   const handleSubmit = $(async () => {
-    const response = await addSubscription(email.value);
+    const { success, message } = await addSubscription(email.value);
 
-    if (response) return alert("Thank you for subscribing!");
-    alert("Subscription failed!");
+    alert(message);
 
-    email.value = "";
+    if (success) {
+      email.value = "";
+    }
   });
 
   return (
@@ -43,10 +44,7 @@ export const Sections = component$(() => {
             <input
               type="email"
               placeholder={`example@mail.domain`}
-              value={email.value}
-              onInput$={(e) =>
-                (email.value = (e.target as HTMLInputElement).value)
-              }
+              bind:value={email}
             />
           </div>
           <button
