@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$, useSignal } from "@builder.io/qwik";
 import {
   HiKeyOutline,
   HiPencilSquareOutline,
@@ -8,8 +8,19 @@ import {
 } from "@qwikest/icons/heroicons";
 
 import Logo from "../../../../public/logo.webp?jsx";
+import { addSubscription } from "~/api/subscription";
 
 export const Sections = component$(() => {
+  const email = useSignal("");
+  const handleSubmit = $(async () => {
+    const response = await addSubscription(email.value);
+
+    if (response) return alert("Thank you for subscribing!");
+    alert("Subscription failed!");
+
+    email.value = "";
+  });
+
   return (
     <div aria-label="Footer sections" class="footer-sections">
       <div aria-label="Website info" class="footer-sections__website-info">
@@ -29,9 +40,24 @@ export const Sections = component$(() => {
             <i>
               <HiEnvelopeOutline />
             </i>
-            <input type="email" placeholder={`example@mail.domain`} />
+            <input
+              type="email"
+              placeholder={`example@mail.domain`}
+              value={email.value}
+              onInput$={(e) =>
+                (email.value = (e.target as HTMLInputElement).value)
+              }
+            />
           </div>
-          <button class="--tex-icon-button">
+          <button
+            class="--tex-icon-button"
+            disabled={
+              !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+                email.value
+              )
+            }
+            onClick$={handleSubmit}
+          >
             Subscribe <HiKeyOutline />
           </button>
         </div>
@@ -42,7 +68,13 @@ export const Sections = component$(() => {
           We are collecting travel stories from Ksamil to add them to our
           website!
         </p>
-        <button class="--tex-icon-button">
+        <button
+          class="--tex-icon-button"
+          onClick$={() => {
+            window.location.href =
+              "https://docs.google.com/forms/d/e/1FAIpQLSf9j6JL_vE-fpcTXBxN_F7cS9JXE30_l-SKNWaFfVKRvemFNA/viewform?usp=dialog";
+          }}
+        >
           Leave My Story <HiPencilSquareOutline />
         </button>
       </div>

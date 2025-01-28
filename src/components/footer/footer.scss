@@ -114,6 +114,10 @@ footer {
       @include media-query.sm-2 {
         width: 75%;
       }
+      button:disabled {
+        cursor: not-allowed;
+        background-color: get-color.color("accent", 100);
+      }
     }
   }
 
