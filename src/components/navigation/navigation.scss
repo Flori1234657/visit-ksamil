@@ -3,10 +3,17 @@
 @use "../../sass/components/icon-buttons";
 @use "../../sass/abstracts/media-query";
 
+@use "../../sass/animations/opacity";
+@use "../../sass/animations/text";
+@use "../../sass/animations/icon-buttons" as icon-buttons-animations;
+
 .support-us-container {
   width: 100%;
   background-color: get-color.color("jellow", 500);
   @include mixins.flex-center;
+
+  animation: simpleOpacity 0.6s;
+
   h4 {
     @include mixins.font(
       "Poppins",
@@ -42,6 +49,8 @@
     @include mixins.flex;
     gap: 0.5rem;
     h4 {
+      animation: writing 0.75s;
+
       @include mixins.font("IslandMoments", 1.269rem, 400, white, 115%);
       &:hover {
         color: get-color.color("jellow", 500);
@@ -53,6 +62,10 @@
   nav,
   select {
     display: none;
+  }
+
+  select {
+    animation: scrollUp 0.9s;
   }
 }
 
@@ -88,6 +101,9 @@
     z-index: -1;
   }
 
+  button {
+    animation: rolling 0.95s;
+  }
   .nav-logo-lang-container__logo {
     height: 3.75rem;
     align-self: flex-start;
@@ -116,6 +132,25 @@
       li a {
         @include mixins.font(Inter, 1rem, 500, get-color.color("accent", 900));
         text-decoration: none;
+      }
+
+      li:nth-child(1) {
+        animation: scrollUp 0.6s;
+      }
+      li:nth-child(2) {
+        animation: scrollUp 0.65s;
+      }
+      li:nth-child(3) {
+        animation: scrollUp 0.7s;
+      }
+      li:nth-child(4) {
+        animation: scrollUp 0.75s;
+      }
+      li:nth-child(5) {
+        animation: scrollUp 0.8s;
+      }
+      li:nth-child(6) {
+        animation: scrollUp 0.85s;
       }
     }
   }
@@ -180,6 +215,25 @@
             color: get-color.color("jellow", 500);
             transition: 0.25s;
           }
+        }
+
+        li:nth-child(1) {
+          animation: scrollUp 0.6s;
+        }
+        li:nth-child(2) {
+          animation: scrollUp 0.65s;
+        }
+        li:nth-child(3) {
+          animation: scrollUp 0.7s;
+        }
+        li:nth-child(4) {
+          animation: scrollUp 0.75s;
+        }
+        li:nth-child(5) {
+          animation: scrollUp 0.8s;
+        }
+        li:nth-child(6) {
+          animation: scrollUp 0.85s;
         }
       }
     }
