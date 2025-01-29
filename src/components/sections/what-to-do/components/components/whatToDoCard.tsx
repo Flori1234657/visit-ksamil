@@ -3,8 +3,6 @@ import type { QRL } from "@builder.io/qwik";
 
 import { HiArrowTopRightOnSquareOutline } from "@qwikest/icons/heroicons";
 
-import placeholderImage from "/images/pages/what-to-do/placeholder.jpg";
-
 interface Props {
   id: string;
   imagePath: string;
@@ -32,7 +30,8 @@ export const WhatToDoCard = component$(
         class="what-to-do__cards-map__card --visible"
       >
         <img
-          src={placeholderImage} // for the moment then use cloudinary
+          // eslint-disable-next-line qwik/jsx-img
+          src="/images/pages/what-to-do/placeholder.jpg" // for the moment then use cloudinary
           alt="Randrom"
           width={50}
           height={50}

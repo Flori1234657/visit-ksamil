@@ -2,8 +2,6 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { imagesData as IMAGES } from "../data/images";
 
-import placeholder from "/images/pages/hero/image-card-placeholder.jpg";
-
 export const ImagesWrapper = component$(() => {
   const visibleImages = useSignal<typeof IMAGES>(IMAGES.slice(0, 3)); // Start with the first three images
   const currentIndex = useSignal(0); // Track the current starting index for the visible images
@@ -45,7 +43,7 @@ export const ImagesWrapper = component$(() => {
           key={index}
           decoding="async"
           loading="lazy"
-          src={placeholder}
+          src="/images/pages/hero/image-card-placeholder.jpg"
           alt={image.alt}
           class={animate.value ? "animate" : ""}
         />

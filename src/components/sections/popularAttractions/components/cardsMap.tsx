@@ -3,7 +3,6 @@ import { component$ } from "@builder.io/qwik";
 import type { QRL } from "@builder.io/qwik";
 import type { Attractions } from "~/types/api";
 
-import placeholderImage from "/images/pages/popular-attractions/placeholder.jpg";
 import { HiArrowTopRightOnSquareOutline } from "@qwikest/icons/heroicons";
 
 export const CardsMap = component$(
@@ -26,7 +25,8 @@ export const CardsMap = component$(
             }}
           >
             <img
-              src={placeholderImage}
+              // eslint-disable-next-line qwik/jsx-img
+              src="/images/pages/popular-attractions/placeholder.jpg"
               alt="Attraction"
               width={168}
               height={244.7}
