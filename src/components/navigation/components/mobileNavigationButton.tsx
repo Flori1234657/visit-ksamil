@@ -1,8 +1,4 @@
 import { type Signal, component$ } from "@builder.io/qwik";
-import {
-  FlChartBars3FromLeftOutline,
-  FlCloseOutline,
-} from "@qwikest/icons/flowbite";
 
 export const MobileNavigationButton = component$(
   ({ showNavigation }: { showNavigation: Signal<boolean> }) => {
@@ -12,11 +8,41 @@ export const MobileNavigationButton = component$(
         onClick$={() => (showNavigation.value = !showNavigation.value)}
       >
         {showNavigation.value ? (
-          <FlCloseOutline />
+          <svg
+            data-qwikest-icon=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 14 14"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+          </svg> // X icon
         ) : (
-          <FlChartBars3FromLeftOutline />
+          <svg
+            data-qwikest-icon=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 12"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 1h14M1 6h14M1 11h7"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+          </svg> // 3 bars Icon
         )}
       </button>
     );
-  },
+  }
 );

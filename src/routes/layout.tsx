@@ -1,10 +1,9 @@
-import { component$, Slot, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { Footer } from "~/components/footer/footer";
 import { Navigation } from "~/components/navigation/navigation";
 
 import "./styles.scss";
-import { changeNavBarBckgWhileScroll } from "~/helpers/nav-bar";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -18,12 +17,6 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export default component$(() => {
-  // eslint-disable-next-line qwik/no-use-visible-task
-  useVisibleTask$(() => {
-    changeNavBarBckgWhileScroll(false);
-    return () => changeNavBarBckgWhileScroll(true); // Cleanup on unmount
-  });
-
   return (
     <>
       <header>

@@ -11,7 +11,6 @@ import { WhatToDoCardsMap } from "./components/whatToDoCardsMap";
 
 import type { ArticleStoreDataType } from "./types/cards";
 
-import { HiArrowLeftOutline } from "@qwikest/icons/heroicons";
 import styles from "./what-to-do.scss?inline";
 import { reorderCards as reorderCardsHelper } from "~/helpers/carousel";
 import { fetchArticles } from "~/api/articles";
@@ -111,7 +110,24 @@ export const WhatToDo = component$(
           class="--tex-icon-button --color-secondary"
           onClick$={() => handleChangeCard(1)}
         >
-          <HiArrowLeftOutline /> Next Card
+          <svg
+            aria-hidden="true"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+          {/** Arrow icon */}
+          Next Card
         </button>
       </section>
     );

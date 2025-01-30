@@ -1,4 +1,10 @@
-import { $, component$, useSignal, useStyles$ } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  useSignal,
+  useStyles$,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { MobileNavigationButton } from "./components/mobileNavigationButton";
 
@@ -7,9 +13,17 @@ import { SupportUs } from "./support-section/supportUs";
 
 import Image from "../../../public/logo.webp?jsx";
 import MobileWave from "../../../public/images/svg/dropdown-menu-wave.svg?jsx";
+import { changeNavBarBckgWhileScroll } from "~/helpers/nav-bar";
 
 export const Navigation = component$(() => {
   useStyles$(styles);
+
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(() => {
+    changeNavBarBckgWhileScroll(false);
+
+    return () => changeNavBarBckgWhileScroll(true);
+  });
 
   const showNavigation = useSignal(false);
 
