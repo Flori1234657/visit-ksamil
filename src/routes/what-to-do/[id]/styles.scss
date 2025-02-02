@@ -1,8 +1,16 @@
 @use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
 
 .what-to-do {
   margin-top: 8.271rem;
   @include mixins.flex-column;
   @include mixins.main-padding(0);
   gap: 1.5rem;
+}
+
+@include media-query.md {
+  .what-to-do {
+    margin-top: 5.93rem;
+    flex-direction: row;
+  }
 }

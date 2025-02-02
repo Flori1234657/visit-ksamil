@@ -1,4 +1,5 @@
 @use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
 @use "../../../sass/utilities/get-color";
 
 article {
@@ -30,5 +31,22 @@ article {
       get-color.color("accent", 500),
       1.6
     );
+  }
+}
+
+@include media-query.md {
+  article {
+    order: 2;
+    h2 {
+      font-size: 1.602rem;
+    }
+
+    > img {
+      @include mixins.box(100%, 13.243rem);
+    }
+
+    p {
+      font-size: 0.79rem;
+    }
   }
 }

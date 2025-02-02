@@ -1,4 +1,5 @@
 @use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
 @use "../../../sass/utilities/get-color";
 
 .what-to-do__side-panel {
@@ -31,6 +32,29 @@
       svg {
         font-size: 1.65em;
         stroke-width: 0.1px;
+      }
+    }
+  }
+}
+
+@include media-query.md {
+  .what-to-do__side-panel {
+    min-width: 8rem;
+    border-top: none;
+    border-right: 2px solid get-color.color("jellow", 500);
+    flex-grow: 1;
+    h4 {
+      margin-top: 0;
+      font-size: 0.889rem;
+    }
+
+    &__links {
+      a {
+        cursor: pointer;
+        font-size: 1.125rem;
+        svg {
+          font-size: 1em;
+        }
       }
     }
   }

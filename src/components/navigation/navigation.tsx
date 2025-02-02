@@ -5,7 +5,7 @@ import {
   useStyles$,
   useVisibleTask$,
 } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { Link, useLocation } from "@builder.io/qwik-city";
 import { MobileNavigationButton } from "./components/mobileNavigationButton";
 
 import styles from "./navigation.scss?inline";
@@ -17,9 +17,11 @@ import { changeNavBarBckgWhileScroll } from "~/helpers/nav-bar";
 
 export const Navigation = component$(() => {
   useStyles$(styles);
+  const location = useLocation();
 
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
+    if (/what-to-do/g.test(location.url.pathname)) return;
     changeNavBarBckgWhileScroll(false);
 
     return () => changeNavBarBckgWhileScroll(true);
@@ -37,7 +39,7 @@ export const Navigation = component$(() => {
       <SupportUs />
       <div
         aria-label="Navigation logo and language container"
-        class={`nav-logo-lang-container ${showNavigation.value ? "--show" : "--hide"}`}
+        class={`nav-logo-lang-container ${showNavigation.value ? "--show" : "--hide"} ${/what-to-do/g.test(location.url.pathname) ? "--scrolled" : ""}`}
       >
         <div class="nav-logo-lang-container__logo">
           <Image style={{ width: "2rem", height: "2rem" }} />
