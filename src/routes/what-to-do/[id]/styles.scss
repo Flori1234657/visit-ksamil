@@ -10,7 +10,16 @@
 
 @include media-query.md {
   .what-to-do {
+    width: 100%;
     margin-top: 5.93rem;
     flex-direction: row;
+    gap: 0.688rem;
+  }
+}
+
+@include media-query.lg {
+  .what-to-do {
+    margin-top: 6.6rem;
+    gap: 0.938rem;
   }
 }

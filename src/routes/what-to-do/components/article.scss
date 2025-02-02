@@ -36,17 +36,40 @@ article {
 
 @include media-query.md {
   article {
+    max-width: 30.996rem;
+    gap: 0.469rem;
     order: 2;
+
     h2 {
-      font-size: 1.602rem;
+      font-size: 1.201rem;
     }
 
     > img {
       @include mixins.box(100%, 13.243rem);
+      margin-bottom: 0.469rem;
     }
 
     p {
-      font-size: 0.79rem;
+      font-size: 0.595rem;
+    }
+  }
+}
+
+@include media-query.lg {
+  article {
+    max-width: 41.25rem;
+    gap: 0.624rem;
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    > img {
+      @include mixins.box(100%, 17.635rem);
+      margin-bottom: 0.624rem;
+    }
+
+    p {
+      font-size: 0.792rem;
     }
   }
 }

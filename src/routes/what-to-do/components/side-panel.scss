@@ -39,22 +39,39 @@
 
 @include media-query.md {
   .what-to-do__side-panel {
-    min-width: 8rem;
+    min-width: 7.222rem;
     border-top: none;
     border-right: 2px solid get-color.color("jellow", 500);
-    flex-grow: 1;
     h4 {
       margin-top: 0;
-      font-size: 0.889rem;
+      font-size: 0.668rem;
     }
 
     &__links {
+      gap: 0.234rem;
+      margin-top: 0;
       a {
         cursor: pointer;
-        font-size: 1.125rem;
+        font-size: 0.75rem;
         svg {
           font-size: 1em;
         }
+      }
+    }
+  }
+}
+
+@include media-query.lg {
+  .what-to-do__side-panel {
+    min-width: 9.617rem;
+    h4 {
+      font-size: 0.89rem;
+    }
+
+    &__links {
+      gap: 0.312rem;
+      a {
+        font-size: 1.125rem;
       }
     }
   }
