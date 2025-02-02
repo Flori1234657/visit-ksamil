@@ -1,8 +1,19 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
+import SidePanel from "../components/sidePanel";
+
+import styles from "./styles.scss?inline";
+import Article from "../components/article";
 
 export default component$(() => {
-  return <div>wha to do card</div>;
+  useStyles$(styles);
+
+  return (
+    <div class="what-to-do">
+      <Article />
+      <SidePanel />
+    </div>
+  );
 });
 
 export const head: DocumentHead = {

@@ -1,0 +1,8 @@
+@use "../../../sass/abstracts/mixins";
+
+.what-to-do {
+  margin-top: 8.271rem;
+  @include mixins.flex-column;
+  @include mixins.main-padding(0);
+  gap: 1.5rem;
+}
