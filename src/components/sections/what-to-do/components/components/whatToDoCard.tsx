@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { QRL } from "@builder.io/qwik";
+import { useNavigate } from "@builder.io/qwik-city";
 
 interface Props {
   id: string;
@@ -21,6 +22,8 @@ export const WhatToDoCard = component$(
     changeCard,
     index,
   }: Props) => {
+    const navigate = useNavigate();
+
     return show ? (
       <div
         key={`what-to-do-card-div${id}`}
@@ -47,7 +50,7 @@ export const WhatToDoCard = component$(
           </div>
 
           <button
-            onClick$={() => console.log(id)}
+            onClick$={() => navigate(`/what-to-do/${id}`)}
             class="--tex-icon-button --sm"
           >
             Discover{" "}
