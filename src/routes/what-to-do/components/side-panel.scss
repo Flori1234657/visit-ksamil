@@ -1,0 +1,78 @@
+@use "../../../sass/abstracts/mixins";
+@use "../../../sass/abstracts/media-query";
+@use "../../../sass/utilities/get-color";
+
+.what-to-do__side-panel {
+  border-top: 2px solid get-color.color("jellow", 500);
+  h4 {
+    margin-top: 0.5rem;
+    @include mixins.font(
+      Poppins,
+      1rem,
+      500,
+      get-color.color("accent", 900),
+      1.6
+    );
+
+    span {
+      font-size: 1em;
+      vertical-align: middle;
+      margin: 0 0.25em;
+      line-height: 0;
+    }
+  }
+
+  &__links {
+    @include mixins.flex($js: flex-start);
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+    a {
+      font-size: 1rem;
+      line-height: 0;
+      svg {
+        font-size: 1.65em;
+        stroke-width: 0.1px;
+      }
+    }
+  }
+}
+
+@include media-query.md {
+  .what-to-do__side-panel {
+    min-width: 7.222rem;
+    border-top: none;
+    border-right: 2px solid get-color.color("jellow", 500);
+    h4 {
+      margin-top: 0;
+      font-size: 0.668rem;
+    }
+
+    &__links {
+      gap: 0.234rem;
+      margin-top: 0;
+      a {
+        cursor: pointer;
+        font-size: 0.75rem;
+        svg {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+@include media-query.lg {
+  .what-to-do__side-panel {
+    min-width: 9.617rem;
+    h4 {
+      font-size: 0.89rem;
+    }
+
+    &__links {
+      gap: 0.312rem;
+      a {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
