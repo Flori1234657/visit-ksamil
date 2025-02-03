@@ -11,6 +11,8 @@ import styles from "./styles.scss?inline";
 import Article from "../components/article";
 import { fetchArticle } from "~/api/articles";
 
+import NotFoundIcon from "../../../../public/images/svg/not-found-icon.svg?jsx";
+
 export default component$(() => {
   useStyles$(styles);
   const location = useLocation();
@@ -29,20 +31,47 @@ export default component$(() => {
     <div class="what-to-do">
       <Resource
         value={articleData}
-        onPending={() => <div>Loading...</div>}
+        onPending={() => (
+          <div class="container">
+            <div
+              aria-label="Loading animation"
+              class="container__spinner-loader"
+              style={{ fontSize: "1rem" }}
+            ></div>
+          </div>
+        )}
         onResolved={(data) => {
+          if (!data)
+            return (
+              <p class="what-to-do__fallback-text">
+                Something went wrong
+                <br />
+                <span aria-disabled="true">
+                  <NotFoundIcon />
+                </span>
+              </p>
+            );
+
           return (
             <>
               <Article
-                title={data!.title}
-                description={data!.description}
-                imgUrl={data!.imageUrl}
+                title={data.title}
+                description={data.description}
+                imgUrl={data.imageUrl}
               />
               <SidePanel />
             </>
           );
         }}
-        onRejected={() => <div>Something went wrong</div>}
+        onRejected={() => (
+          <p class="what-to-do__fallback-text">
+            Something went wrong
+            <br />
+            <span aria-disabled="true">
+              <NotFoundIcon />
+            </span>
+          </p>
+        )}
       />
     </div>
   );
