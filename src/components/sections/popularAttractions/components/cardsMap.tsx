@@ -33,7 +33,7 @@ export const CardsMap = component$(
               aria-label="content wrapper"
               class="popular-attractions__buttons__cards-wrapper__card__content"
             >
-              <h2>{card.title}</h2>
+              <h3>{card.title}</h3>
               <button class="--tex-icon-button --sm">
                 View on Map
                 <svg

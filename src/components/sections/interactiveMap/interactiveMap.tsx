@@ -13,7 +13,7 @@ export const InteractiveMap = component$(() => {
       <ImageIllustration />
 
       <div aria-label="content" class="interactive-map__content">
-        <h1>Interactive Map</h1>
+        <h2>Interactive Map</h2>
         <div
           aria-label="Text content"
           class="interactive-map__content__text-button"
@@ -22,7 +22,10 @@ export const InteractiveMap = component$(() => {
             We have made it easy for you, adding an interactive map where you
             can find different places in Ksamil, also view their images!
           </p>
-          <button class="--tex-icon-button --color-secondary">
+          <button
+            class="--tex-icon-button --color-secondary"
+            onClick$={() => alert("Map is under development!")}
+          >
             Enter on the Map{" "}
             <svg
               aria-hidden="true"

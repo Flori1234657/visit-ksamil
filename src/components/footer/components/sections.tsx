@@ -19,7 +19,7 @@ export const Sections = component$(() => {
     <div aria-label="Footer sections" class="footer-sections">
       <div aria-label="Website info" class="footer-sections__website-info">
         <Logo />
-        <h1>VisitKsamil</h1>
+        <h2>VisitKsamil</h2>
         <p>
           This is a website run by a resident of Ksamil. Its focus is to give
           you the information you need about Ksamil before planning a trip here.
@@ -27,7 +27,7 @@ export const Sections = component$(() => {
         </p>
       </div>
       <div aria-label="Newsletter" class="footer-sections__newsletter">
-        <h1>Newsletter</h1>
+        <h3>Newsletter</h3>
         <p>Get the latest from this website by email!</p>
         <div aria-label="actions" class="footer-sections__newsletter__actions">
           <div aria-label="Input with icon container" class="--input-icon">
@@ -87,7 +87,7 @@ export const Sections = component$(() => {
         </div>
       </div>
       <div aria-label="Travel stories" class="footer-sections__travel-stories">
-        <h1>Travel stories</h1>
+        <h3>Travel stories</h3>
         <p>
           We are collecting travel stories from Ksamil to add them to our
           website!
@@ -120,7 +120,7 @@ export const Sections = component$(() => {
         </button>
       </div>
       <div aria-label="Contact" class="footer-sections__contact">
-        <h1>Contact</h1>
+        <h3>Contact</h3>
         <ul>
           <li>
             <svg

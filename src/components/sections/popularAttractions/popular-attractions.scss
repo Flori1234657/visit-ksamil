@@ -9,7 +9,7 @@
   @include mixins.flex-center-column;
 
   position: relative;
-  h1 {
+  h2 {
     @include mixins.font(Poppins, 1.6rem, 600, get-color.color("accent", 900));
     margin-bottom: 4.5rem;
   }
@@ -63,7 +63,7 @@
             rgba(0, 0, 0, 1) 100%
           );
 
-          h2 {
+          h3 {
             @include mixins.font(Poppins, 1.125rem, 600, white, 0.875rem);
           }
         }
@@ -115,7 +115,7 @@
   .popular-attractions {
     margin-top: 0;
 
-    h1 {
+    h2 {
       font-size: 1.266rem;
     }
 
@@ -141,7 +141,7 @@
             height: unset;
             aspect-ratio: 0.63;
 
-            h2 {
+            h3 {
               font-size: 0.889rem;
             }
           }
@@ -168,7 +168,7 @@
 @include media-query.lg {
   .popular-attractions {
     gap: 2.5rem;
-    h1 {
+    h2 {
       font-size: 1.602rem;
     }
 
@@ -185,7 +185,7 @@
           .popular-attractions__buttons__cards-wrapper__card__content {
             width: 9.681rem;
 
-            h2 {
+            h3 {
               font-size: 0.891rem;
             }
           }

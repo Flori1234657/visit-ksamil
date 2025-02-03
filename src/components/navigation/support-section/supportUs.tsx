@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
 
 export const SupportUs = component$(() => {
   return (
@@ -21,7 +20,13 @@ export const SupportUs = component$(() => {
           </svg>
           {/*Heart Icon*/}
         </span>
-        Support our work: <Link>Donate now!</Link>
+        Support our work:{" "}
+        <a
+          href="https://www.paypal.com/paypalme/FlorianDollani"
+          target="_blank"
+        >
+          Donate now!
+        </a>
         <span>
           <svg
             aria-hidden="true"
@@ -38,7 +43,7 @@ export const SupportUs = component$(() => {
               stroke-linecap="round"
               stroke-linejoin="round"
             ></path>
-          </svg>{" "}
+          </svg>
           {/** Arrow box icon */}
         </span>
       </h4>

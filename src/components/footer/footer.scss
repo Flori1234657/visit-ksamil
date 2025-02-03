@@ -34,7 +34,7 @@ footer {
         height: 6.25rem;
       }
 
-      h1 {
+      h2 {
         @include mixins.font(
           Sniglet,
           1.425rem,
@@ -60,7 +60,7 @@ footer {
       @include mixins.flex-column();
       gap: 0.5rem;
 
-      h1 {
+      h3 {
         @include mixins.font(
           Poppins,
           1.269rem,
@@ -128,7 +128,7 @@ footer {
     @include mixins.flex-center-column();
     gap: 0.25rem;
 
-    h2,
+    p,
     a {
       @include mixins.font(
         Inter,
@@ -162,7 +162,7 @@ footer {
           @include mixins.box(4);
         }
 
-        h1 {
+        h2 {
           font-size: 1.125rem;
         }
 
@@ -176,7 +176,7 @@ footer {
       &__contact {
         margin-top: 6.25rem;
 
-        h1 {
+        h3 {
           font-size: 1rem;
         }
 
@@ -206,7 +206,7 @@ footer {
     .footer-copyright {
       @include mixins.flex();
 
-      h2,
+      p,
       a {
         font-size: 0.625rem;
       }
@@ -228,7 +228,7 @@ footer {
           z-index: 1;
         }
 
-        h1 {
+        h2 {
           font-size: 1.266rem;
         }
 
@@ -243,7 +243,7 @@ footer {
         margin-top: 5.297rem;
         gap: 0;
 
-        h1 {
+        h3 {
           font-size: 1.125rem;
         }
 
@@ -281,7 +281,7 @@ footer {
     .footer-copyright {
       padding: 0.625rem 4.688rem;
 
-      h2,
+      p,
       a {
         font-size: 0.703rem;
       }

@@ -7,7 +7,7 @@
   width: 100%;
   @include mixins.flex-center-column;
   gap: 4.5rem;
-  h1 {
+  h2 {
     @include mixins.font(Poppins, 1.6rem, 600, get-color.color("accent", 900));
   }
 
@@ -23,7 +23,7 @@
         @include mixins.flex-center-column;
         gap: 0.5rem;
 
-        h2 {
+        h4 {
           @include mixins.font(
             Poppins,
             1.269rem,
@@ -78,7 +78,7 @@
     @include mixins.flex-center-column;
     gap: 0.5rem;
 
-    h2 {
+    h3 {
       @include mixins.font(
         Poppins,
         1.425rem,
@@ -98,7 +98,7 @@
   .about-us {
     gap: 4.688rem;
 
-    h1 {
+    h2 {
       font-size: 1.266rem;
     }
 
@@ -116,7 +116,7 @@
           gap: 0.469rem;
           padding: 0;
 
-          h2 {
+          h4 {
             font-size: 1rem;
             filter: unset;
           }
@@ -146,7 +146,7 @@
     .about-us__last-message {
       gap: 0.469rem;
 
-      h2 {
+      h3 {
         font-size: 1.125rem;
       }
 
@@ -162,7 +162,7 @@
   .about-us {
     gap: 6.25rem;
 
-    h1 {
+    h2 {
       font-size: 1.602rem;
     }
 
@@ -175,7 +175,7 @@
         div {
           gap: 0.625rem;
 
-          h2 {
+          h4 {
             font-size: 1.125rem;
           }
 
@@ -194,7 +194,7 @@
     .about-us__last-message {
       gap: 0.625rem;
 
-      h2 {
+      h3 {
         font-size: 1.266rem;
       }
 

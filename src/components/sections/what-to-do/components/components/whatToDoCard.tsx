@@ -45,7 +45,7 @@ export const WhatToDoCard = component$(
             aria-label="Text"
             class="what-to-do__cards-map__card__text-button__text-container"
           >
-            <h2>{title}</h2>
+            <h3>{title}</h3>
             <p>{shortDescription}</p>
           </div>
 
@@ -79,7 +79,7 @@ export const WhatToDoCard = component$(
         class="what-to-do__cards-map__card --hidden"
         onClick$={() => changeCard(index)}
       >
-        <h2>?</h2>
+        <p>?</p>
       </div>
     );
   }

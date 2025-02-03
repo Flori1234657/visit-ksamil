@@ -77,7 +77,7 @@ export const PopularAttractions = component$(({ firstAttractions }: Props) => {
 
   return (
     <section class="popular-attractions" id="popular-attractions">
-      <h1>Popular attractions</h1>
+      <h2>Popular attractions</h2>
       <Blob />
       <Buttons cardChange={handleChangeCard}>
         <Resource

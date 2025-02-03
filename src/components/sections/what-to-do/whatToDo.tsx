@@ -75,7 +75,7 @@ export const WhatToDo = component$(
 
     return (
       <section class="what-to-do" id="what-to-do">
-        <h1>What to do?</h1>
+        <h2>What to do?</h2>
 
         <Resource
           value={newArticles}

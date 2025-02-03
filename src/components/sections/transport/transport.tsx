@@ -23,7 +23,7 @@ export const Transport = component$(() => {
 
   return (
     <section class="transportation" id="transport">
-      <h1>Transportation</h1>
+      <h2>Transportation</h2>
 
       {isMobile.value ? <ImageMb /> : <ImagePc />}
 

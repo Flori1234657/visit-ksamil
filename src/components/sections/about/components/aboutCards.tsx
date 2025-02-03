@@ -40,7 +40,7 @@ export const AboutCards = component$(() => {
   return aboutCards.map((card) => (
     <article key={card.title} class={`about-us__about-cards__${card.class}`}>
       <div aria-label="Text information">
-        <h2>{card.title}</h2>
+        <h4>{card.title}</h4>
         <p>{card.description}</p>
       </div>
       {card.image}
