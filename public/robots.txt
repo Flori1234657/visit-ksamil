@@ -1,0 +1,18 @@
+# Allow all search engines
+User-agent: *
+
+# Allow crawling of all content
+Allow: /
+
+# Disallow unnecessary pages
+# Disallow: /api/     Prevent indexing of backend API endpoints
+
+# Allow Google to index JavaScript, CSS, and images
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Link to your sitemap (important for SEO!)

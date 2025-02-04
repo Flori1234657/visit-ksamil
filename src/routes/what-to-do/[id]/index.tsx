@@ -54,11 +54,7 @@ export default component$(() => {
 
           return (
             <>
-              <Article
-                title={data.title}
-                description={data.description}
-                imgUrl={data.imageUrl}
-              />
+              <Article data={data} />
               <SidePanel />
             </>
           );
@@ -78,12 +74,59 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "What to do in Ksamil?",
+  title: "What to Do in Ksamil? Top Activities & Attractions (2025)",
   meta: [
     {
       name: "description",
       content:
-        "This page has different articles about what activities to do in Ksamil",
+        "Discover the best things to do in Ksamil, Albania! Explore beaches, islands, boat tours, Blue Eye, Butrint National Park, and other must-visit attractions.",
+    },
+    {
+      name: "keywords",
+      content:
+        "things to do in Ksamil, Ksamil activities, Ksamil attractions, Ksamil beaches, Ksamil islands, Ksamil Albania, Butrint National Park, Blue Eye Albania",
+    },
+    {
+      name: "author",
+      content: "Visit Ksamil",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+    {
+      property: "og:title",
+      content: "What to Do in Ksamil? Best Activities & Attractions (2025)",
+    },
+    {
+      property: "og:description",
+      content:
+        "Find out the top activities and attractions in Ksamil, Albania! From crystal-clear beaches to historical sites, here’s what to do in Ksamil.",
+    },
+    {
+      property: "og:image",
+      content: "https://visitksamil.com/change-based-on-vite-path-after-build",
+    },
+    {
+      property: "og:url",
+      content: "https://visitksamil.com/what-to-do",
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:title",
+      content: "What to Do in Ksamil? Best Activities & Attractions (2024)",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "Find the best activities and attractions in Ksamil, Albania, including beaches, boat tours, and nature spots.",
+    },
+    {
+      name: "twitter:image",
+      content: "https://visitksamil.com/change-based-on-vite-path-after-build",
     },
   ],
 };
