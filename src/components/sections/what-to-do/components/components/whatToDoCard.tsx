@@ -34,8 +34,6 @@ export const WhatToDoCard = component$(
           // eslint-disable-next-line qwik/jsx-img
           src="/images/pages/what-to-do/placeholder.jpg" // for the moment then use cloudinary
           alt="Randrom"
-          width={50}
-          height={50}
         />
         <div
           aria-label="Text and button container"

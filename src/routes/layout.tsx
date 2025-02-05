@@ -1,9 +1,9 @@
-import { component$, Slot } from "@builder.io/qwik";
+import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { Footer } from "~/components/footer/footer";
 import { Navigation } from "~/components/navigation/navigation";
 
-import "./styles.scss";
+import globalStyles from "./styles.scss?inline";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -17,6 +17,8 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export default component$(() => {
+  useStyles$(globalStyles);
+
   return (
     <>
       <header>

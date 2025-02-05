@@ -50,15 +50,17 @@
     @include mixins.flex-center;
 
     img {
+      aspect-ratio: 0.63;
+      object-fit: cover;
       border-radius: 0.5rem;
     }
 
     img:nth-child(1),
     img:nth-child(3) {
-      @include mixins.box(7.773rem, 12.39rem);
+      width: 7.773rem;
     }
     img:nth-child(2) {
-      @include mixins.box(8.228rem, 13.116rem);
+      width: 8.228rem;
 
       box-shadow: 0 0 7.8px #ffff;
 
@@ -154,10 +156,10 @@
     .hero-section__images-card {
       img:nth-child(1),
       img:nth-child(3) {
-        @include mixins.box(10rem, 15.941rem);
+        width: 10rem;
       }
       img:nth-child(2) {
-        @include mixins.box(10.586rem, 16.875rem);
+        width: 10.586rem;
       }
     }
   }

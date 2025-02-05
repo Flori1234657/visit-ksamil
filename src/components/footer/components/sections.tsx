@@ -18,7 +18,7 @@ export const Sections = component$(() => {
   return (
     <div aria-label="Footer sections" class="footer-sections">
       <div aria-label="Website info" class="footer-sections__website-info">
-        <Logo />
+        <Logo alt="Website logo" />
         <h2>VisitKsamil</h2>
         <p>
           This is a website run by a resident of Ksamil. Its focus is to give

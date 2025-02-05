@@ -11,7 +11,7 @@ import { MobileNavigationButton } from "./components/mobileNavigationButton";
 import styles from "./navigation.scss?inline";
 import { SupportUs } from "./support-section/supportUs";
 
-import Image from "../../../public/logo.webp?jsx";
+import Logo from "../../../public/logo.webp?jsx";
 import MobileWave from "../../../public/images/svg/dropdown-menu-wave.svg?jsx";
 import { changeNavBarBckgWhileScroll } from "~/helpers/nav-bar";
 
@@ -22,7 +22,8 @@ export const Navigation = component$(() => {
   const isNotAtRootPage = /what-to-do/g.test(location.url.pathname);
 
   // eslint-disable-next-line qwik/no-use-visible-task
-  useVisibleTask$(() => {
+  useVisibleTask$(({ track }) => {
+    track(() => location.url.pathname);
     if (/what-to-do/g.test(location.url.pathname)) return;
     changeNavBarBckgWhileScroll(false);
 
@@ -47,7 +48,7 @@ export const Navigation = component$(() => {
           class="nav-logo-lang-container__logo"
           onClick$={() => navigate("/")}
         >
-          <Image style={{ width: "2rem", height: "2rem" }} />
+          <Logo style={{ width: "2rem", height: "2rem" }} alt="Logo" />
           <h4>VisitKsamil</h4>
         </div>
 
@@ -105,7 +106,7 @@ export const Navigation = component$(() => {
             </li>
           </ul>
         </nav>
-        <select name="Language">
+        <select name="Language" aria-label="Language">
           <option value="en">En</option>
         </select>
         <MobileNavigationButton showNavigation={showNavigation} />

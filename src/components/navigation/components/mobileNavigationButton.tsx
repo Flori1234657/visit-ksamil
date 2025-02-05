@@ -4,6 +4,7 @@ export const MobileNavigationButton = component$(
   ({ showNavigation }: { showNavigation: Signal<boolean> }) => {
     return (
       <button
+        aria-label="Navigation toggle"
         class={`nav-logo-lang-container__nav-button --icon-button ${showNavigation.value ? "--color-secondary --rounded --md" : ""}`}
         onClick$={() => (showNavigation.value = !showNavigation.value)}
       >

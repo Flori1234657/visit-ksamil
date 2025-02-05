@@ -41,6 +41,7 @@ export const HourCard = component$(
         </div>
 
         <button
+          aria-label="Show hours"
           class="--icon-button --rounded"
           onClick$={() => (showHours.value = !showHours.value)}
         >
