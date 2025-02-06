@@ -8,7 +8,14 @@ export default component$(({ data }: { data: Articles }) => {
   return (
     <article>
       <h2>{data.title}</h2>
-      <img src={data.imageUrl} alt="Example" width={100} height={100} />
+      <img
+        src={data.imageUrl}
+        alt={data.title}
+        loading="lazy"
+        decoding="async"
+        width={100}
+        height={100}
+      />
       <p>{data.description}</p>
 
       <script

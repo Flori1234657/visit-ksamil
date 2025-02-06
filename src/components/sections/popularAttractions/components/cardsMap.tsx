@@ -26,6 +26,8 @@ export const CardsMap = component$(
               // eslint-disable-next-line qwik/jsx-img
               src="/images/pages/popular-attractions/placeholder.jpg"
               alt="Attraction"
+              loading="lazy"
+              decoding="async"
               width={168}
               height={244.7}
             />
