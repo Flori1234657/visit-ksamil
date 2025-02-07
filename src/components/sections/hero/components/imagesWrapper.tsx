@@ -43,7 +43,7 @@ export const ImagesWrapper = component$(() => {
           key={index}
           decoding="async"
           loading="lazy"
-          src="/images/pages/hero/image-card-placeholder.jpg"
+          src={`/images/pages/hero/carousel/${image.url}.webp`}
           alt={image.alt}
           class={animate.value ? "animate" : ""}
         />

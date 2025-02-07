@@ -1,81 +1,76 @@
 export const imagesData = [
   {
-    url: "clloudinaryurl", // use descriptive file names like: sunset-beach-ksamil.jpg
+    url: "1", // use descriptive file names like: sunset-beach-ksamil.jpg
     alt: "Beautiful sunset at Ksamil beach with clear blue waters",
     title: "Sunset at Ksamil Beach",
   },
   {
-    url: "clloudinaryurl",
+    url: "2",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "3",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "4",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "5",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "6",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "7",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "8",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "9",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "10",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "11",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "12",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "13",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
+    url: "14",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
   {
-    url: "clloudinaryurl",
-    alt: "Colorful boats floating near the shore of Ksamil",
-    title: "Boats in Ksamil",
-  },
-  {
-    url: "clloudinaryurl",
+    url: "15",
     alt: "Colorful boats floating near the shore of Ksamil",
     title: "Boats in Ksamil",
   },
