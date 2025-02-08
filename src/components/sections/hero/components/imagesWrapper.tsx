@@ -45,6 +45,7 @@ export const ImagesWrapper = component$(() => {
           loading="lazy"
           src={`/images/pages/hero/carousel/${image.url}.webp`}
           alt={image.alt}
+          title={image.title}
           class={animate.value ? "animate" : ""}
         />
       ))}
