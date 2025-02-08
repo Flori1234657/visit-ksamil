@@ -16,7 +16,7 @@ export default component$(({ data }: { data: Articles }) => {
         width={100}
         height={100}
       />
-      <p>{data.description}</p>
+      <p dangerouslySetInnerHTML={data.description}></p>
 
       <script
         type="application/ld+json"

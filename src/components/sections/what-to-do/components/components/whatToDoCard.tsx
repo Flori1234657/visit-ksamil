@@ -16,7 +16,7 @@ export const WhatToDoCard = component$(
   ({
     shortDescription,
     id,
-    // imagePath,
+    imagePath,
     title,
     show,
     changeCard,
@@ -32,7 +32,7 @@ export const WhatToDoCard = component$(
       >
         <img
           // eslint-disable-next-line qwik/jsx-img
-          src="/images/pages/what-to-do/placeholder.jpg" // for the moment then use cloudinary
+          src={imagePath} // for the moment then use cloudinary
           alt="Randrom"
           loading="lazy"
           decoding="async"
