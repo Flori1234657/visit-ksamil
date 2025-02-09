@@ -23,9 +23,8 @@ export const CardsMap = component$(
             }}
           >
             <img
-              // eslint-disable-next-line qwik/jsx-img
-              src="/images/pages/popular-attractions/placeholder.jpg"
-              alt="Attraction"
+              src={card.imageUrl}
+              alt={card.title}
               loading="lazy"
               decoding="async"
               width={168}
@@ -37,7 +36,9 @@ export const CardsMap = component$(
             >
               <h3>{card.title}</h3>
               <button class="--tex-icon-button --sm">
-                View on Map
+                <a href={card.locationUrl} target="_blank">
+                  View on Map
+                </a>
                 <svg
                   aria-hidden="true"
                   fill="none"

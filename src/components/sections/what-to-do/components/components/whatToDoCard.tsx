@@ -30,13 +30,8 @@ export const WhatToDoCard = component$(
         aria-label="What to to card"
         class="what-to-do__cards-map__card --visible"
       >
-        <img
-          // eslint-disable-next-line qwik/jsx-img
-          src={imagePath} // for the moment then use cloudinary
-          alt="Randrom"
-          loading="lazy"
-          decoding="async"
-        />
+        {/* eslint-disable qwik/jsx-img  */}
+        <img src={imagePath} alt={title} loading="lazy" decoding="async" />
         <div
           aria-label="Text and button container"
           class="what-to-do__cards-map__card__text-button --visible"
