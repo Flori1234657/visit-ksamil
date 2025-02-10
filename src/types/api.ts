@@ -15,6 +15,7 @@ export type Attractions = {
   title: string;
   locationUrl: string;
   imageUrl: string;
+  description: string;
   createdAt: {
     seconds: number;
     nanoseconds: number;

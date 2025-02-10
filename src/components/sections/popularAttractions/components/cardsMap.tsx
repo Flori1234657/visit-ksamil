@@ -25,6 +25,7 @@ export const CardsMap = component$(
             <img
               src={card.imageUrl}
               alt={card.title}
+              title={card.description}
               loading="lazy"
               decoding="async"
               width={168}
