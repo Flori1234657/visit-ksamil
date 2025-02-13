@@ -1,22 +1,12 @@
-import {
-  $,
-  component$,
-  Resource,
-  useResource$,
-  useSignal,
-  useStore,
-  useStyles$,
-} from "@builder.io/qwik";
+import { $, component$, Resource, useStyles$ } from "@builder.io/qwik";
 import { Buttons } from "./components/buttons";
 import { CardsMap } from "./components/cardsMap";
 
 import type { AttractionStoreDataType } from "./types/card";
 
-import { reorderCards as reorderCardsHelper } from "~/helpers/carousel";
-import { fetchAttractions } from "~/api/attractions";
-
 import styles from "./popular-attractions.scss?inline";
 import Blob from "../../../../public/images/svg/popular-attractions-blob.svg?jsx";
+import { useAttractions } from "./hooks/attractionsHook";
 
 type Props = {
   firstAttractions: AttractionStoreDataType;
@@ -25,47 +15,8 @@ type Props = {
 export const PopularAttractions = component$(({ firstAttractions }: Props) => {
   useStyles$(styles);
 
-  const fetchNextAttractions = useSignal<
-    { index: number } | "dont-fetch-again" | null
-  >(null);
-
-  const attractionsStore = useStore({
-    data: firstAttractions,
-    setData: $(function (
-      this: { data: AttractionStoreDataType },
-      newFetchedData: AttractionStoreDataType
-    ) {
-      this.data = {
-        attractions: [...this.data.attractions, ...newFetchedData.attractions],
-        lastDoc: newFetchedData.lastDoc,
-      };
-    }),
-    reorderCards: $(function (
-      this: { data: AttractionStoreDataType },
-      index: number
-    ) {
-      this.data.attractions = reorderCardsHelper(index, this.data.attractions);
-    }),
-  });
-
-  const newAttractions = useResource$(async ({ track, cleanup }) => {
-    track(() => fetchNextAttractions.value);
-    const controller = new AbortController();
-    cleanup(() => controller.abort());
-
-    if (
-      !fetchNextAttractions.value ||
-      fetchNextAttractions.value === "dont-fetch-again"
-    )
-      return null;
-
-    const response = await fetchAttractions(
-      `&lastDocId=${attractionsStore.data.lastDoc}`
-    );
-    if (!response || response.attractions.length === 0) return null;
-
-    return response;
-  });
+  const { attractionsStore, fetchNextAttractions, newAttractions } =
+    useAttractions({ firstAttractions });
 
   const handleChangeCard = $((index: number) => {
     if (fetchNextAttractions.value === "dont-fetch-again") {

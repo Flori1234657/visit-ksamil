@@ -1,68 +1,17 @@
-import {
-  $,
-  component$,
-  Resource,
-  useResource$,
-  useSignal,
-  useStore,
-  useStyles$,
-} from "@builder.io/qwik";
+import { $, component$, Resource, useStyles$ } from "@builder.io/qwik";
 import { WhatToDoCardsMap } from "./components/whatToDoCardsMap";
 
 import type { ArticleStoreDataType } from "./types/cards";
 
 import styles from "./what-to-do.scss?inline";
-import { reorderCards as reorderCardsHelper } from "~/helpers/carousel";
-import { fetchArticles } from "~/api/articles";
+import { useArticles } from "./hooks/articlesHook";
 
 export const WhatToDo = component$(
   ({ firstArticles }: { firstArticles: ArticleStoreDataType }) => {
     useStyles$(styles);
 
-    const fetchNextArticles = useSignal<
-      { index: number } | "dont-fetch-again" | null
-    >(null);
-
-    const articlesStore = useStore({
-      data: firstArticles,
-      setData: $(function (
-        this: { data: ArticleStoreDataType },
-        newFetchedData: ArticleStoreDataType
-      ) {
-        this.data = {
-          articles: [...this.data.articles, ...newFetchedData.articles],
-          lastDoc: newFetchedData.lastDoc,
-        };
-      }),
-      reorderCards: $(function (
-        this: { data: ArticleStoreDataType },
-        index: number
-      ) {
-        this.data.articles = reorderCardsHelper(
-          index,
-          this.data.articles,
-          true
-        );
-      }),
-    });
-
-    const newArticles = useResource$(async ({ track, cleanup }) => {
-      track(() => fetchNextArticles.value);
-      const controller = new AbortController();
-      cleanup(() => controller.abort());
-
-      if (
-        !fetchNextArticles.value ||
-        fetchNextArticles.value === "dont-fetch-again"
-      )
-        return null;
-
-      const response = await fetchArticles(
-        `&lastDocId=${articlesStore.data.lastDoc}`
-      );
-      if (!response || response.articles.length === 0) return null;
-
-      return response;
+    const { articlesStore, fetchNextArticles, newArticles } = useArticles({
+      firstArticles,
     });
 
     const handleChangeCard = $((index: number) => {
