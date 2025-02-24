@@ -6,7 +6,8 @@ export const HoursCards = component$(() => {
     {
       city: "Sarandë",
       hours: [
-        "07 : 30",
+        "06 : 30",
+        "07 : 00",
         "08 : 30",
         "09 : 30",
         "10 : 30",
@@ -16,14 +17,13 @@ export const HoursCards = component$(() => {
         "14 : 30",
         "15 : 30",
         "16 : 30",
-        "17 : 30",
       ],
     },
     {
       city: "Ksamil",
       butrintiHours: [
         "07 : 00",
-        "08 : 00",
+        "07 : 30",
         "09 : 00",
         "10 : 00",
         "11 : 00",
@@ -33,11 +33,10 @@ export const HoursCards = component$(() => {
         "15 : 00",
         "16 : 00",
         "17 : 00",
-        "18 : 00",
       ],
       sarandaHours: [
+        "07 : 20",
         "07 : 45",
-        "08 : 45",
         "09 : 45",
         "10 : 45",
         "11 : 45",
@@ -52,8 +51,8 @@ export const HoursCards = component$(() => {
     {
       city: "Butrint",
       hours: [
+        "07 : 05",
         "07 : 30",
-        "08 : 30",
         "09 : 30",
         "10 : 30",
         "11 : 30",
