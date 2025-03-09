@@ -33,14 +33,12 @@ export const PopularAttractions = component$(({ firstAttractions }: Props) => {
       <Buttons cardChange={handleChangeCard}>
         <Resource
           value={newAttractions}
-          onPending={() => (
-            <CardsMap
-              cardChange={handleChangeCard}
-              cards={attractionsStore.data.attractions.slice(0, 3)}
-            />
-          )}
+          onPending={() => <p>Loading...</p>}
           onResolved={(data) => {
-            if (data) attractionsStore.setData(data);
+            if (data) {
+              attractionsStore.setData(data);
+              fetchNextAttractions.value = null;
+            }
 
             if (
               fetchNextAttractions.value &&

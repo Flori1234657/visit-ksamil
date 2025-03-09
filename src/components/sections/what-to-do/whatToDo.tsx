@@ -28,14 +28,12 @@ export const WhatToDo = component$(
 
         <Resource
           value={newArticles}
-          onPending={() => (
-            <WhatToDoCardsMap
-              cards={articlesStore.data.articles.slice(0, 3)}
-              handleChange={handleChangeCard}
-            />
-          )}
+          onPending={() => <p>Loading...</p>}
           onResolved={(data) => {
-            if (data) articlesStore.setData(data);
+            if (data) {
+              articlesStore.setData(data);
+              fetchNextArticles.value = null;
+            }
 
             if (
               fetchNextArticles.value &&
@@ -80,5 +78,5 @@ export const WhatToDo = component$(
         </button>
       </section>
     );
-  }
+  },
 );
