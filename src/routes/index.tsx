@@ -36,7 +36,7 @@ export default component$(() => {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Visit Ksamil",
-            url: "https://visitksamil.com",
+            url: "https://visitksamil.info",
             description:
               "Discover the best attractions, activities, and transport options in Ksamil, Albania.",
             address: {
@@ -54,7 +54,7 @@ export default component$(() => {
               "@type": "Organization",
               name: "Visit Ksamil",
             },
-            image: "https://visitksamil.com/ksamil-cover.jpg", // change based on vite save path
+            image: "https://visitksamil.info/ksamil-cover.jpg", // change based on vite save path
             publisher: {
               "@type": "Organization",
               name: "Visit Ksamil",
@@ -104,11 +104,11 @@ export const head: DocumentHead = {
     },
     {
       property: "og:image",
-      content: "https://visitksamil.com/vite-save-path", // or cloudinary
+      content: "https://visitksamil.info/vite-save-path", // or cloudinary
     },
     {
       property: "og:url",
-      content: "https://visitksamil.com",
+      content: "https://visitksamil.info",
     },
     {
       name: "twitter:card",
@@ -125,11 +125,11 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:image",
-      content: "https://visitksamil.com/ksamil-cover.jpg",
+      content: "https://visitksamil.info/ksamil-cover.jpg",
     },
     {
       name: "canonical",
-      content: "https://visitksamil.com",
+      content: "https://visitksamil.info",
     },
     {
       name: "geo.region",

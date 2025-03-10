@@ -105,11 +105,11 @@ export const head: DocumentHead = {
     },
     {
       property: "og:image",
-      content: "https://visitksamil.com/change-based-on-vite-path-after-build",
+      content: "https://visitksamil.info/change-based-on-vite-path-after-build",
     },
     {
       property: "og:url",
-      content: "https://visitksamil.com/what-to-do",
+      content: "https://visitksamil.info/what-to-do",
     },
     {
       name: "twitter:card",
@@ -126,7 +126,7 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:image",
-      content: "https://visitksamil.com/change-based-on-vite-path-after-build",
+      content: "https://visitksamil.info/change-based-on-vite-path-after-build",
     },
   ],
 };
