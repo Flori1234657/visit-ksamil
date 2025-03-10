@@ -13,7 +13,7 @@
     @include mixins.font(Poppins, 1.6rem, 600, get-color.color("accent", 900));
   }
 
-  > svg {
+  > img {
     width: 100%;
     height: auto;
     padding: 0 2rem;
@@ -199,7 +199,7 @@
       font-size: 1.266rem;
     }
 
-    > svg {
+    > img {
       width: 35rem;
       padding: 0;
     }
@@ -263,7 +263,7 @@
       font-size: 1.602rem;
     }
 
-    > svg {
+    > img {
       width: 35.853rem;
     }
 

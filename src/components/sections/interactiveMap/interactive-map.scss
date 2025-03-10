@@ -45,7 +45,7 @@
     }
   }
 
-  > svg {
+  > img {
     position: absolute;
     bottom: auto;
     z-index: -1;
@@ -53,11 +53,11 @@
     width: 9.896rem;
   }
 
-  > svg:first-child {
+  > img:first-child {
     left: -3.5rem;
   }
 
-  > svg:last-child {
+  > img:last-child {
     right: -4.5rem;
   }
 }
@@ -85,15 +85,15 @@
       }
     }
 
-    > svg {
+    > img {
       width: 8.247rem;
     }
 
-    > svg:first-child {
+    > img:first-child {
       left: -12rem;
     }
 
-    > svg:last-child {
+    > img:last-child {
       right: -12rem;
     }
   }
@@ -117,15 +117,15 @@
       }
     }
 
-    > svg {
+    > img {
       width: 10.994rem;
     }
 
-    > svg:first-child {
+    > img:first-child {
       left: -15rem;
     }
 
-    > svg:last-child {
+    > img:last-child {
       right: -15rem;
     }
   }

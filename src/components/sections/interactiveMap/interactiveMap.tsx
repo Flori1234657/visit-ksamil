@@ -2,15 +2,15 @@ import { component$, useStyles$ } from "@builder.io/qwik";
 
 import styles from "./interactive-map.scss?inline";
 
-import ImageIllustration from "../../../../public/images/svg/interactive-map-image-illustration.svg?jsx";
-import MapIllustration from "../../../../public/images/svg/interactive-map-map-illustration.svg?jsx";
+import ImageIllustration from "../../../../public/images/svg/interactive-map-image-illustration.svg?url";
+import MapIllustration from "../../../../public/images/svg/interactive-map-map-illustration.svg?url";
 
 export const InteractiveMap = component$(() => {
   useStyles$(styles);
 
   return (
     <section class="interactive-map" id="interactive-map">
-      <ImageIllustration />
+      <img src={ImageIllustration} alt="Illustration" />
 
       <div aria-label="content" class="interactive-map__content">
         <h2>Interactive Map</h2>
@@ -48,7 +48,7 @@ export const InteractiveMap = component$(() => {
         </div>
       </div>
 
-      <MapIllustration />
+      <img src={MapIllustration} alt="Illustration" />
     </section>
   );
 });
