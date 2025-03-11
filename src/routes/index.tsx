@@ -36,9 +36,14 @@ export default component$(() => {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Visit Ksamil",
-            url: "https://visitksamil.info",
+            url: "https://www.visitksamil.info",
             description:
               "Discover the best attractions, activities, and transport options in Ksamil, Albania.",
+            image: [
+              "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708402/ksamil-islands_iuaaxg.jpg",
+              "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-crystal-clear-water_d5xskg.jpg",
+              "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-hidden-gem_hvgknk.jpg",
+            ],
             address: {
               "@type": "PostalAddress",
               addressLocality: "Ksamil",
@@ -53,14 +58,46 @@ export default component$(() => {
             author: {
               "@type": "Organization",
               name: "Visit Ksamil",
+              url: "https://www.visitksamil.info",
+              logo: "https://www.visitksamil.info/logo.webp",
             },
-            image: "https://visitksamil.info/ksamil-cover.jpg", // change based on vite save path
             publisher: {
               "@type": "Organization",
               name: "Visit Ksamil",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.visitksamil.info/logo.webp",
+                width: 500,
+                height: 500,
+              },
             },
-            priceRange: "$$",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+355-68-839-3968",
+              contactType: "customer service",
+              areaServed: "Ksamil, Albania",
+              availableLanguage: ["English", "Albanian"],
+            },
+            priceRange: "$",
             areaServed: "Ksamil Albania",
+            breadcrumb: {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://www.visitksamil.info",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "What to Do",
+                  item: "https://www.visitksamil.info/what-to-do/{id}",
+                },
+              ],
+            },
           }),
         }}
       />
@@ -104,11 +141,12 @@ export const head: DocumentHead = {
     },
     {
       property: "og:image",
-      content: "https://visitksamil.info/vite-save-path", // or cloudinary
+      content:
+        "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-crystal-clear-water_d5xskg.jpg",
     },
     {
       property: "og:url",
-      content: "https://visitksamil.info",
+      content: "https://www.visitksamil.info",
     },
     {
       name: "twitter:card",
@@ -125,11 +163,12 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:image",
-      content: "https://visitksamil.info/ksamil-cover.jpg",
+      content:
+        "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-crystal-clear-water_d5xskg.jpg",
     },
     {
       name: "canonical",
-      content: "https://visitksamil.info",
+      content: "https://www.visitksamil.info",
     },
     {
       name: "geo.region",

@@ -33,7 +33,7 @@ export default component$(({ data }: { data: Articles }) => {
                 "@type": "TouristAttraction",
                 name: data.title,
                 description: data.shortDescription,
-                url: `https://visitksamil.info/what-to-do/${data.id}`, // maybe these need to be name instead of id for better seo
+                url: `https://www.visitksamil.info/what-to-do/${data.id}`, // maybe these need to be name instead of id for better seo
                 image: data.imageUrl,
                 address: {
                   "@type": "PostalAddress",
@@ -50,8 +50,8 @@ export default component$(({ data }: { data: Articles }) => {
             publisher: {
               "@type": "Organization",
               name: "Visit Ksamil",
-              url: "https://visitksamil.info",
-              logo: "https://yourwebsite.com/images/logo.png", // change based on where vite will save the logo after build
+              url: "https://www.visitksamil.info",
+              logo: "https://www.visitksamil.info/logo.webp",
             },
           }),
         }}

@@ -104,12 +104,8 @@ export const head: DocumentHead = {
         "Find out the top activities and attractions in Ksamil, Albania! From crystal-clear beaches to historical sites, here’s what to do in Ksamil.",
     },
     {
-      property: "og:image",
-      content: "https://visitksamil.info/change-based-on-vite-path-after-build",
-    },
-    {
       property: "og:url",
-      content: "https://visitksamil.info/what-to-do",
+      content: "https://www.visitksamil.info/what-to-do/{id}",
     },
     {
       name: "twitter:card",
@@ -123,10 +119,6 @@ export const head: DocumentHead = {
       name: "twitter:description",
       content:
         "Find the best activities and attractions in Ksamil, Albania, including beaches, boat tours, and nature spots.",
-    },
-    {
-      name: "twitter:image",
-      content: "https://visitksamil.info/change-based-on-vite-path-after-build",
     },
   ],
 };

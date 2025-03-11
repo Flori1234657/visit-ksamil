@@ -1,9 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "qwik-project-name",
-  "short_name": "Welcome to Qwik",
-  "start_url": ".",
+  "name": "Visit Ksamil - Explore Albania’s Hidden Gem",
+  "short_name": "Visit Ksamil",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#fff",
-  "description": "A Qwik project app."
+  "background_color": "#ffffff",
+  "description": "Discover top attractions, beaches, and things to do in Ksamil, Albania. Plan your trip today!",
+  "orientation": "portrait-primary"
 }
