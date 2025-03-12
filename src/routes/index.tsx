@@ -26,80 +26,75 @@ export default component$(() => {
       )}
       <InteractiveMap />
       <Transport />
-
-      {/* SEO: JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        // @ts-ignore
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
+        dangerouslySetInnerHTML={JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Visit Ksamil",
+          url: "https://www.visitksamil.info",
+          description:
+            "Discover the best attractions, activities, and transport options in Ksamil, Albania.",
+          image: [
+            "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708402/ksamil-islands_iuaaxg.jpg",
+            "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-crystal-clear-water_d5xskg.jpg",
+            "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-hidden-gem_hvgknk.jpg",
+          ],
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Ksamil",
+            addressRegion: "Vlorë",
+            addressCountry: "AL",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 39.7683,
+            longitude: 19.9997,
+          },
+          author: {
+            "@type": "Organization",
             name: "Visit Ksamil",
             url: "https://www.visitksamil.info",
-            description:
-              "Discover the best attractions, activities, and transport options in Ksamil, Albania.",
-            image: [
-              "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708402/ksamil-islands_iuaaxg.jpg",
-              "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-crystal-clear-water_d5xskg.jpg",
-              "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-hidden-gem_hvgknk.jpg",
-            ],
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Ksamil",
-              addressRegion: "Vlorë",
-              addressCountry: "AL",
+            logo: "https://www.visitksamil.info/logo.webp",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Visit Ksamil",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://www.visitksamil.info/logo.webp",
+              width: 500,
+              height: 500,
             },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: 39.7683,
-              longitude: 19.9997,
-            },
-            author: {
-              "@type": "Organization",
-              name: "Visit Ksamil",
-              url: "https://www.visitksamil.info",
-              logo: "https://www.visitksamil.info/logo.webp",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "Visit Ksamil",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://www.visitksamil.info/logo.webp",
-                width: 500,
-                height: 500,
+          },
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: "+355-68-839-3968",
+            contactType: "customer service",
+            areaServed: "Ksamil, Albania",
+            availableLanguage: ["English", "Albanian"],
+          },
+          priceRange: "$",
+          areaServed: "Ksamil Albania",
+          breadcrumb: {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.visitksamil.info",
               },
-            },
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+355-68-839-3968",
-              contactType: "customer service",
-              areaServed: "Ksamil, Albania",
-              availableLanguage: ["English", "Albanian"],
-            },
-            priceRange: "$",
-            areaServed: "Ksamil Albania",
-            breadcrumb: {
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://www.visitksamil.info",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "What to Do",
-                  item: "https://www.visitksamil.info/what-to-do/{id}",
-                },
-              ],
-            },
-          }),
-        }}
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "What to Do",
+                item: "https://www.visitksamil.info/what-to-do/{id}",
+              },
+            ],
+          },
+        })}
       />
     </>
   );
