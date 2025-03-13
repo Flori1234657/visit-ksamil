@@ -1,5 +1,6 @@
 import { $, component$, Resource, useStyles$ } from "@builder.io/qwik";
 import { WhatToDoCardsMap } from "./components/whatToDoCardsMap";
+import { Loader } from "~/components/loading/Loader";
 
 import type { ArticleStoreDataType } from "./types/cards";
 
@@ -28,12 +29,9 @@ export const WhatToDo = component$(
 
         <Resource
           value={newArticles}
-          onPending={() => <p>Loading...</p>}
+          onPending={() => <Loader fontSize={0.75} modifierClass="--black" />}
           onResolved={(data) => {
-            if (data) {
-              articlesStore.setData(data);
-              fetchNextArticles.value = null;
-            }
+            if (data) articlesStore.setData(data);
 
             if (
               fetchNextArticles.value &&
@@ -43,6 +41,7 @@ export const WhatToDo = component$(
 
             if (data && data.articles.length < 3)
               fetchNextArticles.value = "dont-fetch-again";
+            else fetchNextArticles.value = null;
 
             return (
               <WhatToDoCardsMap

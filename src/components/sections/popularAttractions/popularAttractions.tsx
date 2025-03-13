@@ -1,11 +1,12 @@
 import { $, component$, Resource, useStyles$ } from "@builder.io/qwik";
 import { Buttons } from "./components/buttons";
 import { CardsMap } from "./components/cardsMap";
+import { Loader } from "~/components/loading/Loader";
 
 import type { AttractionStoreDataType } from "./types/card";
 
 import styles from "./popular-attractions.scss?inline";
-import Blob from "../../../../public/images/svg/popular-attractions-blob.svg?jsx";
+import Blob from "../../../../public/images/svg/popular-attractions-blob.svg?url";
 import { useAttractions } from "./hooks/attractionsHook";
 
 type Props = {
@@ -29,16 +30,20 @@ export const PopularAttractions = component$(({ firstAttractions }: Props) => {
   return (
     <section class="popular-attractions" id="popular-attractions">
       <h2>Popular attractions</h2>
-      <Blob />
+      <img
+        src={Blob}
+        alt="Blob illustration"
+        width={100}
+        height={100}
+        decoding="async"
+        loading="lazy"
+      />
       <Buttons cardChange={handleChangeCard}>
         <Resource
           value={newAttractions}
-          onPending={() => <p>Loading...</p>}
+          onPending={() => <Loader fontSize={0.75} modifierClass="--black" />}
           onResolved={(data) => {
-            if (data) {
-              attractionsStore.setData(data);
-              fetchNextAttractions.value = null;
-            }
+            if (data) attractionsStore.setData(data);
 
             if (
               fetchNextAttractions.value &&
@@ -48,6 +53,7 @@ export const PopularAttractions = component$(({ firstAttractions }: Props) => {
 
             if (data && data.attractions.length < 3)
               fetchNextAttractions.value = "dont-fetch-again";
+            else fetchNextAttractions.value = null;
 
             return (
               <CardsMap

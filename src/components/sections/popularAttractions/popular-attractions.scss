@@ -102,7 +102,7 @@
     }
   }
 
-  > svg {
+  > img {
     position: absolute;
     bottom: -5.25rem;
     left: -4rem;
@@ -157,7 +157,7 @@
       }
     }
 
-    > svg {
+    > img {
       @include mixins.box(18.75rem, 20.063rem);
 
       left: unset;
@@ -199,7 +199,7 @@
       }
     }
 
-    > svg {
+    > img {
       @include mixins.box(21.016rem, 22.539rem);
     }
 

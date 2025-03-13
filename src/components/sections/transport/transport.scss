@@ -37,7 +37,7 @@
       }
     }
 
-    svg {
+    img {
       @include mixins.box(16rem, 16.063rem);
 
       position: absolute;
@@ -213,7 +213,7 @@
         font-size: 0.889rem;
       }
 
-      svg {
+      img {
         @include mixins.box(12rem, 12rem);
       }
     }
@@ -282,7 +282,7 @@
         }
       }
 
-      svg {
+      img {
         @include mixins.box(12.696rem, 12.696rem);
       }
     }

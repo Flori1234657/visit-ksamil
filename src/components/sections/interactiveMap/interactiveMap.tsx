@@ -10,7 +10,14 @@ export const InteractiveMap = component$(() => {
 
   return (
     <section class="interactive-map" id="interactive-map">
-      <img src={ImageIllustration} alt="Illustration" />
+      <img
+        src={ImageIllustration}
+        alt="Illustration"
+        width={100}
+        height={100}
+        decoding="async"
+        loading="lazy"
+      />
 
       <div aria-label="content" class="interactive-map__content">
         <h2>Interactive Map</h2>
@@ -48,7 +55,14 @@ export const InteractiveMap = component$(() => {
         </div>
       </div>
 
-      <img src={MapIllustration} alt="Illustration" />
+      <img
+        src={MapIllustration}
+        alt="Illustration"
+        width={100}
+        height={100}
+        decoding="async"
+        loading="lazy"
+      />
     </section>
   );
 });

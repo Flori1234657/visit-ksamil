@@ -43,7 +43,14 @@ export const AboutCards = component$(() => {
         <h4>{card.title}</h4>
         <p>{card.description}</p>
       </div>
-      <img src={card.image} alt={card.title} />
+      <img
+        src={card.image}
+        alt={card.title}
+        width={100}
+        height={100}
+        decoding="async"
+        loading="lazy"
+      />
     </article>
   ));
 });

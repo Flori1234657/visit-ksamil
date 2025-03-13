@@ -10,7 +10,7 @@ footer {
 
   position: relative;
 
-  > svg {
+  > img {
     width: 100%;
     height: auto;
 
@@ -147,7 +147,7 @@ footer {
 
 @include media-query.md {
   footer {
-    > svg {
+    > img {
       top: -1rem;
     }
 

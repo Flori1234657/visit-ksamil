@@ -31,7 +31,14 @@ export const WhatToDoCard = component$(
         class="what-to-do__cards-map__card --visible"
       >
         {/* eslint-disable qwik/jsx-img  */}
-        <img src={imagePath} alt={title} loading="lazy" decoding="async" />
+        <img
+          src={imagePath}
+          alt={title}
+          loading="lazy"
+          decoding="async"
+          width={100}
+          height={60}
+        />
         <div
           aria-label="Text and button container"
           class="what-to-do__cards-map__card__text-button --visible"
@@ -77,5 +84,5 @@ export const WhatToDoCard = component$(
         <p>?</p>
       </div>
     );
-  }
+  },
 );

@@ -9,7 +9,7 @@ import { HoursCards } from "./components/hoursCards";
 import styles from "./transport.scss?inline";
 import ImageMb from "../../../../public/images/pages/transportation/image-mb.svg?url";
 import ImagePc from "../../../../public/images/pages/transportation/image-pc.svg?url";
-import Blob from "../../../../public/images/svg/transportation-blob.svg?jsx";
+import Blob from "../../../../public/images/svg/transportation-blob.svg?url";
 
 export const Transport = component$(() => {
   useStyles$(styles);
@@ -26,13 +26,34 @@ export const Transport = component$(() => {
       <h2>Transportation</h2>
 
       {isMobile.value ? (
-        <img src={ImageMb} alt="Destinations image" />
+        <img
+          src={ImageMb}
+          alt="Destinations image"
+          width={100}
+          height={100}
+          decoding="async"
+          loading="lazy"
+        />
       ) : (
-        <img src={ImagePc} alt="Destinations image" />
+        <img
+          src={ImagePc}
+          alt="Destinations image"
+          width={100}
+          height={100}
+          decoding="async"
+          loading="lazy"
+        />
       )}
 
       <div aria-label="Information text" class="transportation__info-txt">
-        <Blob />
+        <img
+          src={Blob}
+          alt="Blob illustration"
+          width={100}
+          height={100}
+          decoding="async"
+          loading="lazy"
+        />
         <p>
           To come in Ksamil from Saranda you can use the bus it costs &nbsp;
           <span> 150lek/person,</span>&nbsp; or you can get a taxi. Also you can

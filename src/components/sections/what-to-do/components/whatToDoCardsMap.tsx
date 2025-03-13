@@ -3,7 +3,7 @@ import type { QRL } from "@builder.io/qwik";
 import { WhatToDoCard } from "./components/whatToDoCard";
 import type { Articles } from "~/types/api";
 
-import Blob from "../../../../../public/images/svg/what-to-do-blob.svg?jsx";
+import Blob from "../../../../../public/images/svg/what-to-do-blob.svg?url";
 
 export const WhatToDoCardsMap = component$(
   (state: {
@@ -12,7 +12,14 @@ export const WhatToDoCardsMap = component$(
   }) => {
     return (
       <div aria-label="What to do cards map" class="what-to-do__cards-map">
-        <Blob />
+        <img
+          src={Blob}
+          alt="Blob illustration"
+          width={100}
+          height={100}
+          decoding="async"
+          loading="lazy"
+        />
 
         {state.cards.map((card, index) => (
           <WhatToDoCard
@@ -28,5 +35,5 @@ export const WhatToDoCardsMap = component$(
         ))}
       </div>
     );
-  }
+  },
 );

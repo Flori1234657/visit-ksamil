@@ -12,6 +12,7 @@ import Article from "../components/article";
 import { fetchArticle } from "~/api/articles";
 
 import NotFoundIcon from "../../../../public/images/svg/not-found-icon.svg?jsx";
+import { Loader } from "~/components/loading/Loader";
 
 export default component$(() => {
   useStyles$(styles);
@@ -31,15 +32,7 @@ export default component$(() => {
     <div class="what-to-do">
       <Resource
         value={articleData}
-        onPending={() => (
-          <div class="container">
-            <div
-              aria-label="Loading animation"
-              class="container__spinner-loader"
-              style={{ fontSize: "1rem" }}
-            ></div>
-          </div>
-        )}
+        onPending={() => <Loader fontSize={1} />}
         onResolved={(data) => {
           if (!data)
             return (
