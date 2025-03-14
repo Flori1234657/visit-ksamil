@@ -81,8 +81,9 @@ export const CardsMap = component$(
         <meta itemProp="address" content="Ksamil, Albania" /> */}
             <meta itemProp="position" content={`${index + 1}`} />
 
-            <script type="application/ld+json">
-              {JSON.stringify({
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "ItemList",
                 itemListElement: state.cards.map((card, index) => ({
@@ -101,7 +102,7 @@ export const CardsMap = component$(
                   },
                 })),
               })}
-            </script>
+            />
           </div>
         ))}
       </div>

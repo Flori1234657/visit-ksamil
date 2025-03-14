@@ -67,7 +67,6 @@ export const AboutCards = component$(() => {
         itemScope
         itemType="https://schema.org/ImageObject"
       />
-      <meta itemProp="contentUrl" content={card.image} />
       <meta
         itemProp="description"
         content={`Visual representation of ${card.title}`}

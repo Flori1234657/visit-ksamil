@@ -38,8 +38,9 @@ export const WhatToDoCardsMap = component$(
             changeCard={state.handleChange}
           />
         ))}
-        <script type="application/ld+json">
-          {JSON.stringify({
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
             itemListElement: state.cards.map((card, index) => ({
@@ -53,7 +54,7 @@ export const WhatToDoCardsMap = component$(
               },
             })),
           })}
-        </script>
+        />
       </div>
     );
   },
