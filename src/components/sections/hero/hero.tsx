@@ -9,21 +9,31 @@ export const Hero = component$(() => {
   useStyles$(styles);
 
   return (
-    <section class="hero-section" id="hero">
+    <section
+      class="hero-section"
+      id="hero"
+      role="banner"
+      itemScope
+      itemType="https://schema.org/WebPage"
+      itemProp="mainContentOfPage"
+    >
       <div
         class="hero-section__text-button-wrapper"
-        aria-label="Main section text and button container"
+        aria-label="VisitKsamil introduction and contact button"
       >
-        <h1>
+        <h1 itemProp="headline">
           Uncover the Beauty of <span>Ksamil</span>: Your Essential Guide Starts
           Here
         </h1>
-        <p>
+        <p itemProp="description">
           Welcome to VisitKsamil, your gateway to the stunning beaches of this
           hidden gem in Albania. Dive into our interactive map, and plan your
           perfect getaway
         </p>
-        <a href="tel:+355688393968">
+        <a
+          href="tel:+355688393968"
+          aria-label="Contact Ksamil information service"
+        >
           <button class="hero-section__text-button-wrapper__cta-button --tex-icon-button">
             Contact Us{" "}
             <svg
@@ -48,7 +58,7 @@ export const Hero = component$(() => {
       </div>
       <ImagesWrapper />
 
-      <Wave />
+      <Wave aria-hidden="true" />
     </section>
   );
 });

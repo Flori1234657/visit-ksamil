@@ -13,13 +13,18 @@ export const HourCard = component$(
 
     return (
       <div
-        aria-label="bus hours card"
         class={`transportation__hours-container__cards-wrapper__hour-card ${showHours.value ? "--show" : "--hide"} ${city === "Ksamil" && "--ksamil"}`}
+        role="article"
+        aria-label={`Bus schedule from ${city}`}
+        itemScope
+        itemProp="item"
+        itemType="https://schema.org/Schedule"
       >
-        <h4>From {city}</h4>
+        <h4 itemProp="name">From {city}</h4>
 
         <div
           aria-label="Hours list"
+          aria-expanded={showHours.value}
           class={
             "transportation__hours-container__cards-wrapper__hour-card__hours"
           }
@@ -28,22 +33,60 @@ export const HourCard = component$(
             <>
               <ul>
                 <li>To Butrint</li>
-                {butrintHours?.map((hours) => <li key={hours}>{hours}</li>)}
+                {butrintHours?.map((hours) => (
+                  <li
+                    key={hours}
+                    itemProp="departureTime"
+                    itemScope
+                    itemType="https://schema.org/BusTrip"
+                  >
+                    <time
+                      dateTime={`T${hours.replace(" ", "")}`}
+                      itemProp="departureTime"
+                    >
+                      {hours}
+                    </time>
+                    <meta itemProp="name" content="Butrint Route" />
+                  </li>
+                ))}
               </ul>
               <ul>
                 <li>To Saranda</li>
-                {sarandaHours?.map((hours) => <li key={hours}>{hours}</li>)}
+                {sarandaHours?.map((hours) => (
+                  <li
+                    key={hours}
+                    itemProp="departureTime"
+                    itemScope
+                    itemType="https://schema.org/BusTrip"
+                  >
+                    <time
+                      dateTime={`T${hours.replace(" ", "")}`}
+                      itemProp="departureTime"
+                    >
+                      {hours}
+                    </time>
+                    <meta itemProp="name" content="Saranda Route" />
+                  </li>
+                ))}
               </ul>
             </>
           ) : (
-            <ul>{hours?.map((hour) => <li key={hour}>{hour}</li>)}</ul>
+            <ul role="list" itemProp="schedule">
+              {hours?.map((hour) => (
+                <li key={hour} itemProp="departureTime">
+                  <time dateTime={`T${hour.replace(" ", "")}`}>{hour}</time>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
 
         <button
-          aria-label="Show hours"
           class="--icon-button --rounded"
           onClick$={() => (showHours.value = !showHours.value)}
+          aria-controls={`schedule-${city.toLowerCase()}`}
+          aria-expanded={showHours.value}
+          aria-label={`${showHours.value ? "Collapse" : "Expand"} ${city} bus schedule`}
         >
           <svg
             aria-hidden="true"
@@ -65,5 +108,5 @@ export const HourCard = component$(
         </button>
       </div>
     );
-  }
+  },
 );

@@ -9,8 +9,9 @@ export const Footer = component$(() => {
   useStyles$(styles);
 
   return (
-    <footer>
+    <footer itemScope itemType="https://schema.org/WPFooter">
       <img
+        aria-hidden="true"
         src={Wave}
         alt="Wave illustration"
         width={100}

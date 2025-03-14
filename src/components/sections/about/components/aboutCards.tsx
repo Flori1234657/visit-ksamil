@@ -37,19 +37,40 @@ export const AboutCards = component$(() => {
     },
   ];
 
-  return aboutCards.map((card) => (
-    <article key={card.title} class={`about-us__about-cards__${card.class}`}>
-      <div aria-label="Text information">
-        <h4>{card.title}</h4>
-        <p>{card.description}</p>
+  return aboutCards.map((card, index) => (
+    <article
+      key={card.title}
+      class={`about-us__about-cards__${card.class}`}
+      itemProp="itemListElement"
+      itemScope
+      itemType="https://schema.org/ListItem"
+    >
+      <meta itemProp="position" content={`${index + 1}`} />
+      <div
+        role="article"
+        aria-label={`${card.title} information`}
+        itemProp="item"
+        itemScope
+        itemType="https://schema.org/Thing"
+      >
+        <h4 itemProp="name">{card.title}</h4>
+        <p itemProp="description">{card.description}</p>
       </div>
       <img
         src={card.image}
-        alt={card.title}
-        width={100}
-        height={100}
+        alt={`Illustration of ${card.title.toLowerCase()} in Ksamil, Albania`}
+        width="100"
+        height="100"
         decoding="async"
         loading="lazy"
+        itemProp="image"
+        itemScope
+        itemType="https://schema.org/ImageObject"
+      />
+      <meta itemProp="contentUrl" content={card.image} />
+      <meta
+        itemProp="description"
+        content={`Visual representation of ${card.title}`}
       />
     </article>
   ));

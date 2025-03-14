@@ -21,7 +21,7 @@ export default component$(() => {
 
   return (
     <>
-      <header>
+      <header itemScope itemType="https://schema.org/WPHeader">
         <Navigation />
       </header>
       <main>

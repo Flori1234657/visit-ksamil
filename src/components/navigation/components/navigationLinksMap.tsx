@@ -41,14 +41,20 @@ export const NavigationLinksMap = component$(
     const isNotAtRootPage = /what-to-do/g.test(pathname);
 
     return (
-      <nav>
-        <ul>
+      <nav
+        aria-label="Main navigation"
+        itemScope
+        itemType="https://schema.org/SiteNavigationElement"
+      >
+        <ul role="menubar">
           {links.map((link) => {
             return (
-              <li key={link.name}>
+              <li key={link.name} role="none">
                 <Link
                   href={`${isNotAtRootPage ? "/" : link.href}`}
                   onClick$={handleCloseNavigationMobile}
+                  role="menuitem"
+                  itemProp="url"
                 >
                   {link.name}
                 </Link>
@@ -58,5 +64,5 @@ export const NavigationLinksMap = component$(
         </ul>
       </nav>
     );
-  }
+  },
 );

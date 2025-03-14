@@ -7,14 +7,29 @@ export const About = component$(() => {
   useStyles$(styles);
 
   return (
-    <section class="about-us" id="about">
-      <h2>About Ksamil</h2>
-      <div aria-label="Cards about Ksamil" class="about-us__about-cards">
+    <section
+      role="region"
+      aria-labelledby="about-heading"
+      class="about-us"
+      id="about"
+      itemScope
+      itemProp="hasPart"
+      itemType="https://schema.org/ItemList"
+    >
+      <h2 itemProp="name">About Ksamil</h2>
+      <div
+        aria-label="Essential facts about Ksamil's history and attractions"
+        class="about-us__about-cards"
+        itemProp="itemListElement"
+        itemScope
+        itemType="https://schema.org/ItemList"
+      >
         <AboutCards />
       </div>
       <div
         aria-label="About Ksamil last paragraph"
         class="about-us__last-message"
+        itemProp="description"
       >
         <h3>You are welcomed!</h3>
         <p>

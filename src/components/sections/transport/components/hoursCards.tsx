@@ -68,14 +68,17 @@ export const HoursCards = component$(() => {
 
   return (
     <div
-      aria-label="hours cards container"
       class="transportation__hours-container"
+      role="region"
+      aria-labelledby="schedule-heading"
     >
       <h3>Hours</h3>
 
       <div
         aria-label="hours cards wrapper"
         class="transportation__hours-container__cards-wrapper"
+        itemScope
+        itemType="https://schema.org/ItemList"
       >
         <HourCard
           city={placeholderData[0].city}

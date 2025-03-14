@@ -1,6 +1,6 @@
 import { $, component$, useSignal } from "@builder.io/qwik";
 
-import Logo from "../../../../public/logo.webp?jsx";
+import Logo from "../../../../public/logo.webp?url";
 import { addSubscription } from "~/api/subscription";
 
 export const Sections = component$(() => {
@@ -17,20 +17,38 @@ export const Sections = component$(() => {
 
   return (
     <div aria-label="Footer sections" class="footer-sections">
-      <div aria-label="Website info" class="footer-sections__website-info">
-        <Logo alt="Website logo" />
-        <h2>VisitKsamil</h2>
-        <p>
+      <div
+        aria-label="Website info"
+        class="footer-sections__website-info"
+        itemScope
+        itemType="https://schema.org/Organization"
+      >
+        <img
+          src={Logo}
+          alt="VisitKsamil Official Logo"
+          width={100}
+          height={100}
+        />
+        <h2 itemProp="name">VisitKsamil</h2>
+        <p itemProp="description">
           This is a website run by a resident of Ksamil. Its focus is to give
           you the information you need about Ksamil before planning a trip here.
           We plan to add more useful things and information’s to this website.{" "}
         </p>
       </div>
-      <div aria-label="Newsletter" class="footer-sections__newsletter">
+      <div
+        role="form"
+        aria-label="Newsletter subscription"
+        class="footer-sections__newsletter"
+      >
         <h3>Newsletter</h3>
         <p>Get the latest from this website by email!</p>
         <div aria-label="actions" class="footer-sections__newsletter__actions">
-          <div aria-label="Input with icon container" class="--input-icon">
+          <div
+            role="group"
+            aria-labelledby="newsletter-desc"
+            class="--input-icon"
+          >
             <i>
               <svg
                 aria-hidden="true"
@@ -54,16 +72,21 @@ export const Sections = component$(() => {
               type="email"
               placeholder={`example@mail.domain`}
               bind:value={email}
+              aria-required="true"
+              itemProp="email"
             />
           </div>
           <button
             class="--tex-icon-button"
             disabled={
               !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-                email.value
+                email.value,
               )
             }
             onClick$={handleSubmit}
+            itemProp="potentialAction"
+            itemScope
+            itemType="https://schema.org/SubscribeAction"
           >
             Subscribe
             <svg
@@ -98,6 +121,9 @@ export const Sections = component$(() => {
             window.location.href =
               "https://docs.google.com/forms/d/e/1FAIpQLSf9j6JL_vE-fpcTXBxN_F7cS9JXE30_l-SKNWaFfVKRvemFNA/viewform?usp=dialog";
           }}
+          itemProp="potentialAction"
+          itemScope
+          itemType="https://schema.org/ShareAction"
         >
           Leave My Story{" "}
           <svg
@@ -119,10 +145,15 @@ export const Sections = component$(() => {
           {/** Pencil Icon */}
         </button>
       </div>
-      <div aria-label="Contact" class="footer-sections__contact">
+      <div
+        aria-label="Contact"
+        class="footer-sections__contact"
+        itemScope
+        itemType="https://schema.org/PostalAddress"
+      >
         <h3>Contact</h3>
         <ul>
-          <li>
+          <li itemProp="telephone">
             <svg
               aria-hidden="true"
               fill="none"
@@ -142,7 +173,7 @@ export const Sections = component$(() => {
             {/** Phone icon */}
             +355 68 839 3968
           </li>
-          <li>
+          <li itemProp="addressLocality">
             <svg
               aria-hidden="true"
               fill="none"
@@ -167,7 +198,7 @@ export const Sections = component$(() => {
             {/** Location icon */}
             Ksamil
           </li>
-          <li>
+          <li itemProp="email">
             <svg
               aria-hidden="true"
               fill="none"

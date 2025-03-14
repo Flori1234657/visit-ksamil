@@ -10,12 +10,23 @@ export const CardsMap = component$(
   }) => {
     return (
       <div
-        aria-label="Cards map container"
         class="popular-attractions__buttons__cards-wrapper"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Ksamil's top attractions carousel"
       >
         {state.cards.map((card, index) => (
           <div
-            aria-label="card"
+            role="group"
+            aria-roledescription="slide"
+            aria-label={
+              index === 1
+                ? `${card.title} - Current attraction`
+                : "Hidden attraction card"
+            }
+            itemScope
+            itemProp="itemListElement"
+            itemType="https://schema.org/ListItem"
             class="popular-attractions__buttons__cards-wrapper__card"
             key={card.id}
             onClick$={() => {
@@ -24,7 +35,8 @@ export const CardsMap = component$(
           >
             <img
               src={card.imageUrl}
-              alt={card.title}
+              alt={`View of ${card.title} in Ksamil, Albania`}
+              itemProp="image"
               title={card.description}
               loading="lazy"
               decoding="async"
@@ -35,9 +47,15 @@ export const CardsMap = component$(
               aria-label="content wrapper"
               class="popular-attractions__buttons__cards-wrapper__card__content"
             >
-              <h3>{card.title}</h3>
-              <button class="--tex-icon-button --sm">
-                <a href={card.locationUrl} target="_blank">
+              <h3 itemProp="name">{card.title}</h3>
+              <button itemProp="description" class="--tex-icon-button --sm">
+                <a
+                  href={card.locationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  itemProp="hasMap"
+                  aria-label={`Open ${card.title} location in Google Maps`}
+                >
                   View on Map
                 </a>
                 <svg
@@ -59,9 +77,34 @@ export const CardsMap = component$(
                 {/** Arrow box icon */}
               </button>
             </div>
+            {/* <meta itemProp="geo" content={`${card.coordinates.lat};${card.coordinates.lng}`} />
+        <meta itemProp="address" content="Ksamil, Albania" /> */}
+            <meta itemProp="position" content={`${index + 1}`} />
+
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                itemListElement: state.cards.map((card, index) => ({
+                  "@type": "ListItem",
+                  position: index + 1,
+                  item: {
+                    "@type": "TouristAttraction",
+                    name: card.title,
+                    url: `https://www.visitksamil.info/attractions/${card.id}`,
+                    image: card.imageUrl,
+                    // "geo": {
+                    //   "@type": "GeoCoordinates",
+                    //   "latitude": card.coordinates.lat,
+                    //   "longitude": card.coordinates.lng
+                    // }
+                  },
+                })),
+              })}
+            </script>
           </div>
         ))}
       </div>
     );
-  }
+  },
 );

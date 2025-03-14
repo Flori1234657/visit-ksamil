@@ -4,10 +4,15 @@ import type { QRL } from "@builder.io/qwik";
 export const Buttons = component$(
   (state: { cardChange: QRL<(index: number) => void> }) => {
     return (
-      <div class="popular-attractions__buttons">
+      <div
+        class="popular-attractions__buttons"
+        role="navigation"
+        aria-label="Attractions carousel controls"
+      >
         <button
           class="--icon-button --color-secondary"
           onClick$={() => state.cardChange(0)}
+          aria-label="Previous attraction"
         >
           <svg
             aria-hidden="true"
@@ -31,6 +36,7 @@ export const Buttons = component$(
         <button
           class="--icon-button --color-secondary"
           onClick$={() => state.cardChange(2)}
+          aria-label="Next attraction"
         >
           <svg
             aria-hidden="true"
@@ -52,5 +58,5 @@ export const Buttons = component$(
         </button>
       </div>
     );
-  }
+  },
 );

@@ -24,8 +24,14 @@ export const WhatToDo = component$(
     });
 
     return (
-      <section class="what-to-do" id="what-to-do">
-        <h2>What to do?</h2>
+      <section
+        class="what-to-do"
+        id="what-to-do"
+        itemScope
+        itemProp="hasPart"
+        itemType="https://schema.org/ItemList"
+      >
+        <h2 itemProp="name">What to do?</h2>
 
         <Resource
           value={newArticles}
@@ -54,6 +60,7 @@ export const WhatToDo = component$(
 
         <button
           class="--tex-icon-button --color-secondary"
+          aria-label="View next activity recommendation"
           onClick$={() => handleChangeCard(1)}
         >
           <svg

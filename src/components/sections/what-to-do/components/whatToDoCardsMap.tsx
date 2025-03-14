@@ -11,10 +11,15 @@ export const WhatToDoCardsMap = component$(
     handleChange: QRL<(index: number) => void>;
   }) => {
     return (
-      <div aria-label="What to do cards map" class="what-to-do__cards-map">
+      <div
+        aria-label="Ksamil activity recommendations carousel"
+        class="what-to-do__cards-map"
+        role="region"
+        aria-roledescription="carousel"
+      >
         <img
           src={Blob}
-          alt="Blob illustration"
+          alt="Decorative pattern background"
           width={100}
           height={100}
           decoding="async"
@@ -33,6 +38,22 @@ export const WhatToDoCardsMap = component$(
             changeCard={state.handleChange}
           />
         ))}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: state.cards.map((card, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              item: {
+                "@type": "Article",
+                name: card.title,
+                url: `https://www.visitksamil.info/what-to-do/${card.id}`,
+                image: card.imageUrl,
+              },
+            })),
+          })}
+        </script>
       </div>
     );
   },

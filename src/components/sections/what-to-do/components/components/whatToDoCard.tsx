@@ -27,33 +27,43 @@ export const WhatToDoCard = component$(
     return show ? (
       <div
         key={`what-to-do-card-div${id}`}
-        aria-label="What to to card"
+        role="group"
+        aria-roledescription="slide"
+        aria-label={`${title} - Current activity`}
         class="what-to-do__cards-map__card --visible"
+        itemScope
+        itemProp="item"
+        itemType="https://schema.org/Article"
       >
         {/* eslint-disable qwik/jsx-img  */}
         <img
           src={imagePath}
-          alt={title}
+          alt={`${title} activity in Ksamil, Albania`}
           loading="lazy"
           decoding="async"
           width={100}
           height={60}
+          itemProp="image"
         />
         <div
           aria-label="Text and button container"
           class="what-to-do__cards-map__card__text-button --visible"
+          itemScope
+          itemProp="mainEntity"
+          itemType="https://schema.org/CreativeWork"
         >
           <div
             aria-label="Text"
             class="what-to-do__cards-map__card__text-button__text-container"
           >
-            <h3>{title}</h3>
-            <p>{shortDescription}</p>
+            <h3 itemProp="headline">{title}</h3>
+            <p itemProp="description">{shortDescription}</p>
           </div>
 
           <button
             onClick$={() => navigate(`/what-to-do/${id}`)}
             class="--tex-icon-button --sm"
+            aria-label={`Read more about ${title}`}
           >
             Discover{" "}
             <svg

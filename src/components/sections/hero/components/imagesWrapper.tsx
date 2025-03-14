@@ -35,8 +35,10 @@ export const ImagesWrapper = component$(() => {
 
   return (
     <div
-      aria-label="Main section images container"
+      aria-label="Ksamil attractions gallery"
       class={`hero-section__images-card${!animate.value ? " --box-shadow" : ""}`}
+      itemScope
+      itemType="https://schema.org/ImageGallery"
     >
       {visibleImages.value.map((image, index) => (
         <img
@@ -44,7 +46,7 @@ export const ImagesWrapper = component$(() => {
           decoding="async"
           loading="lazy"
           src={`/images/pages/hero/carousel/${image.url}.webp`}
-          alt={image.alt}
+          alt={`${image.alt} in Ksamil, Albania`}
           title={image.title}
           class={animate.value ? "animate" : ""}
         />

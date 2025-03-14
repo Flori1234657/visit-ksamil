@@ -4,9 +4,18 @@ export const MobileNavigationButton = component$(
   ({ showNavigation }: { showNavigation: Signal<boolean> }) => {
     return (
       <button
-        aria-label="Navigation toggle"
         class={`nav-logo-lang-container__nav-button --icon-button ${showNavigation.value ? "--color-secondary --rounded --md" : ""}`}
         onClick$={() => (showNavigation.value = !showNavigation.value)}
+        aria-label={
+          showNavigation.value
+            ? "Close navigation menu"
+            : "Open navigation menu"
+        }
+        aria-controls="mobile-menu"
+        aria-expanded={showNavigation.value}
+        itemProp="potentialAction"
+        itemScope
+        itemType="https://schema.org/Action"
       >
         {showNavigation.value ? (
           <svg
@@ -43,7 +52,8 @@ export const MobileNavigationButton = component$(
             ></path>
           </svg> // 3 bars Icon
         )}
+        <meta itemProp="name" content="Toggle Navigation Menu" />
       </button>
     );
-  }
+  },
 );

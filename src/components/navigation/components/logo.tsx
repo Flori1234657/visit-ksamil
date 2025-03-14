@@ -7,8 +7,12 @@ export const Logo = component$(() => {
 
   return (
     <div class="nav-logo-lang-container__logo" onClick$={() => navigate("/")}>
-      <Image style={{ width: "2rem", height: "2rem" }} alt="Logo" />
-      <h4>VisitKsamil</h4>
+      <Image
+        style={{ width: "2rem", height: "2rem" }}
+        alt="VisitKsamil Logo"
+        itemProp="logo"
+      />
+      <h4 itemProp="name">VisitKsamil</h4>
     </div>
   );
 });

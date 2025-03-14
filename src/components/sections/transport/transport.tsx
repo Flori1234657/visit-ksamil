@@ -22,33 +22,34 @@ export const Transport = component$(() => {
   });
 
   return (
-    <section class="transportation" id="transport">
-      <h2>Transportation</h2>
+    <section
+      class="transportation"
+      id="transport"
+      itemScope
+      itemProp="hasPart"
+      itemType="https://schema.org/ItemList"
+    >
+      <h2 itemProp="name">Transportation</h2>
 
-      {isMobile.value ? (
-        <img
-          src={ImageMb}
-          alt="Destinations image"
-          width={100}
-          height={100}
-          decoding="async"
-          loading="lazy"
-        />
-      ) : (
-        <img
-          src={ImagePc}
-          alt="Destinations image"
-          width={100}
-          height={100}
-          decoding="async"
-          loading="lazy"
-        />
-      )}
+      <img
+        src={isMobile.value ? ImageMb : ImagePc}
+        alt="Transportation routes between Ksamil, Saranda, and Butrint"
+        width={100}
+        height={100}
+        decoding="async"
+        loading="lazy"
+        itemProp="image"
+      />
 
-      <div aria-label="Information text" class="transportation__info-txt">
+      <div
+        aria-label="Information text"
+        class="transportation__info-txt"
+        itemProp="description"
+      >
         <img
           src={Blob}
-          alt="Blob illustration"
+          alt="Decorative background element"
+          role="presentation"
           width={100}
           height={100}
           decoding="async"

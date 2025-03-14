@@ -9,7 +9,13 @@ export const InteractiveMap = component$(() => {
   useStyles$(styles);
 
   return (
-    <section class="interactive-map" id="interactive-map">
+    <section
+      class="interactive-map"
+      id="interactive-map"
+      itemScope
+      itemProp="hasPart"
+      itemType="https://schema.org/Map"
+    >
       <img
         src={ImageIllustration}
         alt="Illustration"
@@ -17,23 +23,30 @@ export const InteractiveMap = component$(() => {
         height={100}
         decoding="async"
         loading="lazy"
+        itemProp="image"
       />
 
-      <div aria-label="content" class="interactive-map__content">
-        <h2>Interactive Map</h2>
+      <div
+        aria-label="content"
+        class="interactive-map__content"
+        itemProp="mainContent"
+      >
+        <h2 itemProp="name">Interactive Map</h2>
         <div
-          aria-label="Text content"
           class="interactive-map__content__text-button"
+          role="region"
+          aria-labelledby="map-description"
         >
-          <p>
+          <p itemProp="description">
             We have made it easy for you, adding an interactive map where you
             can find different places in Ksamil, also view their images!
           </p>
           <button
             class="--tex-icon-button --color-secondary"
             onClick$={() => alert("Map is under development!")}
+            aria-label="Open Ksamil interactive map in full screen"
           >
-            Enter on the Map{" "}
+            Enter on the Map
             <svg
               aria-hidden="true"
               fill="none"
@@ -62,6 +75,7 @@ export const InteractiveMap = component$(() => {
         height={100}
         decoding="async"
         loading="lazy"
+        itemProp="image"
       />
     </section>
   );

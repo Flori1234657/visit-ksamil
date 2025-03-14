@@ -28,11 +28,17 @@ export const PopularAttractions = component$(({ firstAttractions }: Props) => {
   });
 
   return (
-    <section class="popular-attractions" id="popular-attractions">
-      <h2>Popular attractions</h2>
+    <section
+      class="popular-attractions"
+      id="popular-attractions"
+      itemScope
+      itemProp="hasPart"
+      itemType="https://schema.org/ItemList"
+    >
+      <h2 itemProp="name">Popular attractions</h2>
       <img
         src={Blob}
-        alt="Blob illustration"
+        alt="Decorative background pattern"
         width={100}
         height={100}
         decoding="async"

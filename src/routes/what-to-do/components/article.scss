@@ -6,7 +6,7 @@ article {
   @include mixins.flex-column;
   gap: 0.5rem;
 
-  h2 {
+  h1 {
     @include mixins.font(
       Poppins,
       1.425rem,
@@ -45,7 +45,7 @@ article {
     gap: 0.469rem;
     order: 2;
 
-    h2 {
+    h1 {
       font-size: 1.201rem;
     }
 
@@ -64,7 +64,7 @@ article {
   article {
     max-width: 41.25rem;
     gap: 0.624rem;
-    h2 {
+    h1 {
       font-size: 1.6rem;
     }
 

@@ -44,7 +44,7 @@ export const Navigation = component$(() => {
       >
         <Logo />
 
-        {showNavigation.value && <MobileWave />}
+        {showNavigation.value && <MobileWave aria-hidden="true" />}
 
         <NavigationLinksMap
           handleCloseNavigationMobile={handleCloseNavigationMobile}
