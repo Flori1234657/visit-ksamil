@@ -16,3 +16,4 @@ Allow: /*.svg$
 Allow: /*.webp$
 
 # Link to your sitemap (important for SEO!)
+Sitemap: https://www.visitksamil.info/sitemap.xml
