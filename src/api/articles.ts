@@ -19,10 +19,10 @@ export const fetchArticles = async (otherQueries?: string) => {
   }
 };
 
-export const fetchArticle = async (id: string) => {
+export const fetchArticle = async (slug: string) => {
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}articles/${id}`,
+      `${import.meta.env.VITE_API_URL}articles/${slug}`,
     );
 
     if (!response.ok) {

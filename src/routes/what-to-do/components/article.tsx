@@ -5,12 +5,6 @@ import type { Articles } from "~/types/api";
 export default component$(({ data }: { data: Articles }) => {
   useStyles$(styles);
 
-  // Generate SEO-friendly slug from title
-  // const slug = data.title
-  //   .toLowerCase()
-  //   .replace(/[^\w\s]/gi, "")
-  //   .replace(/\s+/g, "-");
-
   return (
     <article itemScope itemType="https://schema.org/Article">
       <h1 itemProp="headline">{data.title}</h1>
@@ -33,10 +27,10 @@ export default component$(({ data }: { data: Articles }) => {
           name: "Things to Do in Ksamil",
           description:
             "Discover the best activities and attractions in Ksamil, Albania.",
-          url: `https://www.visitksamil.info/what-to-do/${data.id}`, // repleace with slug
+          url: `https://www.visitksamil.info/what-to-do/${data.slug}`, // repleace with slug
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://www.visitksamil.info/what-to-do/${data.id}`,
+            "@id": `https://www.visitksamil.info/what-to-do/${data.slug}`,
           },
           image: {
             "@type": "ImageObject",
@@ -95,14 +89,8 @@ export default component$(({ data }: { data: Articles }) => {
             {
               "@type": "ListItem",
               position: 2,
-              name: "What to Do",
-              item: "https://www.visitksamil.info/what-to-do",
-            },
-            {
-              "@type": "ListItem",
-              position: 3,
               name: data.title,
-              item: `https://www.visitksamil.info/what-to-do/${data.id}`,
+              item: `https://www.visitksamil.info/what-to-do/${data.slug}`,
             },
           ],
         })}

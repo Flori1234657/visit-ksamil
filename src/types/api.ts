@@ -2,6 +2,7 @@ export type Articles = {
   id: string;
   description: string;
   title: string;
+  slug: string;
   shortDescription: string;
   imageUrl: string;
   createdAt: {

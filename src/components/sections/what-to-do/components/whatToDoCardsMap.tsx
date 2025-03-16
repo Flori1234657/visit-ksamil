@@ -29,7 +29,7 @@ export const WhatToDoCardsMap = component$(
         {state.cards.map((card, index) => (
           <WhatToDoCard
             shortDescription={card.shortDescription}
-            id={card.id}
+            slug={card.slug}
             imagePath={card.imageUrl}
             title={card.title}
             key={card.id}
@@ -43,14 +43,19 @@ export const WhatToDoCardsMap = component$(
           dangerouslySetInnerHTML={JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
+            name: "Top Things to Do in Ksamil",
+            description:
+              "Discover boat tours, diving, historical sites, and more in Ksamil, Albania",
             itemListElement: state.cards.map((card, index) => ({
               "@type": "ListItem",
               position: index + 1,
               item: {
                 "@type": "Article",
                 name: card.title,
-                url: `https://www.visitksamil.info/what-to-do/${card.id}`,
+                url: `https://www.visitksamil.info/what-to-do/${card.slug}`,
                 image: card.imageUrl,
+                description: card.shortDescription,
+                dateModified: card.createdAt,
               },
             })),
           })}

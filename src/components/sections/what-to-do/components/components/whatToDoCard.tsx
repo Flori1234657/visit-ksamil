@@ -3,7 +3,7 @@ import type { QRL } from "@builder.io/qwik";
 import { useNavigate } from "@builder.io/qwik-city";
 
 interface Props {
-  id: string;
+  slug: string;
   imagePath: string;
   title: string;
   shortDescription: string;
@@ -15,7 +15,7 @@ interface Props {
 export const WhatToDoCard = component$(
   ({
     shortDescription,
-    id,
+    slug,
     imagePath,
     title,
     show,
@@ -26,7 +26,7 @@ export const WhatToDoCard = component$(
 
     return show ? (
       <div
-        key={`what-to-do-card-div${id}`}
+        key={`what-to-do-card-div${slug}`}
         role="group"
         aria-roledescription="slide"
         aria-label={`${title} - Current activity`}
@@ -61,7 +61,7 @@ export const WhatToDoCard = component$(
           </div>
 
           <button
-            onClick$={() => navigate(`/what-to-do/${id}`)}
+            onClick$={() => navigate(`/what-to-do/${slug}`)}
             class="--tex-icon-button --sm"
             aria-label={`Read more about ${title}`}
           >

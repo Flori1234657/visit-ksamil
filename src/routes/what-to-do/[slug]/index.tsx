@@ -22,7 +22,7 @@ export default component$(() => {
     const controller = new AbortController();
     cleanup(() => controller.abort());
 
-    const response = await fetchArticle(location.params.id);
+    const response = await fetchArticle(location.params.slug);
     if (!response) return null;
 
     return response;
@@ -86,32 +86,6 @@ export const head: DocumentHead = {
     {
       name: "robots",
       content: "index, follow",
-    },
-    {
-      property: "og:title",
-      content: "What to Do in Ksamil? Best Activities & Attractions (2025)",
-    },
-    {
-      property: "og:description",
-      content:
-        "Find out the top activities and attractions in Ksamil, Albania! From crystal-clear beaches to historical sites, here’s what to do in Ksamil.",
-    },
-    {
-      property: "og:url",
-      content: "https://www.visitksamil.info/what-to-do/{id}",
-    },
-    {
-      name: "twitter:card",
-      content: "summary_large_image",
-    },
-    {
-      name: "twitter:title",
-      content: "What to Do in Ksamil? Best Activities & Attractions (2024)",
-    },
-    {
-      name: "twitter:description",
-      content:
-        "Find the best activities and attractions in Ksamil, Albania, including beaches, boat tours, and nature spots.",
     },
   ],
 };

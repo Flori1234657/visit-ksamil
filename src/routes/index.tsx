@@ -82,12 +82,6 @@ export default component$(() => {
               name: "Home",
               item: "https://www.visitksamil.info",
             },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: "What to Do",
-              item: "https://www.visitksamil.info/what-to-do",
-            },
           ],
         })}
       />
