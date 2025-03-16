@@ -59,9 +59,7 @@
     "undici": "*",
     "vercel": "^29.1.1",
     "vite": "^5.1.6",
-    "vite-tsconfig-paths": "^4.2.1"
-  },
-  "dependencies": {
-    "zwitch": "^2.0.0"
+    "vite-tsconfig-paths": "^4.2.1",
+    "zwitch": "^2.0.4"
   }
 }
