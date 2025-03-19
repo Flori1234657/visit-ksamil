@@ -38,8 +38,8 @@ export const InteractiveMap = component$(() => {
           aria-labelledby="map-description"
         >
           <p itemProp="description">
-            We have made it easy for you, adding an interactive map where you
-            can find different places in Ksamil, also view their images!
+            Discover Ksamil's Hidden Gems. Use our travel map to locate all
+            beaches, and top attractions along the Ksamil coastline .
           </p>
           <button
             class="--tex-icon-button --color-secondary"

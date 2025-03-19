@@ -22,13 +22,13 @@ export const Hero = component$(() => {
         aria-label="VisitKsamil introduction and contact button"
       >
         <h1 itemProp="headline">
-          Uncover the Beauty of <span>Ksamil</span>: Your Essential Guide Starts
-          Here
+          Discover Ksamil: <span>Albanian Riviera's</span> with Crystal-Clear
+          Waters
         </h1>
         <p itemProp="description">
-          Welcome to VisitKsamil, your gateway to the stunning beaches of this
-          hidden gem in Albania. Dive into our interactive map, and plan your
-          perfect getaway
+          Your complete guide to Albania's best beaches near Saranda. Explore
+          UNESCO-listed Butrint National Park, pristine Ionian Sea coves, and
+          the stunning Albanian coastline.
         </p>
         <a
           href="tel:+355688393968"

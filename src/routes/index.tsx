@@ -31,10 +31,10 @@ export default component$(() => {
         dangerouslySetInnerHTML={JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Visit Ksamil",
+          name: "Visit Ksamil - Albanian Riviera Travel Guide",
           url: "https://www.visitksamil.info",
           description:
-            "Discover the best attractions, activities, and transport options in Ksamil, Albania.",
+            "Official travel guide to Ksamil, Albania - featuring the best beaches on the Albanian Riviera, top attractions near Saranda, and UNESCO World Heritage sites. Your complete resource for planning an Albania beach holiday.",
           image: [
             "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708402/ksamil-islands_iuaaxg.jpg",
             "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-crystal-clear-water_d5xskg.jpg",
@@ -44,7 +44,7 @@ export default component$(() => {
             "@type": "City",
             name: "Ksamil",
             description:
-              "Coastal village in southern Albania known for beautiful beaches and clear waters",
+              "Ksamil, Albania - A premier beach destination on the Albanian Riviera, famous for its rocky and white sand beaches, crystal-clear Ionian Sea waters, and proximity to Butrint National Park, a UNESCO World Heritage Site.",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Ksamil",
@@ -90,17 +90,17 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Visit Ksamil Albania 2025 | Beaches, Attractions & Travel Guide",
+  title: "Ksamil Albania: Beaches & Albanian Riviera Travel Guide 2025",
   meta: [
     {
       name: "description",
       content:
-        "Plan your trip to Ksamil, Albania! Discover top attractions, must-see places, transport options, things to do, and local travel tips for 2025.",
+        "Discover Ksamil's pristine beaches on the Albanian Riviera. Your complete guide to top attractions, best beaches in Albania, and travel tips for your perfect Mediterranean holiday.",
     },
     {
       name: "keywords",
       content:
-        "Ksamil, Albania, Ksamil beaches, travel, tourism, beaches, attractions, best places to visit, Ksamil hotels, Ksamil transport, Albanian Riviera",
+        "ksamil albania, albanian riviera, best beaches in albania, saranda albania, ksamil beaches, albania beach resorts, things to do in albania, albania travel guide, albania holiday destinations",
     },
     {
       name: "robots",
@@ -116,12 +116,13 @@ export const head: DocumentHead = {
     },
     {
       property: "og:title",
-      content: "Visit Ksamil - Explore Albania’s Hidden Gem",
+      content:
+        "Ksamil Albania: Beaches & Albanian Riviera Travel Guide | Visit Ksamil",
     },
     {
       property: "og:description",
       content:
-        "Find the best activities, attractions, and transportation options for visiting Ksamil, Albania.",
+        "Plan your perfect beach holiday in Ksamil, Albania. Discover the best beaches on the Albanian Riviera, top attractions, and essential travel tips for 2025.",
     },
     {
       property: "og:image",
@@ -138,12 +139,12 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:title",
-      content: "Visit Ksamil - Explore Albania’s Hidden Gem",
+      content: "Ksamil Albania: Albanian Riviera's Best Beaches & Travel Tips",
     },
     {
       name: "twitter:description",
       content:
-        "Plan your trip to Ksamil, Albania! Discover top attractions, transport options, and must-visit places.",
+        "Your complete guide to Ksamil - Albania's hidden gem with crystal-clear waters, best beaches, and UNESCO World Heritage sites. Plan your 2025 trip now!",
     },
     {
       name: "twitter:image",

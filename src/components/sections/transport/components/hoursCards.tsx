@@ -18,6 +18,8 @@ export const HoursCards = component$(() => {
         "15 : 30",
         "16 : 30",
       ],
+      lat: "39.8746",
+      long: "20.0071",
     },
     {
       city: "Ksamil",
@@ -47,6 +49,8 @@ export const HoursCards = component$(() => {
         "16 : 45",
         "17 : 45",
       ],
+      lat: "39.7683",
+      long: "19.9997",
     },
     {
       city: "Butrint",
@@ -63,6 +67,8 @@ export const HoursCards = component$(() => {
         "16 : 30",
         "17 : 30",
       ],
+      lat: "39.7440",
+      long: "20.0195",
     },
   ];
 

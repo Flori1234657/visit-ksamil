@@ -5,10 +5,12 @@ interface Props {
   hours?: string[];
   butrintHours?: string[];
   sarandaHours?: string[];
+  lat: string;
+  long: string;
 }
 
 export const HourCard = component$(
-  ({ city, hours, butrintHours, sarandaHours }: Props) => {
+  ({ city, hours, butrintHours, sarandaHours, lat, long }: Props) => {
     const showHours = useSignal(false);
 
     return (
@@ -28,44 +30,94 @@ export const HourCard = component$(
           class={
             "transportation__hours-container__cards-wrapper__hour-card__hours"
           }
+          itemProp="schedule"
+          itemScope
+          itemType="https://schema.org/Schedule"
         >
           {city === "Ksamil" ? (
             <>
-              <ul>
-                <li>To Butrint</li>
+              <ul
+                itemProp="event"
+                itemScope
+                itemType="https://schema.org/Event"
+              >
+                <li itemProp="name">To Butrint</li>
                 {butrintHours?.map((hours) => (
                   <li
                     key={hours}
-                    itemProp="departureTime"
+                    itemProp="subEvent"
                     itemScope
                     itemType="https://schema.org/BusTrip"
                   >
+                    <div hidden>
+                      <meta
+                        itemProp="provider"
+                        itemType="https://schema.org/Organization"
+                        content="Albanian Private Bus Services"
+                      />
+                      <meta
+                        itemProp="departureStation"
+                        content={`${city} Bus Station`}
+                      />
+                      <meta
+                        itemProp="arrivalStation"
+                        content="Butrint National Park"
+                      />
+                    </div>
                     <time
                       dateTime={`T${hours.replace(" ", "")}`}
-                      itemProp="departureTime"
+                      itemProp="startTime"
                     >
                       {hours}
                     </time>
                     <meta itemProp="name" content="Butrint Route" />
+                    <meta
+                      itemProp="offers"
+                      itemType="https://schema.org/Offer"
+                      content="Price: 50 ALL"
+                    />
                   </li>
                 ))}
               </ul>
-              <ul>
-                <li>To Saranda</li>
+              <ul
+                itemProp="event"
+                itemScope
+                itemType="https://schema.org/Event"
+              >
+                <li itemProp="name">To Saranda</li>
                 {sarandaHours?.map((hours) => (
                   <li
                     key={hours}
-                    itemProp="departureTime"
+                    itemProp="subEvent"
                     itemScope
                     itemType="https://schema.org/BusTrip"
                   >
+                    <div hidden>
+                      <meta
+                        itemProp="provider"
+                        content="Albanian Private Bus Services"
+                      />
+                      <meta
+                        itemProp="departureStation"
+                        content={`${city} Bus Stop`}
+                      />
+                      <meta
+                        itemProp="arrivalStation"
+                        content="Saranda Bus Stop"
+                      />
+                    </div>
                     <time
                       dateTime={`T${hours.replace(" ", "")}`}
-                      itemProp="departureTime"
+                      itemProp="startTime"
                     >
                       {hours}
                     </time>
                     <meta itemProp="name" content="Saranda Route" />
+                    <meta
+                      itemProp="offers"
+                      itemType="https://schema.org/Offer"
+                      content="Price: 150 ALL"
+                    />
                   </li>
                 ))}
               </ul>
@@ -73,12 +125,54 @@ export const HourCard = component$(
           ) : (
             <ul role="list" itemProp="schedule">
               {hours?.map((hour) => (
-                <li key={hour} itemProp="departureTime">
-                  <time dateTime={`T${hour.replace(" ", "")}`}>{hour}</time>
+                <li
+                  key={hour}
+                  itemProp="event"
+                  itemScope
+                  itemType="https://schema.org/BusTrip"
+                >
+                  <div hidden>
+                    <meta
+                      itemProp="departureStation"
+                      content={`${city} Station`}
+                    />
+                    <meta
+                      itemProp="arrivalStation"
+                      content="Ksamil Bust Stop's"
+                    />
+                  </div>
+                  <time
+                    dateTime={`T${hour.replace(" ", "")}`}
+                    itemProp="startTime"
+                  >
+                    {hour}
+                  </time>
                 </li>
               ))}
             </ul>
           )}
+        </div>
+
+        {/* Add price information for rich snippets */}
+        <div hidden>
+          <meta itemProp="price" content="50 - 200" />
+          <meta itemProp="priceCurrency" content="ALL" />
+          <meta itemProp="availableAtOrFrom" content={`${city} Bus Terminal`} />
+          <div
+            itemProp="location"
+            itemScope
+            itemType="https://schema.org/Place"
+          >
+            <meta itemProp="name" content={`${city} Bus Station`} />
+            <div
+              itemProp="geo"
+              itemScope
+              itemType="https://schema.org/GeoCoordinates"
+            >
+              <meta itemProp="latitude" content={lat} />
+              <meta itemProp="longitude" content={long} />
+            </div>
+          </div>
         </div>
 
         <button

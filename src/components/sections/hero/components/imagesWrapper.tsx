@@ -46,9 +46,10 @@ export const ImagesWrapper = component$(() => {
           decoding="async"
           loading="lazy"
           src={`/images/pages/hero/carousel/${image.url}.webp`}
-          alt={`${image.alt} in Ksamil, Albania`}
+          alt={image.alt}
           title={image.title}
           class={animate.value ? "animate" : ""}
+          itemProp="image"
         />
       ))}
     </div>
