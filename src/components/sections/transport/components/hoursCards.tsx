@@ -89,15 +89,21 @@ export const HoursCards = component$(() => {
         <HourCard
           city={placeholderData[0].city}
           hours={placeholderData[0].hours}
+          lat={placeholderData[0].lat}
+          long={placeholderData[0].long}
         />
         <HourCard
           city={placeholderData[1].city}
           butrintHours={placeholderData[1].butrintiHours}
           sarandaHours={placeholderData[1].sarandaHours}
+          lat={placeholderData[1].lat}
+          long={placeholderData[1].long}
         />
         <HourCard
           city={placeholderData[2].city}
           hours={placeholderData[2].hours}
+          lat={placeholderData[2].lat}
+          long={placeholderData[2].long}
         />
       </div>
     </div>
