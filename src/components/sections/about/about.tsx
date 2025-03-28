@@ -31,26 +31,12 @@ export const About = component$(() => {
         class="about-us__last-message"
         itemProp="description"
       >
-        <h3>You are welcomed in Ksamil!</h3>
+        <h3>Welcome to Ksamil, Albania!</h3>
         <p itemProp="text">
-          Discover the <strong>best beaches in Albania</strong> along the
-          <span
-            itemProp="containsPlace"
-            itemScope
-            itemType="https://schema.org/Beach"
-          >
-            <span itemProp="name"> Albanian Riviera coastline</span>
-          </span>
-          . Just 14km south of{" "}
-          <span itemProp="containedInPlace" itemType="https://schema.org/City">
-            Saranda
-          </span>
-          , Ksamil offers <strong>family-friendly beach resorts</strong> with
-          <span itemProp="amenityFeature">
-            {" "}
-            crystal-clear Ionian Sea waters
-          </span>
-          .
+          Discover Ksamil – a coastal gem renowned for its{" "}
+          <strong>pristine Ksamil beaches</strong> and enchanting islands. This
+          charming destination offers family-friendly resorts, hidden coves, and
+          crystal-clear Ionian Sea waters.
         </p>
       </div>
     </section>

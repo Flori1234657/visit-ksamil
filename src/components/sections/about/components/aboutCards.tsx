@@ -10,28 +10,28 @@ export const AboutCards = component$(() => {
     {
       title: "History",
       description:
-        "Founded in 1966 during Albania's communist era, now into a premier destination on the Albanian Riviera. Located just 14km south of Saranda along the route to UNESCO-listed Butrint National Park, this coastal village combines rich history with Mediterranean charm.",
+        "Founded in 1966, Ksamil Albania transformed from a communist-era settlement to the Albanian Riviera premier destination. Located 14km south of Saranda along the route to UNESCO-listed Butrint National Park, Ksamil blends historical intrigue with Mediterranean charm.",
       image: HistoryImg,
       class: "history",
     },
     {
       title: "Beauty",
       description:
-        "Experience Albania's best beaches along the Ionian Sea. The Ksamil Islands' Caribbean-like turquoise waters and secluded coves make this Albanian Riviera gem a top alternative to crowded Mediterranean destinations. Discover the main beaches with Blue Flag potential.",
+        "Experience the breathtaking beauty of Ksamil, where four small islands dot the Ionian Sea turquoise waters. These Blue Flag-quality beaches offer secluded coves and Caribbean-like clarity, making Ksamil Albania's top alternative to crowded Greek island destinations.",
       image: BeautyImg,
       class: "beauty --left",
     },
     {
       title: "Crystal clear waters",
       description:
-        "Swim in Ksamil's azure waters - ranked among Europe's clearest. Safe for families with small children, these shallow bays near Saranda offer perfect conditions for snorkeling and beach holidays in Albania's southern coast.",
+        "Dive into the crystal-clear, azure waters of Ksamil, Albania—renowned for its safe, family-friendly bays and ideal snorkeling spots. These inviting, shallow waters near Saranda promise an unforgettable beach holiday experience.",
       image: ClearWatersImg,
       class: "crystal--clear--waters",
     },
     {
       title: "To be discovered",
       description:
-        "As one of Europe's last hidden Mediterranean gems, Ksamil offers authentic Albanian tourism experiences. Voted 'Emerging Destination 2024' by Lonely Planet Albania, our coastal village combines untouched nature with developing beach resort amenities.",
+        "Uncover the unspoiled charm of Ksamil, Albania—one of Europe's hidden Mediterranean treasures. Celebrated as an emerging destination, Ksamil offers authentic local culture, pristine nature, and developing beach resort amenities for the discerning traveler.",
       image: DiscoverImg,
       class: "to--be--discovered --left",
     },

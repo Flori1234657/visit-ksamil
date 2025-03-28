@@ -1,33 +1,32 @@
 export const imagesData = [
   {
     url: "1",
-    alt: "Albanian Riviera beaches: Ksamil view of Corfu Island across Ionian Sea",
-    title:
-      "Corfu Island from Ksamil Albania - Best Beaches in Albanian Riviera",
+    alt: "Ksamil Albania coastline crystal-clear Ionian Sea with distant Corfu Island view",
+    title: "Ksamil Albania Beaches - Ionian Sea Views with Nearby Islands",
   },
   {
     url: "2",
     alt: "Private beach cove in Ksamil Albania with turquoise Mediterranean waters",
-    title: "Secluded Albanian Riviera Beach - Top Hidden Spot Near Saranda",
+    title: "Hidden Ksamil Beach - Top Hidden Spot Near Saranda",
   },
   {
     url: "3",
-    alt: "Rocky coastline at Ksamil Albania western point - Albanian coastline landmarks",
-    title: "Ksamil's Westernmost Point - Unique Albanian Coastline Feature",
+    alt: "Rocky coastline of Ksamil Albania with view towards Ksamil Islands",
+    title: "Ksamil Albania Coastal Landscape",
   },
   {
     url: "4",
     alt: "Natural sandy beach in southern Ksamil, Albania, perfect for relaxation",
-    title: "Natural Sandy Beach Albania - Perfect Ksamil Family Vacation Spot",
+    title: "Natural Sandy Beach - Perfect Ksamil Family Vacation Spot",
   },
   {
     url: "5",
-    alt: "Natural swimming pool Ksamil Albania - Safe coastal rock formations Albanian Riviera",
-    title: "Rock Pool Swimming Albania - Ksamil's Natural Ionian Sea Pools",
+    alt: "Natural swimming pool Ksamil Albania - Safe coastal rock formations",
+    title: "Ksamil's Natural Swimming Pools - Safe Ionian Sea Bathing Areas",
   },
   {
     url: "6",
-    alt: "Private swimming beach Ksamil Albania - Best secluded Albanian Riviera coves",
+    alt: "Private swimming beach Ksamil Albania with crystal-clear Mediterranean waters",
     title: "Secret Ksamil Beach Albania - Hidden Mediterranean Swimming Spot",
   },
   {
@@ -37,12 +36,12 @@ export const imagesData = [
   },
   {
     url: "8",
-    alt: "Green coastline Ksamil Albania - Lush Mediterranean vegetation Albanian beaches",
-    title: "Tropical Albanian Riviera Coast - Ksamil's Unique Beach Landscape",
+    alt: "Green coastline Ksamil Albania - Lush Mediterranean vegetation Ksamil beach",
+    title: "Tropical Ksamil Coast - Ksamil's Unique Beach Landscape",
   },
   {
     url: "9",
-    alt: "Scenic view of Ksamil Islands from rocky cliffs in Albania",
+    alt: "Scenic view of Ksamil Islands from rocky cliffs",
     title: "Ksamil Islands View from Cliffs - Top Ionian Sea Islands to Visit",
   },
   {
@@ -52,8 +51,8 @@ export const imagesData = [
   },
   {
     url: "11",
-    alt: "Wooden bridge Ksamil coastline - Albanian Riviera walking paths",
-    title: "Ksamil Coastal Walkway - Scenic Albanian Beach Access Point",
+    alt: "Wooden bridge Ksamil coastline",
+    title: "Ksamil Coastal Walkway - Scenic Ksamil Beach Access Point",
   },
   {
     url: "12",
@@ -62,17 +61,17 @@ export const imagesData = [
   },
   {
     url: "13",
-    alt: "Child-safe shallow waters Albania - Family beach vacation Ksamil",
+    alt: "Child-safe shallow waters Ksamil - Family beach Ksamil holidays",
     title: "Ksamil Family Beach Albania - Safe Swimming for Kids",
   },
   {
     url: "14",
-    alt: "Mountainous Albanian Riviera backdrop - Ksamil beach panorama",
-    title: "Albanian Mountains Meet Sea - Ksamil Coastal Landscape",
+    alt: "Mountainous backdrop behind Ksamil Albania beaches",
+    title: "Ksamil Albania Scenic Coastline - Mountains Meet Ionian Sea",
   },
   {
     url: "15",
-    alt: "Forest camping Albania - Ksamil nature tourism experiences",
-    title: "Ksamil Coastal Camping - Best Albanian Riviera Outdoor Stays",
+    alt: "Camping site near Ksamil Albania beaches with coastal views",
+    title: "Ksamil Coastal Camping - Outdoor Stays Ksamil Albania holidays",
   },
 ];

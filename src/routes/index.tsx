@@ -31,10 +31,10 @@ export default component$(() => {
         dangerouslySetInnerHTML={JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Visit Ksamil - Albanian Riviera Travel Guide",
+          name: "Ksamil Albania Travel Guide - Beaches, Islands & Holidays",
           url: "https://www.visitksamil.info",
           description:
-            "Official travel guide to Ksamil, Albania - featuring the best beaches on the Albanian Riviera, top attractions near Saranda, and UNESCO World Heritage sites. Your complete resource for planning an Albania beach holiday.",
+            "Official travel guide to Ksamil, Albania - offering comprehensive insights on its pristine beaches, enchanting islands, top attractions, and rich local heritage.",
           image: [
             "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708402/ksamil-islands_iuaaxg.jpg",
             "https://res.cloudinary.com/doy1hhgfw/image/upload/v1741708401/ksamil-crystal-clear-water_d5xskg.jpg",
@@ -44,7 +44,7 @@ export default component$(() => {
             "@type": "City",
             name: "Ksamil",
             description:
-              "Ksamil, Albania - A premier beach destination on the Albanian Riviera, famous for its rocky and white sand beaches, crystal-clear Ionian Sea waters, and proximity to Butrint National Park, a UNESCO World Heritage Site.",
+              "Ksamil, Albania - Premier beach destination famous for its four small islands, white pebble beaches, and UNESCO World Heritage neighbor Butrint National Park. Top choice for Albania beach holidays on the Ionian Coast.",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Ksamil",
@@ -56,6 +56,14 @@ export default component$(() => {
               latitude: 39.7683,
               longitude: 19.9997,
             },
+            containsPlace: [
+              { "@type": "Landform", name: "Ksamil Islands" },
+              { "@type": "Beach", name: "Ksamil Beach" },
+              {
+                "@type": "LandmarksOrHistoricalBuildings",
+                name: "Butrint National Park",
+              },
+            ],
           },
           publisher: {
             "@type": "Organization",
@@ -90,17 +98,17 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Ksamil Albania: Beaches & Albanian Riviera Travel Guide 2025",
+  title: "Ksamil Albania: Best Beaches, Islands & 2025 Travel Guide",
   meta: [
     {
       name: "description",
       content:
-        "Discover Ksamil's pristine beaches on the Albanian Riviera. Your complete guide to top attractions, best beaches in Albania, and travel tips for your perfect Mediterranean holiday.",
+        "Explore Ksamil Albania stunning beaches and crystal-clear waters. Your guide to the Ksamil Islands, and planning your Ksamil holidays. Discover top things to do.",
     },
     {
       name: "keywords",
       content:
-        "ksamil albania, albanian riviera, best beaches in albania, saranda albania, ksamil beaches, albania beach resorts, things to do in albania, albania travel guide, albania holiday destinations",
+        "ksamil, ksamil albania, ksamil beach, ksamil islands, ksamil holidays, things to do in ksamil, albania ksamil, ksamil albania holidays, butrint national park, best beaches in albania, ksamil attractions",
     },
     {
       name: "robots",
@@ -117,12 +125,12 @@ export const head: DocumentHead = {
     {
       property: "og:title",
       content:
-        "Ksamil Albania: Beaches & Albanian Riviera Travel Guide | Visit Ksamil",
+        "Ksamil, Albania: Ultimate Guide to Beaches, Islands & Attractions | Visit Ksamil",
     },
     {
       property: "og:description",
       content:
-        "Plan your perfect beach holiday in Ksamil, Albania. Discover the best beaches on the Albanian Riviera, top attractions, and essential travel tips for 2025.",
+        "Plan your trip to Ksamil, Albania – a hidden coastal treasure offering stunning beaches, charming islands, and rich cultural heritage. Your go-to resource for local tips and travel insights.",
     },
     {
       property: "og:image",
@@ -139,12 +147,13 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:title",
-      content: "Ksamil Albania: Albanian Riviera's Best Beaches & Travel Tips",
+      content:
+        "Ksamil, Albania: Ultimate Guide to Beaches, Islands & Attractions",
     },
     {
       name: "twitter:description",
       content:
-        "Your complete guide to Ksamil - Albania's hidden gem with crystal-clear waters, best beaches, and UNESCO World Heritage sites. Plan your 2025 trip now!",
+        "Discover Ksamil, Albania – a coastal pearl with pristine beaches and enchanting islands. Get travel tips, top attractions, and local insights for your next getaway.",
     },
     {
       name: "twitter:image",

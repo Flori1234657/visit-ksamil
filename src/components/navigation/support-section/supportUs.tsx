@@ -6,7 +6,7 @@ export const SupportUs = component$(() => {
       aria-label="Conatiner for Support us link"
       class="support-us-container"
     >
-      <h4>
+      <p>
         <span>
           <svg
             aria-hidden="true"
@@ -46,7 +46,7 @@ export const SupportUs = component$(() => {
           </svg>
           {/** Arrow box icon */}
         </span>
-      </h4>
+      </p>
     </div>
   );
 });

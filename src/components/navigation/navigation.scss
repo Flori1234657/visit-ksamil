@@ -14,7 +14,7 @@
 
   animation: simpleOpacity 0.6s;
 
-  h4 {
+  p {
     @include mixins.font(
       "Poppins",
       0.75rem,
@@ -48,7 +48,7 @@
   &__logo {
     @include mixins.flex;
     gap: 0.5rem;
-    h4 {
+    p {
       animation: writing 0.75s;
 
       @include mixins.font("IslandMoments", 1.269rem, 400, white, 115%);
@@ -162,7 +162,7 @@
 
 @include media-query.md {
   .support-us-container {
-    h4 {
+    p {
       font-size: 0.554rem;
 
       span {
@@ -183,7 +183,7 @@
     &__logo {
       cursor: pointer;
 
-      h4 {
+      p {
         font-size: 1rem;
       }
     }
@@ -259,7 +259,7 @@
 
 @include media-query.lg {
   .support-us-container {
-    h4 {
+    p {
       font-size: 0.625rem;
       line-height: 0;
 
@@ -273,7 +273,7 @@
     @include mixins.main-padding(0.565rem);
 
     &__logo {
-      h4 {
+      p {
         font-size: 1.266rem;
       }
     }

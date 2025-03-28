@@ -12,7 +12,7 @@ export const Logo = component$(() => {
         alt="VisitKsamil Logo"
         itemProp="logo"
       />
-      <h4 itemProp="name">VisitKsamil</h4>
+      <p itemProp="name">VisitKsamil</p>
     </div>
   );
 });

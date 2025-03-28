@@ -14,7 +14,7 @@ export default extendConfig(baseConfig, () => {
     plugins: [vercelEdgeAdapter({
       ssg:{
         include: ['/*'],
-        origin: 'https://qwik.dev',
+        origin: 'https://www.visitksamil.info/',
         sitemapOutFile: 'sitemap.xml',
       }
     })],
