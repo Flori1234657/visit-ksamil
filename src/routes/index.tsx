@@ -31,7 +31,7 @@ export default component$(() => {
         dangerouslySetInnerHTML={JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Ksamil Albania Travel Guide - Beaches, Islands & Holidays",
+          name: "Visit Ksamil",
           url: "https://www.visitksamil.info",
           description:
             "Official travel guide to Ksamil, Albania - offering comprehensive insights on its pristine beaches, enchanting islands, top attractions, and rich local heritage.",
@@ -126,6 +126,10 @@ export const head: DocumentHead = {
       property: "og:title",
       content:
         "Ksamil, Albania: Ultimate Guide to Beaches, Islands & Attractions | Visit Ksamil",
+    },
+    {
+      property: "og:site_name",
+      content: "Visit Ksamil",
     },
     {
       property: "og:description",
